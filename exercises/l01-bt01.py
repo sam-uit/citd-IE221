@@ -1,0 +1,4 @@
+# 2. Viết CT nhập thông tin từ bàn phím, sau đó in ra chuỗi, rồi kiểm tra kiểu dữ liệu nhập vào.
+# 3. Viết chương trình nhập vào hai string. Sau đó dùng `""` hoặc "`+`" trong `print()` để kết hai string đó và xuất ra màn hình.
+# 4. Viết lệnh nhập thông tin từ bàn phím, rồi xuất ra giá trị nhập, viết lệnh `input()` lồng trong lệnh `print()`.
+
