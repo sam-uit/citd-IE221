@@ -1,0 +1,25 @@
+{
+  "selectedLocale": "en",
+  "align": "left",
+  "clickToUse": false,
+  "roundRanges": false,
+  "useUtc": true,
+  "useAI": true,
+  "aiModels": {
+    "openai": "gpt-4o-mini",
+    "gemini": "gemini-2.5-flash"
+  },
+  "aiProvider": "gemini",
+  "showChangelogOnUpdate": true,
+  "enableCaching": false,
+  "lastSeenVersion": "3.6.3",
+  "basesPropNames": {
+    "start": "start",
+    "end": "end",
+    "group": "group",
+    "color": "color",
+    "type": "type",
+    "content": "content",
+    "description": "description"
+  }
+}

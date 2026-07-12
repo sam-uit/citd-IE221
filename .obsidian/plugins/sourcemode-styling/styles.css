@@ -1,0 +1,105 @@
+/*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+
+/* Main source mode styling using CSS variables
+   NOTE: In rare cases, font settings in appearance.json may override these variables.
+   If fonts aren't applying despite CSS variables being set, check appearance.json
+   for textFontFamily/monospaceFontFamily settings. See CLAUDE.md troubleshooting section. */
+.markdown-source-view.mod-cm6.source-mode-raw .cm-scroller {
+	font-family: var(--sourcemode-font-family);
+	font-size: var(--sourcemode-font-size);
+	line-height: var(--sourcemode-line-height);
+	color: var(--sourcemode-font-color);
+	background-color: var(--sourcemode-background-color);
+	font-weight: var(--sourcemode-font-weight);
+}
+
+.markdown-source-view.mod-cm6.source-mode-raw .cm-header {
+	font-size: initial !important;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: unset;
+	font-variant: initial;
+	color: var(--sourcemode-heading-color, inherit);
+}
+
+.markdown-source-view.mod-cm6.source-mode-raw .cm-header.cm-formatting-header {
+	color: var(--text-formatting);
+}
+
+/* Font detection test element */
+.font-test-element {
+	position: absolute;
+	left: -99999px;
+	font-size: 72px;
+}
+
+.font-test-monospace {
+	font-family: monospace;
+}
+
+.font-test-sansserif {
+	font-family: sans-serif;
+}
+
+.font-test-serif {
+	font-family: serif;
+}
+
+/* Dynamic font test using CSS variable */
+.font-test-current {
+	font-family: var(--font-detect-test-family, monospace);
+}
+
+/* Settings UI components */
+.source-mode-settings-input-hidden {
+	display: none;
+}
+
+/* Style Preview Component */
+.style-preview-section {
+	margin-top: var(--size-4-6);
+	padding-top: var(--size-4-4);
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.style-preview-container {
+	padding: var(--size-4-4);
+	background-color: var(--preview-background-color, var(--background-secondary));
+	border-radius: var(--radius-s);
+	margin-top: var(--size-4-2);
+}
+
+.style-preview-heading {
+	font-family: var(--preview-font-family, inherit);
+	font-size: var(--preview-font-size, inherit);
+	font-weight: bold;
+	line-height: var(--preview-line-height, inherit);
+	color: var(--preview-heading-color, var(--text-normal));
+	margin-bottom: var(--size-4-3);
+}
+
+.style-preview-paragraph {
+	font-family: var(--preview-font-family, inherit);
+	font-size: var(--preview-font-size, inherit);
+	font-weight: var(--preview-font-weight, inherit);
+	line-height: var(--preview-line-height, 1.6);
+	color: var(--preview-font-color, var(--text-normal));
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/* Refresh button styling */
+.sourcemode-refresh-button {
+	margin-left: var(--size-4-2);
+}
+
+.sourcemode-refresh-button.is-hidden {
+	display: none;
+}

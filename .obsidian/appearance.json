@@ -1,0 +1,11 @@
+{
+  "theme": "system",
+  "accentColor": "",
+  "cssTheme": "Things",
+  "monospaceFontFamily": "Iosevka",
+  "enabledCssSnippets": [
+    "callout-checklist"
+  ],
+  "interfaceFontFamily": "Google Sans",
+  "textFontFamily": "Google Sans"
+}

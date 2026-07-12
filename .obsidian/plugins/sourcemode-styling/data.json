@@ -1,0 +1,26 @@
+{
+  "rawModeEnabled": true,
+  "fontFamily": "Source Code Pro",
+  "fontSize": 14,
+  "lineHeight": 1.75,
+  "fontColor": "theme",
+  "headingColor": "#2d5b8c",
+  "backgroundColor": "theme",
+  "fontWeight": "theme",
+  "debugMode": false,
+  "cachedAvailableFonts": {
+    "fonts": [
+      "Andale Mono",
+      "Cascadia Code",
+      "Cascadia Mono",
+      "Courier New",
+      "Menlo",
+      "Monaco",
+      "Source Code Pro",
+      "Ubuntu Mono",
+      "monospace"
+    ],
+    "fontListHash": "q6c2pf",
+    "timestamp": 1778285064577
+  }
+}
