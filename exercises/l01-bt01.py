@@ -7,4 +7,9 @@ print("[3] Kiểu dữ liệu là: " + type(hovaten).__name__)
 
 # 3. Viết chương trình nhập vào hai string. Sau đó dùng `""` hoặc "`+`" trong `print()` để kết hai string đó và xuất ra màn hình.
 
+print("[B] Nhập 2 string và nối cùng nhau trong print().")
+chuoia = input("[1] Vui lòng nhập chuỗi a: ")
+chuoib = input("[2] Vui lòng nhập chuỗi b: ")
+print("[3] Chuỗi bạn vừa nhập là: " + chuoia + chuoib)
+
 # 4. Viết lệnh nhập thông tin từ bàn phím, rồi xuất ra giá trị nhập, viết lệnh `input()` lồng trong lệnh `print()`.
