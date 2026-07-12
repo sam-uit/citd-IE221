@@ -4,5 +4,3 @@
 
 - [l01](lectures/l01.md)
 
-## Bài Tập Theo Bài Giảng
-
