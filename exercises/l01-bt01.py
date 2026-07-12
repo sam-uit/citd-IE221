@@ -13,3 +13,6 @@ chuoib = input("[2] Vui lòng nhập chuỗi b: ")
 print("[3] Chuỗi bạn vừa nhập là: " + chuoia + chuoib)
 
 # 4. Viết lệnh nhập thông tin từ bàn phím, rồi xuất ra giá trị nhập, viết lệnh `input()` lồng trong lệnh `print()`.
+
+print("[C] Nhập thông tin từ bàn phím với `input()` lồng trong `print()`")
+print("[2] Tên của bạn là: " + input("[1] Vui lòng nhập tên của bạn: "))
