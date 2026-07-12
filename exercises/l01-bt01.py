@@ -2,6 +2,7 @@
 # MSSV: 25410291
 # Họ Tên: Đinh Xuân Sam
 # Lớp: IE221.F33.LT.CNTT
+# https://github.com/sam-uit/citd-IE221/blob/zero/exercises/l01-bt01.py
 
 print("[i] IE221 - Bài 01 - Bài Tập 01")
 
