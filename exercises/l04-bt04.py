@@ -14,8 +14,28 @@ kbb_dict = {
     "bao": "Bao"
 }
 
+# rule_dict: các quy tắc thắng của trò chơi
+rule_dict = {
+    "keo": "bao",
+    "bao": "bua",
+    "bua": "keo"
+}
+
 # get_kbb_choice: trả về một lựa chọn ngẫu nhiên từ kbb_dict
 def get_kbb_choice():
     """Trả về một lựa chọn ngẫu nhiên từ kbb_dict"""
     return random.choice(tuple(kbb_dict.keys()))
+
+# winner: xác định người chiến thắng dựa trên các lựa chọn
+def winner(your_choice: str, computer_choice: str):
+    """
+    Xác định người chiến thắng dựa trên lựa chọn của người chơi và máy.
+    Sử dụng rule_dict để xác định người chiến thắng.
+    """
+    if your_choice == computer_choice:
+        return 0
+    elif rule_dict[your_choice] == computer_choice:
+        return 1
+    else:
+        return 2
 
