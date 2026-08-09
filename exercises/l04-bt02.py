@@ -40,6 +40,9 @@ def validate_email(email):
             if not component.isalnum():
                 return False
 
+    # Nếu tất cả các kiểm tra đều thành công, trả về True.
+    return True
+
 # Gọi hàm validate_email để kiểm tra địa chỉ email nhập vào.
 if __name__ == '__main__':
     print("[i] Các tên miền email được phép:", ', '.join(ALLOWED_DOMAINS))
