@@ -14,6 +14,13 @@ kbb_dict = {
     "bao": "Bao"
 }
 
+# result_dict: các kết quả khả thi của trò chơi
+result_dict = {
+    0: "Hòa!",
+    1: "Bạn thắng!",
+    2: "Máy thắng!"
+}
+
 # rule_dict: các quy tắc thắng của trò chơi
 rule_dict = {
     "keo": "bao",
