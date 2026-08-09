@@ -29,11 +29,16 @@ def validate_email(email):
         return False
 
     # domain phải có ít 2 phần (tên miền và đuôi tên miền).
+    # có nghĩa chia tách theo dấu . phải có ít nhất 2 phần.
     if len(domain.split('.')) < 2:
         return False
-    # domain không chứa ký tự đặc biệt bao gồm khoảng trắng.
-    if not domain.isalnum():
-        return False
+    else:
+        domain_components = domain.split('.')
+        # Nếu bất kỳ phần nào trong domain chứa ký tự đặc biệt,
+        # bao gồm khoảng trắng, trả về False.
+        for component in domain_components:
+            if not component.isalnum():
+                return False
 
 # Gọi hàm validate_email để kiểm tra địa chỉ email nhập vào.
 if __name__ == '__main__':
@@ -47,10 +52,12 @@ if __name__ == '__main__':
 
     continue_or_not = input('[?] Tiếp tục tới bước kiểm tra email? (y/n): ')
     if continue_or_not.lower() != 'y':
-        exit()
+        exit(2)
 
     your_email = input('[i] Nhập địa chỉ email: ')
     if validate_email(your_email):
         print('[i] Địa chỉ email hợp lệ.')
+        exit(0)
     else:
         print('[!] Địa chỉ email không hợp lệ.')
+        exit(1)
