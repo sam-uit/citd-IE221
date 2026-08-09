@@ -46,3 +46,31 @@ def winner(your_choice: str, computer_choice: str):
     else:
         return 2
 
+# play: chơi một lượt của trò chơi Kéo - Búa - Bao
+def play():
+    """Chơi một lượt của trò chơi Kéo - Búa - Bao"""
+    print("[i] Các lựa chọn: ")
+
+    # Các lựa chọn của trò chơi
+    choices = {1: "keo", 2: "bua", 3: "bao"}
+
+    # In ra các lựa chọn cho người chơi
+    counter = 0
+    for _, value in kbb_dict.items():
+        counter += 1
+        print(f"\t{counter}: {value}")
+
+    your_choice = input("[i] Nhập lựa chọn của bạn (1, 2, 3; 0 để thoát): ")
+    while not your_choice.isdigit():
+        your_choice = input("[i] Nhập lựa chọn của bạn (1, 2, 3; 0 để thoát): ")
+    if int(your_choice) == 0:
+        exit(0)
+
+    print(f"[i] Bạn chọn:\t {kbb_dict[choices[int(your_choice)]]}")
+
+    computer_choice = get_kbb_choice()
+    print(f"[i] Máy chọn:\t {kbb_dict[computer_choice]}")
+
+    result = winner(choices[int(your_choice)], computer_choice)
+    print(f"[>] Kết quả:\t {result_dict[result]}")
+
