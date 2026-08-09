@@ -37,8 +37,20 @@ def validate_email(email):
 
 # Gọi hàm validate_email để kiểm tra địa chỉ email nhập vào.
 if __name__ == '__main__':
-    email = input('[i] Nhập địa chỉ email: ')
-    if validate_email(email):
+    print("[i] Các tên miền email được phép:", ', '.join(ALLOWED_DOMAINS))
+
+    add_domain = input('[?] Bạn có muốn thêm tên miền email khác? (y/n): ')
+    if add_domain.lower() == 'y':
+        new_domain = input('[i] Nhập tên miền email: ')
+        ALLOWED_DOMAINS.append(new_domain)
+        print('[i] Các tên miền email được phép:', ', '.join(ALLOWED_DOMAINS))
+
+    continue_or_not = input('[?] Tiếp tục tới bước kiểm tra email? (y/n): ')
+    if continue_or_not.lower() != 'y':
+        exit()
+
+    your_email = input('[i] Nhập địa chỉ email: ')
+    if validate_email(your_email):
         print('[i] Địa chỉ email hợp lệ.')
     else:
         print('[!] Địa chỉ email không hợp lệ.')
