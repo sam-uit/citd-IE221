@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # MSSV: 25410291
+# l06-bt02
 # l06-bt02.py
 
 import math as m
