@@ -1,42 +1,51 @@
-#import "/lib.typ": *
-#import "/content/diagrams.typ": class-diagram
+#import "../lib.typ": *
+#import "diagrams.typ": class-diagram
 
-= MÃ NGUỒN: TRỌNG TÂM `model/`
+= TRỌNG TÂM `/model/`
 <ma-nguon-trong-tam-model>
 
 == Package Và Module
 <package-va-module>
 
 #grid(
-  columns: (1fr, 1.1fr),
-  column-gutter: 1.5em,
+  columns: (1.1fr, 1fr),
+  column-gutter: 1em,
   [
-    #set text(size: 0.72em)
-    ```
+    #set text(size: 0.8em)
+    ```yaml
     src/skills_scraper/
-    ├── __init__.py      __version__
-    ├── config.py        defaults < yaml < env
-    ├── cli.py           skills-scraper
-    ├── tui.py           skills-scraper-tui
-    ├── model/           LÕI
-    │   ├── serialize.py  base_entity.py
+    ├── __init__.py      # __version__
+    ├── config.py        # defaults < yaml < env
+    ├── cli.py           # cli (Command Line Interface)
+    ├── tui.py           # tui (Text User Interface)
+    ├── model/           # LÕI QUAN TRỌNG
+    │   ├── __init__.py  # __init__
+    │   ├── base_entity.py
     │   ├── collection.py
-    │   ├── path.py  course.py  lab.py
-    │   └── paths.py  courses.py  labs.py  topics.py
+    │   ├── path.py
+    │   ├── course.py
+    │   ├── courses.py
+    │   ├── lab.py
+    │   ├── labs.py
+    │   ├── paths.py
+    │   └── serialize.py
     ├── services/
-    │   ├── browser.py   Selenium, sign-in
-    │   └── store.py     JSON, index, atomic
-    └── utils/utils.py
-    tests/               15 test offline
+    │   ├── __init__.py  # __init__
+    │   ├── browser.py   # browser (Selenium)
+    │   └── store.py     # store (JSON, index, atomic)
+    └── utils/
+        ├── __init__.py  # __init__
+        └── utils.py
     ```
   ],
   [
-    #code-file("/content/code/pyproject.toml", from: 1, to: 3, lang: "toml", size: 12pt)
-    #code-file("/content/code/pyproject.toml", from: 20, to: 26, lang: "toml", size: 12pt)
-    #set text(size: 0.85em)
-    - `__init__.py` là mặt tiền: `from skills_scraper.model.course import Course`.
-    - Import *tuyệt đối*, không còn `sys.path.append` của v2.0.0.
-    - `uv sync` là toàn bộ bước cài; `uv run skills-scraper` là toàn bộ bước chạy.
+    // #co-warn(title: "Giới Thiệu")[Cấu Trúc và Khai Báo]
+    #code-file("/content/code/pyproject.toml", from: 1, to: 3, lang: "toml", size: 0.8em)
+    #code-file("/content/code/pyproject.toml", from: 20, to: 26, lang: "toml", size: 0.8em)
+    // #set text(size: 0.85em)
+    // - `__init__.py` là mặt tiền: `from skills_scraper.model.course import Course`.
+    // - Import *tuyệt đối*, không còn `sys.path.append` của v2.0.0.
+    // - `uv sync` là toàn bộ bước cài; `uv run skills-scraper` là toàn bộ bước chạy.
   ],
 )
 
