@@ -3,7 +3,7 @@
 = BỐI CẢNH
 <boi-canh>
 
-== Một Bộ Não Thu Nhỏ
+== Một Bộ Não Thu Nhỏ -- A Vault
 <mot-bo-nao-thu-nho>
 
 #grid(
@@ -11,7 +11,7 @@
   [
     #align(center)[
       #image("images/obsidian-pkb-2nd-brain.png", height: auto)
-    ],
+    ]
   ],
   [
     #align(center + horizon)[
@@ -20,30 +20,39 @@
   ]
 )
 
-== skills.google Hôm Nay
-<skills-google-hom-nay>
+== skills.google -- Tiểu Sử
+<skills-google>
 
-#small[
+// #small[
 #cols(
-  card(title: [Cloud Skills Boost], icon: [1])[
-    Tên cũ, xem ẩn danh được. `ql-course-outline`, `requests` là đủ.
+  card(title: [Cloud Skills Boost], icon: [1], accent: ggcolors.blue)[
+    - #link("https://cloudskillsboost.google/")[cloudskillsboost.google]
+    // - Tên cũ.
+    - Tập trung Google Cloud.
+    - Không cần tài khoản.
+    - `ql-course-outline`.
   ],
-  card(title: [skills.google], icon: [2])[
-    Đổi tên, đổi schema: `ql-contents-menu`, catalog API phân trang, hai portal.
+  card(title: [Google Skills], icon: [2], accent: ggcolors.red)[
+    - #link("https://skills.google/")[skills.google]
+    // - Tên mới.
+    - Phục vụ nhiều sản phẩm của Google.
+    - Phải có tài khoản đăng nhập.
+    - `ql-contents-menu`.
   ],
-  card(title: [02/2026], icon: [3])[
-    Loại activity mới `html_bundle` (HTML5 trên Cloud Storage); rồi `badge`, `credential`.
-  ],
-  card(title: [07/2026], icon: [4], tint: true)[
-    Trang course *bắt buộc đăng nhập*; catalog trả 403 cho request trần.
-  ],
+  // card(title: [02/2026], icon: [3])[
+  //   Loại activity mới `html_bundle` (HTML5 trên Cloud Storage); rồi `badge`, `credential`.
+  // ],
+  // card(title: [07/2026], icon: [4], tint: true)[
+  //   Trang course *bắt buộc đăng nhập*; catalog trả 403 cho request trần.
+  // ],
 )
 
 #v(0.8em)
-#co-info(title: "Hệ quả kỹ thuật")[
-  Selenium là bắt buộc: một *scraper có phiên đăng nhập*, không phải crawler. Một Chrome với profile lưu phiên, mọi trang đi qua nó.
+#co-note(title: "Hệ quả kỹ thuật")[
+  - Công cụ phải có *phiên đăng nhập* (_scraper_, không phải _crawler_).
+  - Một trình duyệt với profile lưu phiên, mọi _request_ đi qua nó.
 ]
-]
+// ]
 
 == Phân Cấp Dữ Liệu
 <phan-cap-du-lieu>
