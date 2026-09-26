@@ -1,0 +1,21 @@
+# Bảng đối chiếu chương bài giảng IE221 với bằng chứng trong mã. Dựng bằng datatable-slide.
+caption: Chương bài giảng và bằng chứng trong mã nguồn
+
+options:
+  index: false
+  align: [center, left, left]
+  strong-first: true
+
+headers: [Chương, Nội dung, Bằng chứng (sau refactor)]
+
+rows:
+  - ["01", "Python 3.12, môi trường", "`pyproject.toml`, `.python-version`, `uv.lock`"]
+  - ["02", "Kiểu dữ liệu", "dict lồng `modules[].steps[].activities[]`, `f\"{item_id:>5}\"`, `json.dump(ensure_ascii=False)`"]
+  - ["03", "Rẽ nhánh", "dispatch dict theo `activity[\"type\"]`, `if not force and datePublished == self.datePublished`"]
+  - ["04", "Lặp", "`while True` phân trang với `MAX_PAGES` làm cầu chì, `for module / step / activity` ba tầng"]
+  - ["05", "Hàm", "tham số mặc định, `**kwargs`, `lambda` sort key, đệ quy `_parse_lesson_item`"]
+  - ["06", "Module, package", "`src/skills_scraper/model/`, import tuyệt đối, hai entry point trong `pyproject.toml`"]
+  - ["07", "Ngoại lệ", "`try/except` quanh fetch, `except BaseException` dọn file tạm rồi `raise`, `ValueError` cho type lạ"]
+  - ["08", "OOP", "`Serialize`, `BaseEntity`, `Collection`, `@property`, `super()`, ghi đè `generate_markdown`, thuộc tính lớp `API_URL`"]
+  - ["09", "GUI", "không dùng, có lý do: người dùng ở terminal; GUI thật nằm ở nhánh Tauri"]
+  - ["10", "CSDL", "không dùng, có lý do: file phẳng + `index.json`, dưới 5.000 bản ghi, stateless"]

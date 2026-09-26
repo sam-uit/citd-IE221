@@ -1,0 +1,32 @@
+[project]
+name = "skills-scraper"
+version = "2.0.1"
+description = "Scrape Google Skills paths, courses and labs into JSON and an Obsidian-ready Markdown vault."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "selenium>=4.40",
+    "beautifulsoup4>=4.12",
+    "requests>=2.32",
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff",
+]
+
+[project.scripts]
+skills-scraper = "skills_scraper.cli:main"
+skills-scraper-tui = "skills_scraper.tui:main"
+
+[build-system]
+requires = ["uv_build>=0.8,<0.13"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

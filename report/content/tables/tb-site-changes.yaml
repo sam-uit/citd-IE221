@@ -1,0 +1,16 @@
+# Site đổi, mã đổi theo: năm thay đổi của skills.google và commit ở dòng chính đã xử lý.
+caption: Site đổi, mã đổi theo
+
+options:
+  index: false
+  align: [left, left, left]
+  strong-first: false
+
+headers: [skills.google đổi gì, v2.0.0 gặp gì, Sửa thế nào (commit dòng chính)]
+
+rows:
+  - ["Trang course cần đăng nhập (07/2026)", "`requests.get` nhận trang sign-in", "một `ensure_authenticated` thay sáu khối `input()` (7637ba2)"]
+  - ["Catalog trả 403 cho request trần", "`list -r` rỗng", "đọc JSON trong `<pre>` qua trình duyệt, một `fetch_catalog` cho ba lớp (61f2cbf)"]
+  - ["Loại activity `html_bundle`, `badge`, `credential`", "bị bỏ qua lặng lẽ", "dispatch dict, loại lạ giữ nguyên và log (31390c6)"]
+  - ["`ld+json.hasPart` gắn nhãn lab thành Course", "path trỏ sai course", "`ql-contents-menu` là nguồn sự thật (0b3c374)"]
+  - ["Title có dấu nháy", "YAML hỏng, Obsidian báo lỗi", "`json.dumps` cho scalar, `title` thay `name` (1aa2f3e)"]
