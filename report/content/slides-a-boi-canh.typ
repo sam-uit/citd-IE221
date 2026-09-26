@@ -23,17 +23,21 @@
 == skills.google -- Tiểu Sử
 <skills-google>
 
+#co-note(title: "Giới Thiệu")[
+  - Một portal e-learning: _"Bởi Google và cho Google."_
+]
+
 // #small[
 #cols(
   card(title: [Cloud Skills Boost], icon: [1], accent: ggcolors.blue)[
-    - #link("https://cloudskillsboost.google/")[cloudskillsboost.google]
+    - #link("https://cloudskillsboost.google/")[_cloudskillsboost.google_]
     // - Tên cũ.
     - Tập trung Google Cloud.
     - Không cần tài khoản.
     - `ql-course-outline`.
   ],
   card(title: [Google Skills], icon: [2], accent: ggcolors.red)[
-    - #link("https://skills.google/")[skills.google]
+    - #link("https://skills.google/")[_skills.google_]
     // - Tên mới.
     - Phục vụ nhiều sản phẩm của Google.
     - Phải có tài khoản đăng nhập.
@@ -47,10 +51,10 @@
   // ],
 )
 
-#v(0.8em)
-#co-note(title: "Hệ quả kỹ thuật")[
-  - Công cụ phải có *phiên đăng nhập* (_scraper_, không phải _crawler_).
-  - Một trình duyệt với profile lưu phiên, mọi _request_ đi qua nó.
+// #v(0.8em)
+#co-warn(title: "Hệ quả kỹ thuật")[
+  - Công cụ phải có *phiên đăng nhập*, mọi _request_ đi qua nó, (_scraper_, không phải _crawler_).
+  // - Một trình duyệt với profile lưu phiên, mọi _request_ đi qua nó.
 ]
 // ]
 
