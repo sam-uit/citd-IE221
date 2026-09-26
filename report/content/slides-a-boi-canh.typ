@@ -1,4 +1,4 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
 = BỐI CẢNH
 <boi-canh>
@@ -7,7 +7,7 @@
 <mot-bo-nao-thu-nho>
 
 #align(center)[
-  #image("/content/images/obsidian-pkb-2nd-brain.png", height: 13.6cm)
+  #image("images/obsidian-pkb-2nd-brain.png", height: 13.6cm)
   #text(size: 0.8em, fill: gray)[3.600 note, 0 dòng nhập tay. Mỗi chấm là một path, course hoặc lab trên skills.google.]
 ]
 
