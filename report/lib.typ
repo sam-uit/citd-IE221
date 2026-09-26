@@ -8,6 +8,13 @@
 
 #import "@local/uit-theme:0.4.2": *
 
+#let ggcolors = (
+  blue: rgb("#174EA6"),
+  red: rgb("#A50E0E"),
+  orange: rgb("#E37400"),
+  green: rgb("#0D652D"),
+)
+
 // MARK: Nạp dữ liệu
 
 #let load-data(path, id: none) = {
