@@ -17,7 +17,7 @@ metadata:
     id: "25410291"
   assignment:
     title: "Google Skills Scraper"
-    subtitle: "Một ứng dụng dòng lệnh đưa skills.google vào bộ não thứ hai"
+    subtitle: "Trích Xuất Nội Dung skills.google Vào Kho PKB"
     type: "slides"
     date: "Tháng 09/2026"
   repo:
