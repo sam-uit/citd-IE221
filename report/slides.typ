@@ -1,6 +1,6 @@
 // slides.typ: deck báo cáo IE221, theme aqua của @local/uit-theme.
 // Nội dung nằm ở content/slides-*.typ, cấu hình ở config/config.yaml, mã thật ở content/code/.
-#import "/lib.typ": *
+#import "./lib.typ": *
 #import aqua: *
 
 #let uit_logo = image("static/uit-small.png")
