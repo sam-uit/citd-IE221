@@ -1,0 +1,26 @@
+theme:
+
+metadata:
+  university:
+    name: "Đại Học Quốc Gia Thành Phố Hồ Chí Minh"
+    college: "Trường Đại Học Công Nghệ Thông Tin"
+    center: "Trung Tâm Phát Triển Công Nghệ Thông Tin"
+    faculty: "Khoa Khoa Học Và Kỹ Thuật Thông Tin"
+    logo: "uit-small.png"
+  course:
+    id: "IE221"
+    name: "Kỹ Thuật Lập Trình Python"
+    class: "IE221.F33.LT.CNTT"
+  instructor: "ThS. Nghi Hoàng Khoa"
+  author:
+    name: "Đinh Xuân Sâm"
+    id: "25410291"
+  assignment:
+    title: "Google Skills Scraper"
+    subtitle: "Một ứng dụng dòng lệnh đưa skills.google vào bộ não thứ hai"
+    type: "slides"
+    date: "Tháng 09/2026"
+  repo:
+    url: "https://github.com/ggcta/skills-scrapper"
+    branch: "refactor-ie221"
+    base: "v2.0.0"

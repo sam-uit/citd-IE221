@@ -1,0 +1,41 @@
+# Slides IE221: `just` liệt kê công thức. Chỉ có slides, không có report.
+#
+#   content/*.typ  --typst-->  slides.pdf
+#   tools/snippets.py bóc mã thật từ repo scraper vào content/code/ (chạy lại khi mã đổi)
+#
+# Yêu cầu: typst 0.15+, python3. Font và theme nằm ở repo typst-uit-theme.
+
+typst := env("TYPST", "typst")
+theme := env("UIT_THEME", env("HOME") / "repos/typst-uit-theme")
+fonts := env("UIT_FONTS", theme / "fonts")
+scraper := env("SCRAPER", env("HOME") / "repos/gcpcta/skills-google-scrapper")
+
+default:
+    @just --list
+
+# Kiểm tra phiên bản typst: 0.15 trở lên, không bao giờ 0.14.x.
+typst-version:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    v=$({{ typst }} --version | awk '{print $2}')
+    case "$v" in 0.1[5-9].*|0.[2-9]*|[1-9]*) echo "typst $v";; *) echo "typst $v: cần 0.15 trở lên"; exit 1;; esac
+
+# Bóc các đoạn mã thật vào content/code/.
+snippets:
+    python3 tools/snippets.py --repo {{ scraper }}
+
+# Biên dịch slides.pdf.
+slides: typst-version
+    {{ typst }} compile slides.typ --font-path {{ fonts }}
+
+# Bóc mã rồi biên dịch.
+all: snippets slides
+
+# Xuất từng trang PNG vào _review/ để soát bằng mắt.
+png: typst-version
+    mkdir -p _review
+    {{ typst }} compile slides.typ "_review/page-{p}.png" --format png --ppi 60 --font-path {{ fonts }}
+
+# Theo dõi và biên dịch lại.
+watch:
+    find . -maxdepth 3 \( -name "*.typ" -o -name "*.yaml" -o -name "*.py" \) | entr -r just slides
