@@ -61,30 +61,56 @@
 == Phân Cấp Dữ Liệu
 <phan-cap-du-lieu>
 
-#grid(
-  columns: (1.1fr, 1fr),
-  column-gutter: 1.5em,
-  [
-    #set text(size: 0.9em)
-    ```
-    Portal (public | partner)
-    └── Path  (learning path)
-        └── Course
-            └── Module
-                └── Step
-                    └── Activity
-                        video | lab | quiz | link
-                        document | html_bundle
-                        badge | credential | ...
-    ```
+```
+Portal (public | partner)
+└─ Path (learning path)
+  └─ Course
+    └─ Module
+      └─ Step
+        └─ Activity
+          └─ video | lab        | quiz        |
+          └─ link  | document   | html_bundle |
+          └─ badge | credential | ...
+```
+
+#cols(
+  card(title: [Ghi Chú], icon: [!], accent: ggcolors.orange)[
+    -  *Lab*: `lab`
+      - vừa là *Activity* trong *Course*
+      - vừa là *thực thể* độc lập.
+    - *Activity* thuộc về Google: thêm/bớt.
   ],
-  [
-    - *Lab* vừa là activity trong course, vừa là thực thể độc lập có trang riêng.
-    - Một course thuộc *nhiều* path. Đó là các nút bậc cao ở giữa đồ thị.
-    - Tập loại activity thuộc về Google, không thuộc về ứng dụng: hôm nay 6 loại có handler, mai có thể thêm.
-    - `model/` phản chiếu đúng cây này: `Path`, `Course`, `Lab` là thực thể; `modules` là dữ liệu của `Course`.
-  ],
+  card(title: [Mô Hình Hóa], icon: [M], accent: ggcolors.blue)[
+    - Thực thể: *Path*, *Course*, *Lab*.
+    - Dữ liệu: `modules`, thuộc Course.
+    - Module: `src/skills_scaper/model/`.
+  ]
 )
+
+// #grid(
+//   columns: (1.1fr, 1fr),
+//   column-gutter: 1.5em,
+//   [
+//     // #set text(size: 0.9em)
+//     ```
+//     Portal (public | partner)
+//     └── Path (learning path)
+//         └── Course
+//             └── Module
+//                 └── Step
+//                     └── Activity
+//                         video | lab | quiz | link
+//                         document | html_bundle
+//                         badge | credential | ...
+//     ```
+//   ],
+//   [
+//     - *Lab* vừa là activity trong course, vừa là thực thể độc lập có trang riêng.
+//     - Một course thuộc *nhiều* path. Đó là các nút bậc cao ở giữa đồ thị.
+//     - Tập loại activity thuộc về Google, không thuộc về ứng dụng: hôm nay 6 loại có handler, mai có thể thêm.
+//     - `model/` phản chiếu đúng cây này: `Path`, `Course`, `Lab` là thực thể; `modules` là dữ liệu của `Course`.
+//   ],
+// )
 
 == Vấn Đề
 <van-de>
