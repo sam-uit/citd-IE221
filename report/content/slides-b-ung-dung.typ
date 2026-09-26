@@ -1,8 +1,7 @@
-#import "/lib.typ": *
-#import "/content/diagrams.typ": arch-diagram
+#import "../lib.typ": *
+#import "diagrams.typ": arch-diagram
 
-= ỨNG DỤNG, KHÔNG PHẢI HỆ THỐNG
-<ung-dung-khong-phai-he-thong>
+= MỘT TIỆN ÍCH NHỎ
 
 == Lịch Sử Công Cụ
 <lich-su-cong-cu>
