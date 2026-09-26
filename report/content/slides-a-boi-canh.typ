@@ -112,28 +112,49 @@ Portal (public | partner)
 //   ],
 // )
 
-== Vấn Đề
+== Vấn Đề -- Khó Nắm Bối Cảnh
 <van-de>
 
-#text(size: 0.95em)[Site cho xem *một trang tại một thời điểm*. Bốn câu hỏi người học hỏi nhiều nhất, site không trả lời được:]
+// Site chỉ cho xem *một trang tại một thời điểm*.
 
-#v(0.3em)
+// #v(0.3em)
 #card-grid(
   columns: 2,
-  row-gutter: 0.6em,
-  card(title: [Course này thuộc path nào?], icon: [1])[
-    Site: tìm ngược thủ công. Vault: *backlink* của note, tức thì.
+  // row-gutter: 0.6em,
+  row-gutter: - 0.2em,
+  card(title: [Course này thuộc Path nào?], icon: [1], accent: ggcolors.blue)[
+    - Site:
+      - dò tìm ngược thủ công.
+      - có khi không tìm được.
+    - Vault: *backlink* của note, tức thì.
   ],
-  card(title: [Hai path chồng nhau bao nhiêu?], icon: [2])[
-    Site: không có. Vault: nút chung trên *graph*, hoặc một truy vấn Dataview.
+  card(title: [Hai Path trùng nhau bao nhiêu?], icon: [2], accent: ggcolors.red)[
+    - Site: không có / không rõ.
+    - Vault:
+      - nút chung trên *graph*, hoặc
+      - một truy vấn Dataview.
   ],
-  card(title: [Transcript nào nhắc "Vertex AI Pipelines"?], icon: [3])[
-    Site: không tìm trong transcript. Vault: `grep` hoặc ô tìm kiếm, offline.
+  card(title: [Ở đâu nói "Vertex AI Pipelines"?], icon: [3], accent: ggcolors.orange)[
+    - Site: không tìm trong transcript.
+    - Vault: offline
+      - `grep` hoặc
+      - ô tìm kiếm.
   ],
-  card(title: [Google đổi gì từ lần học trước?], icon: [4])[
-    Site: không có changelog. Vault: `date_published` trong frontmatter và `git diff`.
+  card(title: [Google đổi gì từ lần học trước?], icon: [4], accent: ggcolors.green)[
+    - Site: không có changelog.
+    - Vault:
+      - `date_published` (property);
+      - `git diff`.
   ],
 )
+
+#align(right)[
+#text(
+  size: 0.8em,
+  fill: gradient.linear(..ggcolors.values()),
+    [_Có thể bạn đã biết. Color Palette của Google._]
+  )
+]
 
 == Obsidian Vault Là Bộ Não Thứ Hai
 <obsidian-vault-la-bo-nao-thu-hai>
