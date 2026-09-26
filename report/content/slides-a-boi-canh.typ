@@ -6,10 +6,19 @@
 == Một Bộ Não Thu Nhỏ
 <mot-bo-nao-thu-nho>
 
-#align(center)[
-  #image("images/obsidian-pkb-2nd-brain.png", height: 13.6cm)
-  #text(size: 0.8em, fill: gray)[3.600 note, 0 dòng nhập tay. Mỗi chấm là một path, course hoặc lab trên skills.google.]
-]
+#grid(
+  columns: (auto, 1fr),
+  [
+    #align(center)[
+      #image("images/obsidian-pkb-2nd-brain.png", height: auto)
+    ],
+  ],
+  [
+    #align(center + horizon)[
+      Mỗi chấm là một *path*, *course* hoặc *lab* trên skills.google.
+    ]
+  ]
+)
 
 == skills.google Hôm Nay
 <skills-google-hom-nay>
