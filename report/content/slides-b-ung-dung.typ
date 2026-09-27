@@ -44,29 +44,33 @@
   #text(fill: gray)[ggcta = Google Cloud Technical Architect]
 ]
 
-== Triết Lý Unix Trong Mã
-<triet-ly-unix-trong-ma>
+== Triết Lý Unix Trong Code
+<triet-ly-unix-trong-code>
 
 #card-grid(
   columns: 3,
   row-gutter: 0.6em,
-  card(title: [Làm một việc], icon: [1])[
-    `fetch` lấy về JSON. `md` từ JSON ra Markdown. Hai lệnh không biết nhau.
-  ],
-  card(title: [Văn bản là giao diện], icon: [2])[
+  card(title: [PLAIN TEXT!], icon: [1])[
     JSON và Markdown thuần. `git diff` được, `jq` được, `grep` được.
   ],
-  card(title: [Ghép được], icon: [3])[
-    `skills-scraper list -c | grep Vertex`, vòng `for` shell, cron.
+  card(title: [KISS], icon: [2])[
+    - `fetch`: lấy về JSON. `md`: JSON ra Markdown.
+    - Không (cần) biết nhau.
   ],
-  card(title: [Không trạng thái], icon: [4])[
-    Đọc file, ghi file, thoát. Không daemon, không DB. Chạy lại là idempotent nhờ `datePublished`.
+  card(title: [Pipelining], icon: [3])[
+    `skills-scraper list -c | grep -i Vertex`; // vòng `for` shell, cron.
   ],
-  card(title: [Cấu hình là dữ liệu], icon: [5])[
-    `config.yaml` và biến môi trường `CSB_*`. Không có đường dẫn cá nhân trong mã.
+  card(title: [Stateless], icon: [4])[
+    - Đọc file, ghi file, thoát.
+    - Không daemon, không DB.
+    - Chạy lại là idempotent nhờ `datePublished`.
   ],
-  card(title: [Nghề], icon: [6], tint: true)[
-    ZSphere TUI, VxRail platform-service trên ESXi: thành phần nhỏ, module, stateless của hệ thống lớn.
+  card(title: [.conf], icon: [5])[
+    `config.yaml` và biến môi trường `CSB_*`. Không có đường dẫn cá nhân trong code.
+  ],
+  card(title: [real-world], icon: [6], tint: true)[
+    - ZSphere TUI, VxRail platform-service trên ESXi.
+    - Thành phần nhỏ, module, stateless của hệ thống lớn.
   ],
 )
 
