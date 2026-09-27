@@ -74,16 +74,16 @@ Portal (public | partner)
 ```
 
 #cols(
+  card(title: [Mô Hình Hóa], icon: [M], accent: ggcolors.blue)[
+    - Thực thể: *Path*, *Course*, *Lab*.
+    - Dữ liệu: `modules`, thuộc Course.
+    - Module: `src/skills_scaper/model/`.
+  ],
   card(title: [Ghi Chú], icon: [!], accent: ggcolors.orange)[
     -  *Lab*: `lab`
       - vừa là *Activity* trong *Course*
       - vừa là *thực thể* độc lập.
     - *Activity* thuộc về Google: thêm/bớt.
-  ],
-  card(title: [Mô Hình Hóa], icon: [M], accent: ggcolors.blue)[
-    - Thực thể: *Path*, *Course*, *Lab*.
-    - Dữ liệu: `modules`, thuộc Course.
-    - Module: `src/skills_scaper/model/`.
   ]
 )
 
