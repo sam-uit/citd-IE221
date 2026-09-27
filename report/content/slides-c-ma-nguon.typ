@@ -241,32 +241,35 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
   [
     #set text(size: 0.8em)
     ```yaml
-    data/
+    data/                 # nguồn sự thật
     ├── index.json        # ledger, dựng lại được
     ├── paths/280.json
-    ├── courses/892.json  # nguồn sự thật
+    ├── courses/892.json
     ├── courses/892-prompt.json
     └── labs/2794.json
     csbmdvault/
-    ├── paths.md  paths/  courses/  labs/
+    ├── paths.md
+    ├── paths/
+    ├── courses/
+    ├── labs/
     └── materials/courses/892/*.pdf
     ```
+  ],
+  [
     #v(0.3em)
     ```
     $ skills-scraper reindex
        paths: 73   courses: 416   labs: 824
     ```
-  ],
-  [
     #set text(size: 0.85em)
     - Dưới 5.000 bản ghi: `grep` trả lời trong mili giây.
-    - File phẳng là *git-friendly*; Obsidian đọc trực tiếp, không cần export.
-    - Không trạng thái: chạy ở đâu cũng được (đóng gói lên Cloud Run).
-    - v2.0.0 ghi song song TinyDB và JSON, đọc từ TinyDB; đã loại bỏ, JSON là nguồn sự thật.
-
-    #v(0.3em)
-    #co-warn(title: "Database?")[
-      Kết nối CSDL là kỹ năng đã học. *Không dùng* ở đây là quyết định thiết kế có lý do, không phải bỏ sót: một package nhỏ, flat-file, stateless.
-    ]
+    - Flat-file *git-friendly*; Editor đọc trực tiếp, không cần export.
+    - Stateless: chạy ở đâu cũng được (ví dụ đóng gói lên Cloud Run).
+    - v2.0.0 ghi song song TinyDB và JSON, đọc từ TinyDB; đã loại bỏ, JSON là nguồn sự thật duy nhất từ v2.0.1.
   ],
 )
+
+// #v(0.3em)
+#co-warn(title: "Database?")[
+  Kết nối CSDL là kỹ năng đã học. *Không dùng* ở đây là quyết định thiết kế có lý do, không phải bỏ sót: một package nhỏ, flat-file, stateless.
+]
