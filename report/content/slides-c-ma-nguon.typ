@@ -57,7 +57,7 @@
 #v(0.3em)
 #small(size: 1em)[
 #cols(
-  card(title: [Trái: một thứ $x$], icon: [1])[`BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.],
+  card(title: [Trái: thực thể $x$], icon: [1])[`BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.],
   card(title: [Phải: danh sách $x$], icon: [2])[`Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.],
   card(title: [Composition], icon: [3])[
     - `Course` tạo `Lab` và cập nhật `Labs`;
@@ -65,6 +65,10 @@
     - `Topics` đọc `Courses`.
   ],
 )
+]
+
+#align(center)[
+  #image("images/model-serialize-baseentity.png")
 ]
 
 == Class Và Object
