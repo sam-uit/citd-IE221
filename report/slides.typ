@@ -96,7 +96,7 @@
 #include "content/slides-a-boi-canh.typ"
 #include "content/slides-b-ung-dung.typ"
 #include "content/slides-c-ma-nguon.typ"
-#include "content/slides-d-demo-mo-rong.typ"
+#include "content/slides-demo.typ"
 
 == Cảm Ơn
 <cam-on>
@@ -106,7 +106,7 @@
     #v(1fr)
     #text(size: 3em, weight: "bold", fill: self.colors.primary)[#upper[Xin Cảm Ơn!]]
     #v(0.5em)
-    #text(size: 0.8em, fill: gray)[#metadata.repo.url #h(1em) nhánh #raw(metadata.repo.branch)]
+    #text(size: 0.8em, fill: gray)[#metadata.repo.url #h(1em)]
     #v(1fr)
     #h(1fr)
     #text(fill: gray, style: "italic")[Built with Typst and #sym.suit.heart.stroked]
