@@ -6,29 +6,42 @@
 == Lịch Sử Công Cụ
 <lich-su-cong-cu>
 
-#small(size: 0.8em)[
+#small(size: 0.9em)[
 #cols(
-  card(title: [Cuối 2024], icon: [1])[
-    Vai *Cloud Technical Architect* GCP JAPAC. Tự enablement có hệ thống, học offline.
+  // card(title: [Cuối 2024], icon: [1])[
+  //   - CTA GCP JAPAC.
+  //   - Self-enablement.
+  // ],
+  card(title: [12/2024 -- 01/2025], icon: [1])[
+    - Self-enablement.
+    - Những commit đầu tiên.
+    - Cloud Skills Boost.
+    // -  `extract_transcript()` ra đời 05/01/2025.
   ],
-  card(title: [Đầu 2025], icon: [2])[
-    Script Python đầu tiên, CSB thành Markdown. `extract_transcript()` ra đời 05/01/2025.
+  card(title: [02/2026, v2.0.0], icon: [2])[
+    - Giờ là skills.google.
+    - CLI, interactive
+    - TinyDB + JSON.
   ],
-  card(title: [02/2026 v2.0.0], icon: [3])[
-    CLI, interactive, web UI Flask, TinyDB song song JSON. 587 commit.
-  ],
-  card(title: [07/2026 v2.2..17], icon: [4])[
-    Site bắt đăng nhập. Lõi Go, GUI Tauri; Python được "cascade" theo.
-  ],
-  card(title: [09/2026 ie221], icon: [5], tint: true)[
-    Fork từ v2.0.0, *giữ Python*, cập nhật lõi, đóng gói chuẩn.
+  // card(title: [07/2026 v2.2..17], icon: [4])[
+  //   Site bắt đăng nhập. Lõi Go, GUI Tauri; Python được "cascade" theo.
+  // ],
+  card(title: [09/2026, ie221], icon: [3], tint: true)[
+    - Fork từ v2.0.0.
+    - Cập nhật, đóng gói.
   ],
 )
+]
 
 #v(0.8em)
-#co-note(title: "Nguồn gốc")[
-  Repo gốc `github.com/ggcta/skills-scrapper`: *ggcta = Google CTA*, cùng một tác giả ở một vai khác. Lịch sử git liền mạch từ 2025 tới nhánh này.
+#co-note(title: "Repo")[
+  - Lưu tại `github.com/ggcta/skills-scrapper`.
+  - Cùng một tác giả ở một vai trò khác.
 ]
+// ]
+
+#place(right+bottom)[
+  #text(fill: gray)[ggcta = Google Cloud Technical Architect]
 ]
 
 == Triết Lý Unix Trong Mã
