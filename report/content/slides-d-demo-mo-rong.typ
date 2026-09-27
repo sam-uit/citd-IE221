@@ -1,7 +1,7 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
-= HÔM NAY, DEMO, MỞ RỘNG
-<hom-nay-demo-mo-rong>
+= DEMO, MỞ RỘNG
+<demo-mo-rong>
 
 == Site Đổi, Mã Đổi Theo
 <site-doi-ma-doi-theo>
