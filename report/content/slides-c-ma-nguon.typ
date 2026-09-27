@@ -183,22 +183,26 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
   columns: (1fr, 1fr),
   column-gutter: 1.2em,
   [
-    #text(size: 0.8em, fill: gray)[Rẽ nhánh bằng dict, loại lạ thì giữ (ch. 03)]
+    #text(size: 0.9em, fill: gray)[Rẽ nhánh bằng dict, loại lạ thì giữ]
     #code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 11pt)
     #code-file("/content/code/course_process_step.py", from: 25, to: 29, size: 11pt)
   ],
   [
-    #text(size: 0.8em, fill: gray)[Đệ quy thật: bài học Rise lồng `items` (ch. 05)]
+    #text(size: 0.9em, fill: gray)[Đệ quy: lồng `items`]
     #code-file("/content/code/course_parse_lesson_item.py", from: 9, to: 15, size: 11pt)
-    #text(size: 0.8em, fill: gray)[Lặp có cầu chì (ch. 04)]
+    #text(size: 0.9em, fill: gray)[Lặp có ngắt `break`]
     #code-file("/content/code/collection_fetch_catalog.py", from: 54, to: 57, size: 11pt)
   ],
 )
 
 #v(0.2em)
-#small(size: 0.85em)[
-Tham số mặc định và `**kwargs` xuyên suốt: `generate_markdown(toc_only=False, no_transcript=False, **kwargs)`. `lambda` làm khoá sắp xếp: `sorted(collection.items(), key=lambda item: item[1])`. Ba vòng `for` lồng nhau `module`, `step`, `activity` là đúng hình dạng dữ liệu.
-]
+// #small(size: 0.85em)[
+- Tham số mặc định và `**kwargs` xuyên suốt:
+  - `generate_markdown(toc_only=False, no_transcript=False, **kwargs)`.
+- `lambda` làm khoá sắp xếp:
+  - `sorted(collection.items(), key=lambda item: item[1])`.
+- Các vòng `for` lồng nhau `module`, `step`, `activity` theo cấu trúc dữ liệu (trình bày ở chương 01).
+// ]
 
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
