@@ -89,15 +89,15 @@
 // MARK: kiến trúc ứng dụng
 
 #let arch-nodes = (
-  cli: (6cm, 0.85cm, "cli.py", "argparse, exit codes"),
-  tui: (12cm, 0.85cm, "tui.py", "menu tuong tac"),
-  model: (10cm, 3.5cm, "model/", "Path Course Lab + Collections"),
-  browser: (3.5cm, 6.1cm, "services/browser.py", "Selenium, sign-in"),
-  store: (14.5cm, 6.1cm, "services/store.py", "JSON + index, atomic"),
-  site: (3.5cm, 8.7cm, "skills.google", "Chrome, profile"),
-  data: (11cm, 8.7cm, "data/*.json", "source of truth"),
-  vault: (18cm, 8.7cm, "csbmdvault/*.md", "Obsidian"),
-  config: (23cm, 3.5cm, "config.py", "defaults < yaml < env"),
+  cli: (11cm, 0.85cm, "cli.py", "argparse, exit codes"),
+  tui: (19cm, 0.85cm, "tui.py", "menu tuong tac"),
+  model: (15cm, 4cm, "model/", "Path Course Lab + Collections"),
+  browser: (3.5cm, 7cm, "services/browser.py", "Selenium, sign-in"),
+  store: (15cm, 7cm, "services/store.py", "JSON + index, atomic"),
+  site: (3.5cm, 10cm, "skills.google", "Chrome, profile"),
+  data: (11cm, 10cm, "data/*.json", "source of truth"),
+  vault: (19cm, 10cm, "csbmdvault/*.md", "Obsidian"),
+  config: (25cm, 4cm, "config.py", "defaults < yaml < env"),
 )
 
 #let arch-edges = (
@@ -112,12 +112,11 @@
 )
 
 #let arch-diagram(highlight: ()) = diagram(
-  26cm,
+  30cm,
   12cm,
   arch-nodes,
   arch-edges,
   node-w: 5cm,
-  node-h: 1.45cm,
   node-h: 2cm,
   highlight: highlight,
 )
