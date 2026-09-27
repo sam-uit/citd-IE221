@@ -1,7 +1,7 @@
 #import "../lib.typ": *
 
-= DEMO, MỞ RỘNG
-<demo-mo-rong>
+= DEMO
+<demo>
 
 == TUI
 
