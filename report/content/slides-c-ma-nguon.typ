@@ -67,10 +67,6 @@
 )
 ]
 
-#align(center)[
-  #image("images/model-serialize-baseentity.png")
-]
-
 == Class Và Object
 <class-va-object>
 
@@ -102,6 +98,12 @@
     ]
   ],
 )
+
+== Kế Thừa -- Ví Dụ
+
+#align(center)[
+  #image("images/model-serialize-baseentity.png")
+]
 
 == Kế Thừa Và Đa Hình
 <ke-thua-va-da-hinh>
