@@ -223,9 +223,12 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
 #v(0.2em)
 #small(size: 0.85em)[
 #cols(
-  card(title: [Nguyên tắc], icon: [1])[Một activity hỏng *không được giết* cả course: `process_*` bắt, log, đi tiếp. Chỉ thiếu metadata hoặc outline mới dừng.],
-  card(title: [Ba nguồn ngoại lệ], icon: [2])[Thư viện (`NoSuchElementException`, `JSONDecodeError`), Python (`KeyboardInterrupt`, `EOFError`), và của mình (`ValueError` cho type lạ).],
-  card(title: [`except BaseException`], icon: [3])[Dọn file tạm rồi `raise` lại: Ctrl+C không bao giờ để lại nửa file JSON.],
+  card(title: [Nguyên tắc liên tục], icon: [1])[Một activity lỗi *không dừng*:
+    - `process_*` bắt, log, đi tiếp.
+    - Chỉ thiếu metadata hoặc outline mới dừng.],
+  card(title: [Các nguồn ngoại lệ], icon: [2])[Thư viện (`NoSuchElementException`, `JSONDecodeError`), Python (`KeyboardInterrupt`, `EOFError`), và `ValueError` (cho type lạ).],
+  card(title: [`except BaseException`], icon: [3])[
+    - Dọn file tạm rồi `raise` lại: Ctrl+C không bao giờ để lại *nửa* file JSON.],
 )
 ]
 
