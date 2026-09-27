@@ -156,7 +156,7 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
   columns: (1.1fr, 1fr),
   column-gutter: 1.2em,
   [
-    #text(size: 0.8em, fill: gray)[`BaseEntity.to_dict`: những gì ra đĩa]
+    #text(size: 0.8em, fill: gray)[`BaseEntity.to_dict`: lưu gì ra đĩa]
     #code-file("/content/code/base_entity_to_dict.py", from: 10, to: 17, size: 11.5pt)
     #text(size: 0.8em, fill: gray)[`Course.process_lab`: một course tạo ra một lab]
     #code-file("/content/code/course_process_lab.py", from: 32, to: 41, size: 11.5pt)
@@ -164,11 +164,14 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
   [
     #set text(size: 0.85em)
     #card(title: [Đóng gói theo quy ước], icon: [\_])[
-      `_json_path`, `_md_path` là chi tiết nội bộ. `to_dict` lọc mọi khoá `_` và khoá `driver`: JSON trên đĩa không bao giờ chứa tài nguyên hay đường dẫn máy.
+      - `_json_path`, `_md_path` là chi tiết nội bộ.
+      - `to_dict` lọc mọi khoá (có tiền tố) `_` và khoá `driver`:
+        - JSON trên ổ đĩa không bao giờ chứa tài nguyên hay đường dẫn nội bộ.
     ]
     #v(0.5em)
     #card(title: [Composition, idempotent], icon: [+])[
-      `Course` tạo `Lab(id)`, `load_json()`; đã có tên thì bỏ qua, chưa có thì `save_json()`, `save_markdown()` rồi cập nhật `Labs`. Chạy lại không tạo trùng.
+      - `Course` tạo `Lab(id)`, `load_json()`; đã có tên thì bỏ qua, chưa có thì `save_json()`, `save_markdown()` rồi cập nhật `Labs`.
+      - Chạy lại không tạo trùng.
     ]
   ],
 )
