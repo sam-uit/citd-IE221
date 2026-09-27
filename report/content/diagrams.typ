@@ -112,11 +112,12 @@
 )
 
 #let arch-diagram(highlight: ()) = diagram(
-  35cm,
+  26cm,
   12cm,
   arch-nodes,
   arch-edges,
   node-w: 5cm,
   node-h: 1.45cm,
+  node-h: 2cm,
   highlight: highlight,
 )
