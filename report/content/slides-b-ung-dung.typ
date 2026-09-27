@@ -78,29 +78,31 @@
 <vi-sao-chi-terminal>
 
 #cols(
-  card(title: [CLI: `skills-scraper`], icon: [\$])[
+  card(title: [CLI: `skills-scraper`], icon: [T])[
     - `argparse`, subcommand, mã thoát.
-    - Cho *script và automation*: gọi từ shell, cron, công cụ khác.
+    - Cho *scripting và automation*: gọi từ shell, cron, công cụ khác.
     - `list`, `fetch`, `md`, `search`, `reindex`, `browser`.
   ],
-  card(title: [TUI: `skills-scraper-tui`], icon: [>])[
+  card(title: [TUI: `xxx-tui`], icon: [U])[
     - Vòng lặp menu, màu ANSI, kiểu classic interactive.
     - Cho *tương tác*: chọn path, chọn course, làm luôn.
     - Siêu gọn, đa nền tảng, không phụ thuộc thêm.
   ],
-  card(title: [Không GUI, không web], icon: [x], tint: true)[
-    - Người dùng của công cụ là kỹ sư hệ thống ngồi trong terminal.
-    - Chương 09 (tkinter) là kỹ năng đã học; *chọn không dùng* là quyết định.
-    - GUI thật đã có ở nhánh Tauri; báo cáo này là về lõi.
+  card(title: [!GUI, !web], icon: [G], tint: true)[
+    - User: kỹ sư hệ thống trong terminal.
+    - GUI là một lựa chọn.
+    - Mở rộng: Desktop GUI Tauri.
   ],
 )
 
 #v(0.6em)
-#text(size: 0.85em)[Hai runner, *một lõi*: cả hai chỉ khởi tạo lớp trong `model/` và gọi phương thức. Đổi giao diện không sửa `model/`.]
+Hai runner, *một lõi*:
+  - cả hai chỉ khởi tạo lớp trong `model/` và gọi phương thức.
+  - Đổi giao diện không sửa `model/`.
 
 == Kiến Trúc
 <kien-truc>
 
 #align(center)[#arch-diagram(highlight: ("model",))]
 
-#text(size: 0.8em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services chạm file và trình duyệt. Không tầng nào gọi ngược lên.]
+#text(size: 0.8em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services chạm file và trình duyệt.]
