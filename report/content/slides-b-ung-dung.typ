@@ -26,9 +26,10 @@
   // card(title: [07/2026 v2.2..17], icon: [4])[
   //   Site bắt đăng nhập. Lõi Go, GUI Tauri; Python được "cascade" theo.
   // ],
-  card(title: [09/2026, ie221], icon: [3], tint: true)[
+  card(title: [09/2026, v2.0.1], icon: [3], tint: true)[
     - Fork từ v2.0.0.
     - Cập nhật, đóng gói.
+    - Môn IE221.
   ],
 )
 ]
