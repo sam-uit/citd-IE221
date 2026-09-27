@@ -55,11 +55,15 @@
 #align(center)[#class-diagram(highlight: ("base", "collection"))]
 
 #v(0.3em)
-#small(size: 0.85em)[
+#small(size: 1em)[
 #cols(
-  card(title: [Cây trái: một thứ], icon: [1])[`BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.],
-  card(title: [Cây phải: danh sách thứ đó], icon: [2])[`Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.],
-  card(title: [Composition], icon: [3])[`Course` tạo `Lab` và cập nhật `Labs`; `Path` giữ dict course; `Topics` đọc `Courses`.],
+  card(title: [Trái: một thứ $x$], icon: [1])[`BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.],
+  card(title: [Phải: danh sách $x$], icon: [2])[`Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.],
+  card(title: [Composition], icon: [3])[
+    - `Course` tạo `Lab` và cập nhật `Labs`;
+    - `Path` giữ dict course;
+    - `Topics` đọc `Courses`.
+  ],
 )
 ]
 
