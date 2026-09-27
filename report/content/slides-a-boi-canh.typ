@@ -223,27 +223,39 @@ Portal (public | partner)
 
 #place(right+bottom)[#link("https://fortelabs.com/blog/basboverview/")[#text(size: 1em, fill: gray)[https://fortelabs.com/blog/basboverview/]]]
 
-== Vô Tình Khớp Open Knowledge Format
+== Open Knowledge Format
 <vo-tinh-khop-open-knowledge-format>
 
-#text(size: 0.9em)[OKF v0.2 (GoogleCloudPlatform/open-knowledge-format) bắt buộc đúng một thứ: mọi `.md` có frontmatter YAML với `type` không rỗng.]
-
-#v(0.2em)
-#small(size: 0.8em)[
+#card(title: "OKF v0.2", icon: "!", accent: orange)[
+  - mọi `.md` có frontmatter YAML với `type` không rỗng.
+//
+//   #h(1fr)
+//   #small(size: 0.6em)[#link("https://github.com/GoogleCloudPlatform/open-knowledge-format")[GoogleCloudPlatform/open-knowledge-format], Aug 2026.]
+]
+// #v(0.2em)
+// #small(size: 0.8em)[
 #table(
   columns: (1fr, 1fr, 1.6fr),
   stroke: (bottom: 0.5pt + luma(200), top: none, left: none, right: none),
   inset: (top: 0.4em, bottom: 0.4em),
-  table.header([*Vault (v2.0.0)*], [*OKF v0.2*], [*Trạng thái*]),
-  [`type: Course`], [`type` (bắt buộc)], [Có từ 2025: sinh từ tên lớp, `self.__class__.__name__`],
-  [`title`], [`title`], [Khớp từ commit 1aa2f3e],
-  [`url`], [`resource`], [Cùng nghĩa, khác tên],
-  [`topics`], [`tags`], [Cùng hình, khác tên],
-  [`description` trong thân], [`description` ở frontmatter], [Đã chuyển lên frontmatter (bản refactor)],
-  [không có], [`sources`, `generated`], [Đã thêm: nguồn, `last_modified`, `skills-scraper/<version>`],
-  [`paths.md`], [`index.md`, `log.md`], [Chưa: khoảng 80 dòng, việc tiếp theo],
+  table.header([*OKF v0.2*], [*Vault (v2.0.0)*], [*Trạng thái*]),
+  [`type` (bắt buộc)], [`type: Course`], [Khớp, `self.__class__.__name__`],
+  [`title`], [`title`], [Khớp, đổi từ `name`],
+  [`resource`], [`url`], [Cùng nghĩa, khác tên],
+  [`tags`], [`topics`], [Cùng nghĩa, khác tên],
+  [`description` ở frontmatter], [`description` trong thân], [Đã chuyển lên frontmatter],
+  [`sources`, `generated`], [không có], [Thêm: `last_modified`, `skills-scraper/<version>`],
+  [`index.md`, `log.md`], [`paths.md`], [Thiếu, cần bổ sung],
 )
 
-#v(0.4em)
-#co-succ(title: "Vì sao trùng")[Cùng một ràng buộc: một khái niệm một file, siêu dữ liệu ở đầu, thân Markdown cho người đọc, Obsidian là trình đọc mặc định.]
+#place(right+bottom)[
+  #small(size: 0.8em)[#link("https://github.com/GoogleCloudPlatform/open-knowledge-format")[GoogleCloudPlatform/open-knowledge-format], Aug 2026.]
 ]
+
+// #v(0.4em)
+// #co-note(title: "Cùng một ràng buộc")[
+//   - một khái niệm một file,
+//   - siêu dữ liệu ở đầu,
+//   - thân Markdown cho người đọc,
+//   - Obsidian là trình đọc mặc định.]
+// ]
