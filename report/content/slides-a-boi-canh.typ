@@ -159,39 +159,69 @@ Portal (public | partner)
 == Obsidian Vault Là Bộ Não Thứ Hai
 <obsidian-vault-la-bo-nao-thu-hai>
 
+#cols(
+  card(title: [Capture], icon: [C], accent: ggcolors.blue)[
+    - scraper
+    - tự động
+    - lặp lại được.
+  ],
+  card(title: [Organize], icon: [O], accent: ggcolors.red)[
+    - `paths/`
+    - `courses/`
+    - `labs/`
+    // - `materials/`
+    // - link tương đối.
+  ],
+  card(title: [Distill], icon: [D], accent: ggcolors.orange)[
+    - `--toc`,
+    - `--no-transcript`,
+    - `<id>-prompt.json`.
+  ],
+  card(title: [Express], icon: [E], accent: ggcolors.green)[
+    - ghi chú riêng
+    - scraper *không đụng tới*.
+  ],
+)
+
 #grid(
-  columns: (1fr, 1.2fr),
-  column-gutter: 1.5em,
+  columns: (1.3fr, 1fr),
+  column-gutter: 1em,
   [
-    #set text(size: 0.85em)
-    ```
+    // #set text(size: 0.85em)
+    ```yaml
     skills-vault/
     ├── public/
-    │   ├── paths/      73
-    │   ├── courses/   416
-    │   └── labs/      824
+    │   ├── paths/     # 73
+    │   ├── courses/   # 416
+    │   └── labs/      # 824
     ├── partner/
-    │   ├── paths/     181
-    │   ├── courses/   899
-    │   └── labs/     1209
-    ├── materials/courses/<id>/   397 thư mục PDF
+    │   ├── paths/     # 181
+    │   ├── courses/   # 899
+    │   └── labs/      # 1209
+    ├── materials/courses/<id>/  # thư mục PDF
     ├── docs/  README.md  CONTRIBUTING.md
     ```
   ],
   [
-    #set text(size: 0.9em)
-    Khung *CODE* của Tiago Forte:
-    - *Capture*: scraper, tự động và lặp lại được.
-    - *Organize*: `paths/ courses/ labs/ materials/`, link tương đối.
-    - *Distill*: `--toc`, `--no-transcript`, `<id>-prompt.json` cho LLM.
-    - *Express*: ghi chú của người học, ứng dụng *không đụng tới*.
-
-    #v(0.3em)
-    #co-note(title: "Cố ý dừng ở đó")[
-      Ứng dụng làm C và một phần D. O và E thuộc về Obsidian và người học. Làm một việc, làm tốt.
+    #card(title: "Trách Nhiệm", icon: [R])[
+      - Scraper:
+        - *C* và một phần *D*.
+      - Người dùng:
+        - *O* và *E*.
+      // - _"Làm một việc, làm tốt việc đó"_.
+      - KISS: _Keep It Simple, Stupid_.
     ]
-  ],
+  ]
 )
+
+    // #set text(size: 0.9em)
+    // Khung *CODE* của Tiago Forte:
+    // - *Capture*: scraper, tự động và lặp lại được.
+    // - *Organize*: `paths/ courses/ labs/ materials/`, link tương đối.
+    // - *Distill*: `--toc`, `--no-transcript`, `<id>-prompt.json` cho LLM.
+    // - *Express*: ghi chú của người học, ứng dụng *không đụng tới*.
+
+#place(right+bottom)[#link("https://fortelabs.com/blog/basboverview/")[#text(size: 1em, fill: gray)[https://fortelabs.com/blog/basboverview/]]]
 
 == Vô Tình Khớp Open Knowledge Format
 <vo-tinh-khop-open-knowledge-format>
