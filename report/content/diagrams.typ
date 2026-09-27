@@ -84,7 +84,7 @@
 #let arch-nodes = (
   cli: (6cm, 0.85cm, "cli.py", "argparse, exit codes"),
   tui: (12cm, 0.85cm, "tui.py", "menu tuong tac"),
-  model: (9cm, 3.5cm, "model/", "Path Course Lab + Collections"),
+  model: (10cm, 3.5cm, "model/", "Path Course Lab + Collections"),
   browser: (3.5cm, 6.1cm, "services/browser.py", "Selenium, sign-in"),
   store: (14.5cm, 6.1cm, "services/store.py", "JSON + index, atomic"),
   site: (3.5cm, 8.7cm, "skills.google", "Chrome, profile"),
@@ -105,8 +105,8 @@
 )
 
 #let arch-diagram(highlight: ()) = diagram(
-  27cm,
-  9.6cm,
+  35cm,
+  12cm,
   arch-nodes,
   arch-edges,
   node-w: 5cm,
