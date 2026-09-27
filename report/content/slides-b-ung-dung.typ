@@ -104,6 +104,7 @@ Hai runner, *một lõi*:
 == Kiến Trúc
 <kien-truc>
 
-#align(center)[#arch-diagram(highlight: ("model",))]
-
-#text(size: 0.8em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services chạm file và trình duyệt.]
+#align(center)[
+  #arch-diagram(highlight: ("model",))
+  #text(size: 0.8em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
+]
