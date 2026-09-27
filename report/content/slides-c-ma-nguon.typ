@@ -76,23 +76,25 @@
   [
     #text(size: 0.8em, fill: gray)[`model/base_entity.py`]
     #code-file("/content/code/base_entity_init.py", from: 1, to: 7, size: 11.5pt)
-    #code-file("/content/code/base_entity_type_url.py", from: 1, to: 2, size: 11.5pt)
-    #code-file("/content/code/base_entity_type_url.py", from: 7, to: 7, size: 11.5pt)
-    #code-file("/content/code/base_entity_type_url.py", from: 9, to: 10, size: 11.5pt)
-    #code-file("/content/code/base_entity_type_url.py", from: 15, to: 24, size: 11.5pt)
+    #code-file("/content/code/base_entity_type_url.py", from: 1, to: 7, size: 11.5pt)
+    // #code-file("/content/code/base_entity_type_url.py", from: 7, to: 7, size: 11.5pt)
+    #code-file("/content/code/base_entity_type_url.py", from: 9, to: 22, size: 11.5pt)
+    // #code-file("/content/code/base_entity_type_url.py", from: 15, to: 24, size: 11.5pt)
   ],
   [
     #set text(size: 0.85em)
     #card(title: [`@property`, không lưu mà suy ra], icon: [P])[
-      `type` là `self.__class__.__name__`: lớp con *không thể quên* khai. Đó là lý do frontmatter có `type` "miễn phí" và OKF thoả ngay từ đầu.
+      `type` là `self.__class__.__name__`: lớp con *luôn có*. frontmatter có `type` "miễn phí" và thoả OKF ngay từ đầu.
     ]
     #v(0.5em)
     #card(title: [Object có trạng thái và tài nguyên], icon: [O])[
-      `Course(id="892", driver=driver)`: `modules`, `topics` là trạng thái; `driver` là tài nguyên, *không* được serialize.
+      `Course(id="892", driver=driver)`:
+        - `modules`, `topics` là trạng thái; được serialize.
+        - `driver` là tài nguyên, *không* được serialize.
     ]
     #v(0.5em)
-    #card(title: [Lỗi là ngoại lệ, không phải chuỗi], icon: [!])[
-      `url` ném `ValueError` cho type lạ thay vì trả về `None` rồi để lỗi trôi xuống dưới.
+    #card(title: [Xử lý ngoại lệ], icon: [!])[
+      `url` throws `ValueError` cho `type` lạ (nếu có) thay vì trả về `None`.
     ]
   ],
 )
@@ -250,7 +252,7 @@ Tham số mặc định và `**kwargs` xuyên suốt: `generate_markdown(toc_onl
     - v2.0.0 ghi song song TinyDB và JSON, đọc từ TinyDB; chính dòng chính đã đảo lại ở v2.8.0 vì *hai nguồn sự thật*.
 
     #v(0.3em)
-    #co-warn(title: "Chương 10 thì sao")[
+    #co-warn(title: "Database?")[
       Kết nối CSDL là kỹ năng đã học. *Không dùng* ở đây là quyết định thiết kế có lý do, không phải bỏ sót: một package nhỏ, flat-file, stateless.
     ]
   ],
