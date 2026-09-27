@@ -240,11 +240,11 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
   column-gutter: 1.5em,
   [
     #set text(size: 0.8em)
-    ```
+    ```yaml
     data/
-    ├── index.json          ledger, dựng lại được
+    ├── index.json        # ledger, dựng lại được
     ├── paths/280.json
-    ├── courses/892.json    nguồn sự thật
+    ├── courses/892.json  # nguồn sự thật
     ├── courses/892-prompt.json
     └── labs/2794.json
     csbmdvault/
@@ -261,8 +261,8 @@ Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `AP
     #set text(size: 0.85em)
     - Dưới 5.000 bản ghi: `grep` trả lời trong mili giây.
     - File phẳng là *git-friendly*; Obsidian đọc trực tiếp, không cần export.
-    - Không trạng thái: chạy ở đâu cũng được, kể cả trong CI.
-    - v2.0.0 ghi song song TinyDB và JSON, đọc từ TinyDB; chính dòng chính đã đảo lại ở v2.8.0 vì *hai nguồn sự thật*.
+    - Không trạng thái: chạy ở đâu cũng được (đóng gói lên Cloud Run).
+    - v2.0.0 ghi song song TinyDB và JSON, đọc từ TinyDB; đã loại bỏ, JSON là nguồn sự thật.
 
     #v(0.3em)
     #co-warn(title: "Database?")[
