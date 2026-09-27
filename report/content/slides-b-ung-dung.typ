@@ -79,12 +79,12 @@
 <vi-sao-chi-terminal>
 
 #cols(
-  card(title: [CLI: `skills-scraper`], icon: [T])[
+  card(title: [CLI: `skills-scraper`], icon: [C])[
     - `argparse`, subcommand, mã thoát.
     - Cho *scripting và automation*: gọi từ shell, cron, công cụ khác.
     - `list`, `fetch`, `md`, `search`, `reindex`, `browser`.
   ],
-  card(title: [TUI: `xxx-tui`], icon: [U])[
+  card(title: [TUI: `*-tui`], icon: [T])[
     - Vòng lặp menu, màu ANSI, kiểu classic interactive.
     - Cho *tương tác*: chọn path, chọn course, làm luôn.
     - Siêu gọn, đa nền tảng, không phụ thuộc thêm.
@@ -106,5 +106,5 @@ Hai runner, *một lõi*:
 
 #align(center)[
   #arch-diagram(highlight: ("model",))
-  #text(size: 0.8em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
+  #text(size: 1em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
 ]
