@@ -117,10 +117,12 @@
   ],
 )
 
-#v(0.3em)
+// #v(0.3em)
 #small(size: 0.85em)[
 #co-info(title: "Template method")[
-  `save_markdown` ở lớp cha gọi `self.generate_markdown(**kwargs)` mà không biết lớp con nào đang chạy. `Path`, `Course`, `Lab` mỗi lớp một bản. Một lệnh `md -c / -p / -l` trong CLI chạy ba nhánh chỉ khác *lớp được khởi tạo*.
+  - `save_markdown` ở lớp cha gọi `self.generate_markdown(**kwargs)` mà không (cần) biết lớp con nào đang chạy.
+  - `Path`, `Course`, `Lab` mỗi lớp một bản.
+  - Một lệnh `md -c / -p / -l` trong CLI chạy ba nhánh chỉ khác *lớp được khởi tạo*.
 ]
 ]
 
@@ -128,10 +130,11 @@
 <ke-thua-thay-cho-ba-ban-copy>
 
 #grid(
-  columns: (1.2fr, 1fr),
+  columns: (1.4fr, 1fr),
   column-gutter: 1.2em,
   [
     #text(size: 0.8em, fill: gray)[`model/collection.py`: một vòng phân trang cho cả ba]
+    #code-file("/content/code/collection_fetch_catalog.py", from: 1, to: 1, size: 11.5pt)
     #code-file("/content/code/collection_fetch_catalog.py", from: 25, to: 33, size: 11.5pt)
     #code-file("/content/code/collection_fetch_catalog.py", from: 54, to: 57, size: 11.5pt)
   ],
@@ -142,9 +145,9 @@
 )
 
 #v(0.3em)
-#small(size: 0.85em)[
-v2.0.0 có *ba bản* của vòng `while` này (90 dòng mỗi bản, trong `Paths`, `Courses`, `Labs`). Sau refactor: một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `API_URL` và `MAX_PAGES`, còn `fetch_paths` giữ tên để CLI tra bằng `getattr(collection, f"fetch_{label}")`. Diff: +118 / -268.
-]
+// #small(size: 0.85em)[
+Một `fetch_catalog` ở `Collection`, lớp con khai *thuộc tính lớp* `API_URL` và `MAX_PAGES`, còn `fetch_paths` giữ tên để CLI tra bằng `getattr(collection, f"fetch_{label}")`.
+// ]
 
 == Đóng Gói Và Composition
 <dong-goi-va-composition>
