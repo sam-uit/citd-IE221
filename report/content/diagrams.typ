@@ -77,7 +77,14 @@
   ("collection", "topics"),
 )
 
-#let class-diagram(highlight: ()) = diagram(29.5cm, 6.4cm, class-nodes, class-edges, highlight: highlight)
+#let class-diagram(highlight: ()) = diagram(
+  29.5cm,
+  6.4cm,
+  class-nodes,
+  class-edges,
+  node-h: 1.7cm,
+  highlight: highlight,
+)
 
 // MARK: kiến trúc ứng dụng
 
