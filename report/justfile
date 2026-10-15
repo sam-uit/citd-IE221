@@ -5,10 +5,14 @@
 #
 # Yêu cầu: typst 0.15+, python3. Font và theme nằm ở repo typst-uit-theme.
 
+# MARK: Biến
+config := "pandoc/pandoc.yaml"
+
 typst := env("TYPST", "typst")
 theme := env("UIT_THEME", env("HOME") / "repos/typst-uit-theme")
 fonts := env("UIT_FONTS", theme / "fonts")
 scraper := env("SCRAPER", env("HOME") / "repos/gcpcta/skills-google-scrapper")
+docs := "report thesis slides"
 
 default:
     @just --list
@@ -24,12 +28,58 @@ typst-version:
 snippets:
     python3 tools/snippets.py --repo {{ scraper }}
 
+# Biên dịch toàn bộ: report, thesis, slides.
+all: typ
+    @for doc in {{ docs }}; do just compile "$doc"; done
+
+# Chỉ chuyển content/*.md sang .typ (không biên dịch PDF).
+typ:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    shopt -s nullglob
+    # Mốc thời gian mới nhất trong số cấu hình *và mọi filter*. Trước đây chỉ so với
+    # pandoc.yaml, dù chú thích ngay dưới đã nói là "cấu hình/filter" — và đúng chỗ
+    # lệch đó đã giấu một lỗi làm hỏng mọi bảng markdown suốt nhiều tháng: filter
+    # được sửa, không .typ nào được dựng lại, build vẫn xanh vì nó đọc bản .typ cũ.
+    newest="{{ config }}"
+    for f in pandoc/*.lua; do
+        if [[ "$f" -nt "$newest" ]]; then newest="$f"; fi
+    done
+    for md in content/*.md; do
+        out="${md%.md}.typ"
+        if [[ ! -f "$out" || "$md" -nt "$out" || "$newest" -nt "$out" ]]; then
+            echo "pandoc  $md -> $out"
+            pandoc -d {{ config }} "$md" -o "$out"
+        fi
+    done
+
+# Biên dịch một tài liệu: just compile report | thesis | slides
+compile doc:
+    @echo "typst   {{ doc }}.typ -> {{ doc }}.pdf"
+    typst compile {{ doc }}.typ --font-path {{ fonts }}
+
+# Báo cáo.
+report: typ (compile "report")
+
+# Luận án.
+thesis: typ (compile "thesis")
+
+# Slides (không cần bước pandoc cho content/*.md).
+slides: (compile "slides")
+
 # Biên dịch slides.pdf.
-slides: typst-version
-    {{ typst }} compile slides.typ --font-path {{ fonts }}
+# slides: typst-version
+#     {{ typst }} compile slides.typ --font-path {{ fonts }}
 
 # Bóc mã rồi biên dịch.
-all: snippets slides
+# all: snippets slides
+
+# Theo dõi nguồn và build lại: just watch [all|report|thesis|slides]
+watch target="all":
+    @echo "Đang theo dõi thay đổi (Ctrl-C để dừng)..."
+    @find config content author pandoc . -maxdepth 2 \
+        \( -name "*.md" -o -name "*.typ" -o -name "*.lua" -o -name "*.yaml" -o -name "*.csv" \) \
+        | entr -r just {{ target }}
 
 # Xuất từng trang PNG vào _review/ để soát bằng mắt.
 png: typst-version
@@ -37,5 +87,10 @@ png: typst-version
     {{ typst }} compile slides.typ "_review/page-{p}.png" --format png --ppi 60 --font-path {{ fonts }}
 
 # Theo dõi và biên dịch lại.
-watch:
-    find . -maxdepth 3 \( -name "*.typ" -o -name "*.yaml" -o -name "*.py" \) | entr -r just slides
+# watch:
+#     find . -maxdepth 3 \( -name "*.typ" -o -name "*.yaml" -o -name "*.py" \) | entr -r just slides
+
+# Xoá PDF và các .typ sinh từ Markdown.
+clean:
+    rm -f report.pdf thesis.pdf slides.pdf main.pdf slides02.pdf
+    rm -f content/*.typ
