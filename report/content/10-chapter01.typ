@@ -107,8 +107,28 @@ Không bao gồm:
     ([FR-10], [Sinh tệp prompt JSON cho mô hình ngôn ngữ lớn (LLM).]),
     ([FR-11], [Giao diện tương tác dạng menu (TUI)]),
   ),
-  options: (index: false, align: ("left", "left"), columns: ("20%", "auto")),
+  options: (index: false, align: ("left", "left"), columns: ("15%", "auto")),
 ))
 
 #co-note[FR-10: Sinh tệp prompt JSON cho mô hình ngôn ngữ lớn (LLM) để tóm tắt nội dung transcript, đã từng được đề xuất, nhưng giờ tạm ngừng xây dựng.]
 
+=== Yêu Cầu Phi Chức Năng
+<yeu-cau-phi-chuc-nang>
+
+#datatable-data((
+  headers: ([Mã], [Yêu cầu]),
+  rows: (
+    ([NFR-01], [Không trạng thái (stateless): mỗi lần chạy đọc tệp, ghi tệp; chạy lại là _idempotent_ (nguyên bản)]),
+    ([NFR-02], [Dữ liệu và đầu ra là văn bản thuần (plain text), UTF-8, đọc được bằng `git diff`]),
+    ([NFR-03], [Cấu hình tường minh qua biến môi trường và tệp văn bản (`config.yaml`)]),
+    ([NFR-04], [Lỗi tường minh: một `activity` hỏng không làm hỏng cả `course`, mọi ngoại lệ đều được báo]),
+    ([NFR-05], [Ghi tệp nguyên tử (`atomic`): nếu gặp ngắt giữa chừng không để lại nửa tệp lỗi]),
+    ([NFR-06], [Môi trường tái lập: `uv sync` từ một bản clone sạch là có thể bắt đầu]),
+  ),
+  options: (index: false, align: ("left", "left"), columns: ("15%", "auto")),
+))
+
+== Tổng Kết Chương 1
+<tong-ket-chuong-1>
+
+Chương này mô tả bài toán thực tế của sinh viên, và từ đó phát sinh nhu cầu cần giải quyết, vì vậy là một công cụ thực tế, và từ đó có những đặc thù nhất định mà không hoàn toàn sử dụng hết mọi kiến thức của môn học. Chương 2 sẽ trình bày Triết lý và Thiết kế để trả lời bài toán đó bằng một ứng dụng nhỏ.
