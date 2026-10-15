@@ -53,3 +53,10 @@ Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng
 - Mỗi note Markdown tự khai nó được sinh bởi phiên bản nào, từ trang nào, trang đó sửa lần cuối khi nào đều được nêu rõ tường minh.
 - Khi bỏ qua một `course` vì course đó không đổi, ứng dụng nêu rõ ra là đã bỏ qua và vì lý do gì.
 
+=== Thêm Hay Không Thêm
+<them-hay-khong-them>
+
+Mỗi thư viện và mỗi tầng hạ tầng phải trả lời được câu hỏi "nó đóng góp được gì".
+
+Quy ước của dự án: một thư viện chỉ được khai báo trong đúng _commit_ đầu tiên `import` nó. Cơ sở dữ liệu lớn chỉ xứng đáng khi cần hiệu năng cao, ghi đồng thời song song, hoặc xử lý phân tán; bài toán này không cần cả ba, vì vậy đây là lý do báo cáo này không sử dụng một số kiến thức nhất định trong môn học.
+
