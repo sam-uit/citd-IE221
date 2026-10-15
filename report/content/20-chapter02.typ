@@ -37,3 +37,19 @@ Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng
   - Hiệu quả đến mức không cần phải thay thế.
 ]
 
+=== Là Một Phần Của Hệ Thống
+<la-mot-phan-cua-he-thong>
+
+Ứng dụng giao tiếp bằng tệp văn bản và mã thoát, nên ghép được với `grep`, `jq`, `git`, `cron`, Obsidian và các plugin AI mà không cần API riêng. Đồ thị khoảng 3.600 note trong vault không được thiết kế trước: nó hình thành từ các liên kết tương đối mà mỗi note tự ghi ra.
+
+#image("images/obsidian-pkb-2nd-brain.png")
+
+#co-info(title: [Emergence])[Nguyên Lý Đột Sinh (Emergence) -- một phần "ngốc nghếch" của một hệ thống _thông minh_.]
+
+=== Tường Minh
+<tuong-minh>
+
+- Cấu hình nằm trong biến môi trường và tệp `config.yaml` văn bản thuần, có tệp mẫu trong repo.
+- Mỗi note Markdown tự khai nó được sinh bởi phiên bản nào, từ trang nào, trang đó sửa lần cuối khi nào đều được nêu rõ tường minh.
+- Khi bỏ qua một `course` vì course đó không đổi, ứng dụng nêu rõ ra là đã bỏ qua và vì lý do gì.
+
