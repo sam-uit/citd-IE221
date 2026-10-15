@@ -1,4 +1,5 @@
 #import "/lib.typ": *
+#import "diagrams.typ": arch-diagram
 
 = Triết Lý Và Thiết Kế
 <triet-ly-va-thiet-ke>
@@ -129,3 +130,35 @@ date: "2025-01-06"
 datePublished: "2023-11-21",
 ```
 
+== Kiến Trúc Gói
+<kien-truc-goi>
+
+```
+src/skills_scraper/
+  __init__.py
+  config.py     cấu hình, URL, selector
+  cli.py        runner dòng lệnh
+  tui.py        runner tương tác
+  model/        lõi: Serialize, BaseEntity, Collection và các lớp con
+  services/     browser.py (phiên đăng nhập), store.py (lưu trữ)
+  utils/        xử lý văn bản, ghi tệp nguyên tử
+```
+
+Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `services/` và `utils/`. Toàn bộ kiến thức về skills.google nằm trong `config.py` và các phương thức phân tích trang; mô hình, lưu trữ, kết xuất và giao diện không biết Google.
+
+#align(center)[
+  #arch-diagram(highlight: ("model",))
+  #text(size: 0.6em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
+]
+
+== Hai Quyết Định Không Dùng
+<hai-quyet-dinh-khong-dung>
+
+Không cơ sở dữ liệu (chương 10 của môn học): dưới 5.000 bản ghi, tìm kiếm tuyến tính trả lời trong mili giây; tệp phẳng đọc được bằng git và Obsidian; không trạng thái nên chạy ở đâu cũng được. Phiên bản v2.0.0 từng ghi song song JSON và TinyDB, và chính tác giả đã bỏ TinyDB ở v2.8.0 vì hai nguồn sự thật.
+
+Không giao diện đồ hoạ (chương 09): người dùng mục tiêu là kỹ sư làm việc trong terminal; giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri; báo cáo này tập trung vào lõi.
+
+Đây là quyết định thiết kế có lý do, không phải bỏ sót kỹ năng đã học.
+
+== Tổng Kết Chương 2
+<tong-ket-chuong-2>
