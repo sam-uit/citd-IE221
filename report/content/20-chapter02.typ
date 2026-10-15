@@ -42,8 +42,6 @@ Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng
 
 Ứng dụng giao tiếp bằng tệp văn bản và mã thoát, nên ghép được với `grep`, `jq`, `git`, `cron`, Obsidian và các plugin AI mà không cần API riêng. Đồ thị khoảng 3.600 note trong vault không được thiết kế trước: nó hình thành từ các liên kết tương đối mà mỗi note tự ghi ra.
 
-#image("images/obsidian-pkb-2nd-brain.png")
-
 #co-info(title: [Emergence])[Nguyên Lý Đột Sinh (Emergence) -- một phần "ngốc nghếch" của một hệ thống _thông minh_.]
 
 === Tường Minh
