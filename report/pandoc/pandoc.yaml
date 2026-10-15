@@ -1,0 +1,20 @@
+# pandoc/pandoc.yaml
+from: markdown
+to: typst
+
+# List both filters in order
+filters:
+  # Vietnamese to ASCII conversion
+  - pandoc/add-import.lua
+  - pandoc/vietnamese-slugs.lua
+  # Extra empty lines after a heading (vertical spacing)
+  - pandoc/vspacing.lua
+  # HTML <u> (underline) to Typst #underline
+  - pandoc/underline.lua
+  # Tables come with every columns at 1fr
+  - pandoc/tables.lua
+
+# Optional: Text wrapping (preserves source readability)
+# columns: 80
+# wrap: preserve
+wrap: none
