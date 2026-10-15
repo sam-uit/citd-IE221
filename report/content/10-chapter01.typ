@@ -37,3 +37,21 @@ Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã 
   - Tập các loại hoạt động (*Activity*) thuộc về Google chứ không thuộc về ứng dụng: Google Skills có thể thay đổi các loại hoặc động bất kỳ lúc nào, hiện tại thường là sẽ thêm mới dựa theo cách triển khai nội dung của các khóa học/môn học mới.
 ]
 
+== Vấn Đề Cần Giải Quyết
+<van-de-can-giai-quyet>
+
+Nền tảng cho xem một trang tại một thời điểm. Bốn câu hỏi người học hay đặt ra nhất lại không trả lời được trên bản thân trang độc lập đó, trong khi chúng là tính năng có sẵn của Obsidian khi nội dung là Markdown liên kết:
+
+#datatable-data((
+  headers: ([Câu hỏi], [Trên skills.google], [Trong vault Obsidian]),
+  rows: (
+    ([Course này *thuộc những path* nào?], [phải tìm ngược từng path], [backlink của note]),
+    ([Hai path *chồng lấn bao nhiêu* course?], [không có], [graph view, truy vấn]),
+    ([Transcript nào *nhắc tới một khái niệm*?], [khó tìm trong transcript], [tìm toàn văn, offline]),
+    ([Course này *thay đổi gì* từ lần học trước?], [không có lịch sử], [`date_published` và `git diff`]),
+  ),
+  options: (index: false, align: ("left", "left", "left"), columns: ("1fr", "auto", "auto")),
+))
+
+Quy trình hiện tại của người học trên Google Skills: duyệt danh mục, mở từng khoá, xem video, ghi chú tay. Nội dung nằm rải rác qua video, quiz, lab, tài liệu; không có bản xuất, không có bản offline, không tìm kiếm xuyên khoá. Có một sự rời rạc trong một hệ thống được thiết kế trông rất chặt chẽ.
+
