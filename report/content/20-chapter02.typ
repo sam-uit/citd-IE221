@@ -93,3 +93,39 @@ Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Orga
 
 #image("images/obsidian-pkb-2nd-brain.png")
 
+== Đối Chiếu Với Open Knowledge Format
+<doi-chieu-voi-open-knowledge-format>
+
+OKF v0.2 chỉ bắt buộc mọi tệp `.md` có frontmatter YAML đọc được với khoá `type` không được rỗng. Vault đã thoả điều này từ 2025 vì `type` được suy ra từ tên lớp. Việc trùng khớp không phải ngẫu nhiên: cả hai cùng xuất phát từ ràng buộc "một khái niệm là một tệp, siêu dữ liệu (metadata) ở đầu, thân bài cho người đọc".
+
+#co-info(title: [Fun Fact])[
+  Thực ra cách trình bày file Markdown này là kế thừa từ thời sử dụng #link("https://jekyllrb.com/")[Jekeyll].
+]
+
+#datatable-data((
+  headers: ([Vault v2.0.0], [OKF v0.2], [Trạng thái]),
+  rows: (
+    ([`type`], [`type` (bắt buộc)], [đã có]),
+    ([`title`], [`title`], [đã có]),
+    ([`url`], [`resource`], [khác tên, giữ làm alias]),
+    ([`topics`], [`tags`], [khác tên, giữ làm alias]),
+    ([mô tả trong thân bài], [`description`], [bổ sung]),
+    ([`scraped_date`], [`generated {by, at}`], [bổ sung]),
+    ([`date_published`], [`sources[].last_modified`], [bổ sung]),
+    ([không có], [`index.md`, `log.md`], [hướng phát triển]),
+  ),
+  options: (index: false, align: ("left", "left", "left")),
+))
+
+Mẫu frontmatter ví dụ:
+
+```yaml
+"id": "892"
+name: "Conversational AI on Vertex AI and Dialogflow CX"
+type: "Course"
+url: "https://www.cloudskillsboost.google/course_templates/892"
+description: "In this course you will learn how to use the new generative AI features..."
+date: "2025-01-06"
+datePublished: "2023-11-21",
+```
+
