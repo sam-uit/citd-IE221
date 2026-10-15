@@ -21,9 +21,16 @@ Công cụ được thiết kế dưới góc nhìn của kỹ sư hệ thống:
 Ứng dụng chỉ thu thập và chuẩn hoá.
 
 - Lệnh `fetch` đưa nội dung về JSON.
-- Lệnh `md` chuyển JSON thành Markdown, hai lệnh không biết nhau.
+- Lệnh `md` chuyển JSON thành Markdown, hai lệnh không (cần) biết nhau.
 - Ba thư viện ngoài lúc chạy (selenium, beautifulsoup4, requests).
 - Không daemon, không server.
+
+=== Đơn Giản Để Luôn Thay Thế Được
+<don-gian-de-luon-thay-the-duoc>
+
+Thứ bền nhất không phải công cụ mà là dữ liệu nó để lại. JSON và Markdown thuần vẫn đọc được khi công cụ không còn tồn tại.
+
+Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng lõi Go (thử nghiệm) mà vault không đổi định dạng. Một công cụ khoá dữ liệu của người dùng vào chính nó thì không phải là khó thay thế, mà biến dữ liệu thành con tin.
 
 #co-note(title: [Tiêu Chí])[
   - Đơn giản đến mức có thể được thay thế bất kỳ lúc nào.
