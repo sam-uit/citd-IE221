@@ -60,3 +60,22 @@ Mỗi thư viện và mỗi tầng hạ tầng phải trả lời được câu 
 
 Quy ước của dự án: một thư viện chỉ được khai báo trong đúng _commit_ đầu tiên `import` nó. Cơ sở dữ liệu lớn chỉ xứng đáng khi cần hiệu năng cao, ghi đồng thời song song, hoặc xử lý phân tán; bài toán này không cần cả ba, vì vậy đây là lý do báo cáo này không sử dụng một số kiến thức nhất định trong môn học.
 
+== Con Người Trong Vòng Lặp
+<con-nguoi-trong-vong-lap>
+
+- Câu hỏi: _nếu Google thay đổi cấu trúc website hay khoá học, ứng dụng có tự phát hiện và thay đổi theo không?_
+- Câu trả lời tách làm hai vế: phát hiện thì *có*, tự thích nghi thì *không*, và đó là chủ ý thiết kế của người thực hiện.
+
+Về phát hiện: loại _activity_ lạ được giữ nguyên dữ liệu thô và ghi log:
+
+- Thiếu metadata hoặc đề cương thì dừng course đó và báo rõ;
+- Phiên đăng nhập hết hạn thì dừng chờ người dùng;
+- Bộ mẫu HTML trong `tests/` sẽ kích hoạt một thay đổi markup (của Google) thành một test thất bại (và từ đó cần xử lý tương ứng).
+
+Về không tự thích nghi, có ba lý do.
+
+- Một scraper tự sửa selector thực chất là *đoán*, và đoán sai sẽ ghi dữ liệu sai vào vault một cách âm thầm; _lỗi im lặng nguy hiểm hơn lỗi ồn ào_, thà để ồn ào để biết đó là gì, còn hơn để mọi thứ sai trong im lặng. đây cũng là chủ ý thiết kế.
+- Có đi theo thay đổi hay không là quyết định về giá trị: nếu mục tiêu cốt lõi (lấy nội dung về) vẫn đạt, thời gian, công sức và tài nguyên tính toán bỏ ra có xứng đáng không; bản thân logic của công cụ không trả lời được câu đó, và đó là lúc con người tham gia trong "vòng lặp".
+
+Lịch sử dự án đã kiểm chứng cách làm này (chương 4): mỗi thay đổi của site là một commit có nguồn và có lý do. Mô hình triển khai: công cụ báo lỗi, người quyết định, git ghi lại lịch sử bao gồm cả lý do, cách xử lý, vv... thành một nguồn sự thật duy nhất (SSOT -- Single Source Of Truth).
+
