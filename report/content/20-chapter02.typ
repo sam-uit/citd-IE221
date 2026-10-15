@@ -77,3 +77,19 @@ Về không tự thích nghi, có ba lý do.
 
 Lịch sử dự án đã kiểm chứng cách làm này (chương 4): mỗi thay đổi của site là một commit có nguồn và có lý do. Mô hình triển khai: công cụ báo lỗi, người quyết định, git ghi lại lịch sử bao gồm cả lý do, cách xử lý, vv... thành một nguồn sự thật duy nhất (SSOT -- Single Source Of Truth).
 
+== Vault Như Bộ Não Thứ Hai
+<vault-nhu-bo-nao-thu-hai>
+
+Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Organize, Distill, Express)], ứng dụng làm *Capture* và một phần *Distill* (`--toc`, `--no-transcript`, tệp prompt). *Organize* thuộc về Obsidian, *Express* thuộc về người học. Ứng dụng cố ý và nên dừng ở mức đó.
+
+#datatable-data((
+  headers: ([Portal], [Paths], [Courses], [Labs]),
+  rows: (
+    ([public], [73], [416], [824]),
+    ([partner], [181], [899], [1209]),
+  ),
+  options: (index: false, align: ("left", "left", "left", "left")),
+))
+
+#image("images/obsidian-pkb-2nd-brain.png")
+
