@@ -55,3 +55,33 @@ Nền tảng cho xem một trang tại một thời điểm. Bốn câu hỏi ng
 
 Quy trình hiện tại của người học trên Google Skills: duyệt danh mục, mở từng khoá, xem video, ghi chú tay. Nội dung nằm rải rác qua video, quiz, lab, tài liệu; không có bản xuất, không có bản offline, không tìm kiếm xuyên khoá. Có một sự rời rạc trong một hệ thống được thiết kế trông rất chặt chẽ.
 
+== Mục Tiêu Đề Tài
+<muc-tieu-de-tai>
+
+Mục tiêu đầu tiên, công cụ thực tiễn:
+
+- Xây dựng một ứng dụng/công cụ Python dòng lệnh.
+- Thu thập Path, Course, Lab từ skills.google vào kho JSON (file-based database).
+- Sinh ra một vault Markdown dùng được ngay trong Obsidian
+- Cung cấp hai giao diện terminal (CLI cho tự động hoá, TUI cho tương tác).
+
+Mục tiêu thứ hai, về mặt học thuật, là dùng chính ứng dụng này làm chứng cứ cho các kiến thức của môn học: *module* và *package*, *lớp* và *đối tượng*, *kế thừa*, xử lý ngoại lệ, vv...
+
+== Phạm Vi Ứng Dụng
+<pham-vi>
+
+Bao gồm:
+
+- Public portal;
+- Ba loại thực thể chính: Path, Course, Lab;
+- Activity: transcript video, quiz, lab, link, tài liệu PDF, html_bundle;
+- Kết xuất JSON và Markdown;
+- Hai runner terminal: CLI, TUI (Terminal User Interface).
+
+Không bao gồm:
+
+- Partner Portal (sinh viên không còn quyền truy cập);
+- Chạy Lab;
+- Quản lý tài khoản, mua khoá học;
+- Giao diện đồ hoạ và Cơ Sở Dữ Liệu (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<triet-ly-va-thiet-ke>, form: "page")).
+
