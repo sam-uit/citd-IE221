@@ -85,3 +85,30 @@ Không bao gồm:
 - Quản lý tài khoản, mua khoá học;
 - Giao diện đồ hoạ và Cơ Sở Dữ Liệu (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<triet-ly-va-thiet-ke>, form: "page")).
 
+== Yêu Cầu
+<yeu-cau>
+
+
+=== Yêu Cầu Chức Năng
+<yeu-cau-chuc-nang>
+
+#datatable-data((
+  headers: ([Mã], [Yêu cầu]),
+  rows: (
+    ([FR-01], [Liệt kê danh mục `path`, `course`, `lab`; làm mới từ site hoặc đọc offline]),
+    ([FR-02], [Thu thập một `path` và lan xuống các `course`, `lab` của nó]),
+    ([FR-03], [Thu thập một `course` với đầy đủ `module`, `step`, `activity`]),
+    ([FR-04], [Thu thập một `lab` độc lập]),
+    ([FR-05], [Bỏ qua course có `datePublished` không đổi, trừ khi `--force`]),
+    ([FR-06], [Sinh Markdown cho `path`, `course`, `lab`; tuỳ chọn `--toc`, `--no-transcript`]),
+    ([FR-07], [Tìm kiếm theo tên (`name`), `id`, chủ đề (`topic`)]),
+    ([FR-08], [Dựng lại chỉ mục từ dữ liệu JSON (`reindex`)]),
+    ([FR-09], [Tải tài liệu PDF vào `materials/courses/<id>/`]),
+    ([FR-10], [Sinh tệp prompt JSON cho mô hình ngôn ngữ lớn (LLM).]),
+    ([FR-11], [Giao diện tương tác dạng menu (TUI)]),
+  ),
+  options: (index: false, align: ("left", "left"), columns: ("20%", "auto")),
+))
+
+#co-note[FR-10: Sinh tệp prompt JSON cho mô hình ngôn ngữ lớn (LLM) để tóm tắt nội dung transcript, đã từng được đề xuất, nhưng giờ tạm ngừng xây dựng.]
+
