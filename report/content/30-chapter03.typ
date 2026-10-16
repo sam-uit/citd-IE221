@@ -57,9 +57,10 @@ Trong đó:
 - Trái: *thực thể $x$* cụ thể: Ở đây là Path/Course/Lab.
   - `BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.
 - Phải: *danh sách của $x$*: Ở đây là chuỗi/tập hợp của Path/Course/Lab.
-  - `Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.
+  - `Collection` là `{id: name}` cộng `fetch_catalog` (kéo danh sách của một loại).
+  - Lớp con chỉ khai `API_URL`.
 - *Kết Hợp*:
-  - #text(fill: gray)[`Portal` cho biết các `Path` khả dụng.]
+  - #text(fill: gray)[`Portal` cho biết các `Path` khả dụng (không triển khai ở bản IE221).]
   - `Path` cho biết danh sách các khóa học (`Course`).
   - `Course` tạo `Lab` và cập nhật `Labs`.
   - `Topics` đọc thuộc tính của `Courses`/`Path`/`Lab`.
