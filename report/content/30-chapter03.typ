@@ -1,14 +1,31 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
 = Cài Đặt
 <cai-dat>
 
-Mỗi mục dưới đây có ít nhất một đoạn mã thật, lấy từ repo bằng `tools/snippets.py` (như deck), kèm tên tệp và tên symbol.
-
 == Môi Trường Phát Triển
 <moi-truong-phat-trien>
 
-#co-note[Python 3.12 (`.python-version`), uv và `uv.lock`, `pyproject.toml` với `[project.scripts]` hai entry point, ruff, pytest. Một đoạn giải thích vì sao dùng uv thay cho `venv` cộng `requirements.txt` mà bài giảng chương 01 dạy: một lệnh, tái lập, khoá phiên bản. Đoạn mã: khối `[project]` và `[project.scripts]`.]
+`uv` được sử dụng để khai báo, quản lý gói, và khóa phiên bản:
+
+- Nhất quán, có thể tái lập ở một môi trường mới bất kỳ đâu.
+- Một công cụ duy nhất, `uv` và với một định dạng đánh dấu (markup) thân thiện, `toml`.
+
+`pyproject.toml` được khai báo như sau:
+
+- Tên của công cụ, và phiên bản.
+
+#code-file("/content/code/pyproject.toml", from: 1, to: 3, lang: "toml", size: 1em)
+
+- Các _runner_ tương ứng.
+
+#code-file("/content/code/pyproject.toml", from: 20, to: 26, lang: "toml", size: 1em)
+
+`.python-version`:
+
+- Cho biết phiên bản Python được sử dụng.
+
+#code-file("/content/code/python-version", lang: "toml", size: 1em)
 
 == Package Và Module
 <package-va-module>
