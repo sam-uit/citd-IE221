@@ -59,9 +59,10 @@ Trong đó:
 - Phải: *danh sách của $x$*: Ở đây là chuỗi/tập hợp của Path/Course/Lab.
   - `Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.
 - *Kết Hợp*:
-  - `Course` tạo `Lab` và cập nhật `Labs`;
-  - `Path` giữ dict course;
-  - `Topics` đọc `Courses`.
+  - #text(fill: gray)[`Portal` cho biết các `Path` khả dụng.]
+  - `Path` cho biết danh sách các khóa học (`Course`).
+  - `Course` tạo `Lab` và cập nhật `Labs`.
+  - `Topics` đọc thuộc tính của `Courses`/`Path`/`Lab`.
 
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
