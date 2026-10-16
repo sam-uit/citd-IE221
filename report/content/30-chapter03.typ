@@ -178,18 +178,22 @@ Ví dụ trong `Course.process_step()`:
 
 === Vòng Lặp
 
-Đệ quy: lồng `items`:
+Đệ quy: lồng `items`: `Course._parse_lesson_item()`
 
 - Với mỗi _item_ trong danh sách, xử lý tương ứng.
 
-#code-file("/content/code/course_parse_lesson_item.py", from: 9, to: 15, size: 0.8em)
+#code-file("/content/code/course_parse_lesson_item.py", from: 1, to: 5, size: 0.8em)
 
-Lặp có ngắt `break`:
+#code-file("/content/code/course_parse_lesson_item.py", from: 8, to: 15, size: 0.8em)
+
+Lặp có ngắt `break`: `Collection.fetch_catalog()`
 
 - Nếu số thứ tự của trang hiệnt tại vượt giới hạn số trang được quét, sẽ dừng lại.
 - Sử dụng khi lấy danh sách tất cả các _items_ (Path/Course/Lab) có trên skills.google.
 
-#code-file("/content/code/collection_fetch_catalog.py", from: 54, to: 57, size: 0.8em)
+#code-file("/content/code/collection_fetch_catalog.py", from: 1, to: 5, size: 0.8em)
+
+#code-file("/content/code/collection_fetch_catalog.py", from: 44, to: 59, size: 0.8em)
 
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
