@@ -64,6 +64,10 @@ Trong đó:
   - `Course` tạo `Lab` và cập nhật `Labs`.
   - `Topics` đọc thuộc tính của `Courses`/`Path`/`Lab`.
 
+`Serialize` thực ra rất đơn giản, `serialize.py`:
+
+#code-file("/content/code/serialize.py", lang: "python", size: 1em)
+
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
 
