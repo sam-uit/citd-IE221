@@ -66,7 +66,7 @@ Trong đó:
 
 `Serialize` thực ra rất đơn giản, `serialize.py`:
 
-#code-file("/content/code/serialize.py", lang: "python", size: 1em)
+#code-file("/content/code/serialize.py", lang: "python", size: 0.8em)
 
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
