@@ -209,7 +209,7 @@ Ba nhóm ngoại lệ:
 
 `services/store.py`: ghi file nguyên tử (atomic).
 
-- Đảm bảo việc ghi file không làm hỏng tính nhất quán.
+- Đảm bảo việc ghi file không làm hỏng tính nhất quán: không lưu "nửa" file.
 - Nếu có lỗi phát sinh tương ứng, hãy thông báo.
 
 #code-file("/content/code/store_write_text.py", from: 6, to: 20, size: 0.8em)
