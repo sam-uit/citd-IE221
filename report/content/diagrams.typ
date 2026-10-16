@@ -86,6 +86,30 @@
   highlight: highlight,
 )
 
+#let class-nodes-report = (
+  serialize: (14cm, 1cm, "Serialize"),
+  base: (12cm, 3cm, "BaseEntity"),
+  collection: (16cm, 3cm, "Collection"),
+  path: (8cm, 3cm, "Path"),
+  course: (8cm, 5cm, "Course"),
+  lab: (12cm, 5cm, "Lab"),
+  paths: (15.5cm, 5cm, "Paths"),
+  courses: (19.5cm, 5cm, "Courses"),
+  labs: (21cm, 3.5cm, "Labs"),
+  topics: (21cm, 2cm, "Topics"),
+)
+
+#let class-diagram-report(highlight: ()) = diagram(
+  30cm,
+  6.4cm,
+  class-nodes-report,
+  class-edges,
+  node-w: 3cm,
+  node-h: 1cm,
+  highlight: highlight,
+  size: 1em,
+)
+
 // MARK: kiến trúc ứng dụng
 
 #let arch-nodes = (
