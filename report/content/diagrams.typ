@@ -122,23 +122,23 @@
 )
 
 #let min-nodes = (
-  cli: (11cm, 0.85cm, "cli.py", "argparse, exit codes"),
-  tui: (19cm, 0.85cm, "tui.py", "menu tuong tac"),
-  model: (15cm, 4cm, "model/", "Path, Course, Lab"),
-  browser: (9cm, 7cm, "services/browser.py", "Selenium, sign-in"),
-  store: (18cm, 7cm, "services/store.py", "JSON + index, atomic"),
-  site: (9cm, 10cm, "skills.google", "Chrome, profile"),
-  data: (15cm, 10cm, "data/*.json", "source of truth"),
-  vault: (21cm, 10cm, "csbmdvault/*.md", "Obsidian"),
-  config: (21cm, 4cm, "config.py", "defaults < yaml < env"),
+  cli: (11cm, 1cm, "cli.py", "argparse, exit codes"),
+  tui: (19cm, 1cm, "tui.py", "menu tuong tac"),
+  model: (15cm, 3cm, "model/", "Path, Course, Lab"),
+  browser: (9cm, 5cm, "services/browser.py", "Selenium, sign-in"),
+  store: (18cm, 5cm, "services/store.py", "JSON + index, atomic"),
+  site: (9cm, 7cm, "skills.google", "Chrome, profile"),
+  data: (15cm, 7cm, "data/*.json", "source of truth"),
+  vault: (21cm, 7cm, "csbmdvault/*.md", "Obsidian"),
+  config: (21cm, 3cm, "config.py", "defaults < yaml < env"),
 )
 
 #let arch-min(highlight: ()) = diagram(
   30cm,
-  12cm,
+  8cm,
   min-nodes,
   arch-edges,
   node-w: 5cm,
-  node-h: 2cm,
+  node-h: 1.5cm,
   highlight: highlight,
 )
