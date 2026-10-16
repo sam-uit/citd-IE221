@@ -75,7 +75,20 @@ Trong đó:
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
 
-#co-note[`BaseEntity.__init__`; `@property type` trả `self.__class__.__name__`; `@property url` tra bảng theo `type`, ném `ValueError` khi lạ. Ý giảng: `type` không lưu mà suy ra nên lớp con không thể quên khai, và đó là lý do frontmatter OKF có `type` miễn phí. Đối tượng: `Course(id="892", driver=driver)` có trạng thái (modules, topics) và một tài nguyên (driver) không được tuần tự hoá.]
+`BaseEntity.__init__()` khai báo các thuộc tính nguyên bản (attributes) để định danh một lớp/thực thể: `id`, `name`, `description`.
+
+#code-file("/content/code/base_entity_init.py", lang: "python", size: 0.8em)
+
+Nhưng để tự động nhận diện và phân loại các thực thể, `BaseEntity` khai báo các thuộc tính nội sinh (properties) với `@property`, từ đó giúp việc kế thừa trở nên xuyên suốt hơn:
+
+- `@property type` trả `self.__class__.__name__`.
+- `@property url` tra bảng theo `type`, trả về `ValueError` khi có kết quả lạ.
+
+#code-file("/content/code/base_entity_type_url.py", lang: "python", size: 0.8em)
+
+#co-note(title: [Hệ Quả])[
+Loại (`type`) của một thực thể không cần được lưu sẵn mà tự suy ra nên lớp con không thể thiếu, và từ đó frontmatter theo chuẩn của OKF luôn có `type` (gần như) miễn phí, không cần kiểm lại.
+]
 
 === Kế Thừa Và Đa Hình
 <ke-thua-va-da-hinh>
