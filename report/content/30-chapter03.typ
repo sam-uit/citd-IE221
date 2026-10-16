@@ -172,10 +172,9 @@ Rẽ nhánh bằng `dict`: data-driven.
 
 Ví dụ trong `Course.process_step()`:
 
-#code-file("/content/code/course_process_step.py", size: 0.8em)
-
-// #code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 0.8em)
-// #code-file("/content/code/course_process_step.py", from: 25, to: 29, size: 0.8em)
+#code-file("/content/code/course_process_step.py", from: 1, to: 7, size: 0.8em)
+#code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 0.8em)
+#code-file("/content/code/course_process_step.py", from: 16, to: 29, size: 0.8em)
 
 === Vòng Lặp
 
