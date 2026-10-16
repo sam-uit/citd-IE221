@@ -17,6 +17,20 @@ Tuy nhiên, sinh viên nhận thấy cách trình bày nội dung của Google S
 
 Vì vậy, sinh viên đã đi đến quyết định thiết kế một công cụ nhỏ, mục đích kéo tất cả nội dung cần thiết của Google Skills về máy nội bộ, đóng gói thành các file thuần văn bản Markdown, trong một kho (vault) của Obsidian; vừa xây dựng cho mình một Kho Kiến Thức Cá Nhân (Personal Knowwledge Base); vừa tạo tiền đề cho các sự mở rộng/liên kết kiến thức thậm chí bên ngoài Google Skills; hoặc/và đóng gói thành các văn bản dạng sách A4/A5, tiện lợi cho việc tra khảo hoặc đọc trên các thiết bị cầm tay (iPad/Kindle) cá nhân.
 
+```log
+* commit 1c822f5eb80d5e6350f1e170379b8cabcb3af657
+| Author: samdx <18287802+samdx@users.noreply.github.com>
+| Date:   Sun Jan 5 17:07:57 2025 +0800
+|
+|     Init the repo.
+|
+* commit 9eb4e75a4ffa4c01cee6c36eadc2f8ce282747fe
+  Author: samdx <18287802+samdx@users.noreply.github.com>
+  Date:   Sun Jan 5 17:06:54 2025 +0800
+
+      Create .gitattributes
+```
+
 Mục tiêu đầu tiên của công cụ ban đầu hoàn toàn không có ý tưởng về việc xây dựng một Bộ Não Thứ 2 (#link("https://fortelabs.com/blog/basboverview/")[https://fortelabs.com/blog/basboverview/]), tuy nhiên có một sự vô tình trong cách triển khai, mà sau này khi OKF (Open Knowledge Format) xuất hiện, mô hình nội dung trong công cụ đã tương thích gần như hoàn toàn.
 
 Tuy nhiên, báo cáo này chỉ tập trung vào phần kỹ thuật của công cụ, các nội dung khác liên quan về cách tổ chức kho PKB sẽ không được đề cập ở đây hoặc chỉ được nhắc qua, ví dụ: backlink hoặc graph view trong Obsidian giúp trực quan hóa mối quan hệ giữa các khóa học/môn học; cách tổ chức kho theo mô hình PARA và cách khai thác, vv..
