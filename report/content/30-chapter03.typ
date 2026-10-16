@@ -160,10 +160,22 @@ Hình ảnh biểu hiện trong code base thực tế:
 #code-file("/content/code/course_process_lab.py", from: 60, to: 64, size: 0.8em)
 
 
-== Kiểu Dữ Liệu, Rẽ Nhánh, Vòng Lặp, Hàm
+== Kiểu Dữ Liệu, Hàm Và Cấu Trúc Điều Khiển
 <kieu-du-lieu-re-nhanh-vong-lap-ham>
 
 #co-note[Chương 02 tới 05, mỗi chương một đoạn mã ngắn. 02: cấu trúc dict lồng `modules[].steps[].activities[]`, định dạng chuỗi. 03: dispatch dict theo loại activity trong `process_step` thay chuỗi `elif`, loại lạ giữ nguyên. 04: `while has_more` phân trang với cầu chì số trang; ba tầng `for` module, step, activity. 05: tham số mặc định và `**kwargs` của `generate_markdown`, `lambda` làm khoá sắp xếp, đệ quy `_parse_lesson_item`.]
+
+=== Cấu Trúc Điều Khiển
+
+Rẽ nhánh bằng `dict`: data-driven.
+
+- Nếu gặp loại dữ liệu lạ (ví dụ Google mới thêm vào) thì giữ nguyên, không xử lý và có thông báo.
+  - Đây là đoạn liên quan đến sự "trung thực" về hành vi, sự tham gia của con Người, và không cần "phỏng đoán" của công cụ: tường minh, có giới hạn.
+
+Ví dụ trong `Course.process_step()`:
+
+#code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 0.8em)
+#code-file("/content/code/course_process_step.py", from: 25, to: 29, size: 0.8em)
 
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
