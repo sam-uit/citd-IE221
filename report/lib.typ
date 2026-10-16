@@ -52,3 +52,32 @@
   set text(size: size)
   body
 }
+
+// MARK: Mã nguồn trong báo cáo, có chú thích
+//
+// Cùng nguồn `content/code/*.py` như `code-file`, nhưng bọc trong `figure(kind: raw)` để
+// đoạn mã có số thứ tự, chú thích, và tự lên "Danh Sách Mã Nguồn" như bảng và hình
+// (IE203 làm vậy với mọi bảng và hình). `code-file` giữ cho slides, nơi không có
+// chú thích. `label:` là chuỗi, dán vào chính `figure` để `@nhan` tham chiếu được.
+#let code-figure(
+  path,
+  caption: none,
+  label: none,
+  from: 1,
+  to: none,
+  lang: "python",
+  size: 0.85em,
+) = {
+  let lines = read(path).split("\n")
+  let stop = if to == none { lines.len() } else { calc.min(to, lines.len()) }
+  let body = raw(lines.slice(from - 1, stop).join("\n"), lang: lang, block: true)
+  let fig = figure(
+    {
+      set text(size: size)
+      body
+    },
+    kind: raw,
+    caption: caption,
+  )
+  if label == none { fig } else { [#fig#std.label(label)] }
+}

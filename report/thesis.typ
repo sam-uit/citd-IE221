@@ -50,9 +50,8 @@
     logo: image("static/" + university.logo, width: 5cm),
 )
 
-// Đặt font cho code ở 0.8 để tiết kiệm không gian.
-// TODO: Cập nhật raw text size vào template.
-#show raw: set text(font: "Iosevka")
+// Font mã nguồn là Google Sans Code của theme (`code-font`), cùng slides và IE203;
+// cỡ chữ của từng đoạn đặt tại `code-figure(size: ..)` trong `lib.typ`.
 
 // Content goes here
 #include "content/10-chapter01.typ"
@@ -64,8 +63,7 @@
 
 // Show appendix
 #show: appendix
-// #include "content/90-appendixA.typ"
-// #include "content/91-appendixB.typ"
+#include "content/90-appendixA.typ"
 
 // Show bibliography
 #show: bibliography-page
