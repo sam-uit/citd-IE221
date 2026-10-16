@@ -1,5 +1,5 @@
-#import "/lib.typ": *
-#import "diagrams.typ": arch-diagram
+#import "../lib.typ": *
+#import "diagrams.typ": *
 
 = Triết Lý Và Thiết Kế
 <triet-ly-va-thiet-ke>
@@ -147,8 +147,8 @@ src/skills_scraper/
 Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `services/` và `utils/`. Toàn bộ kiến thức về skills.google nằm trong `config.py` và các phương thức phân tích trang; mô hình, lưu trữ, kết xuất và giao diện không biết Google.
 
 #align(center)[
-  #arch-diagram(highlight: ("model",))
-  #text(size: 0.6em, fill: gray)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
+  #arch-min(highlight: ("model",))
+  #text(size: 1em)[Phụ thuộc một chiều: runner gọi model, model gọi services, services lầm việc với file và trình duyệt (các tài nguyên).]
 ]
 
 == Hai Quyết Định Không Dùng
