@@ -164,7 +164,7 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 
 === Không Giao Diện Đồ Hoạ (Chương 09 -- IE221)
 
-- Người dùng mục tiêu là kỹ sư làm việc trong terminal.
+- Người dùng và môi trường mục tiêu là người làm làm việc trong terminal.
 - Giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri (như một ví dụ về khả năng mở rộng) nhưng sẽ không được ghép vào dòng/chức năng chính.
 - Báo cáo này sẽ chỉ tập trung vào phần vào lõi của công cụ (model) nơi biểu hiện rõ nhất các nội dung của chương trình học.
 
