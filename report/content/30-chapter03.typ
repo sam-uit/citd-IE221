@@ -447,7 +447,7 @@ Frontmatter do `BaseEntity.generate_front_matter` sinh, là tập mở rộng (s
   "/content/code/base_entity_front_matter.py",
   from: 21,
   to: 48,
-  size: 0.85em,
+  size: 0.75em,
   caption: [`BaseEntity.generate_front_matter`: khoá OKF, khoá riêng và alias cũ],
   label: "ma-front-matter",
 )
