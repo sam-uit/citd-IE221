@@ -154,11 +154,21 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 == Hai Quyết Định Không Dùng
 <hai-quyet-dinh-khong-dung>
 
-Không cơ sở dữ liệu (chương 10 của môn học): dưới 5.000 bản ghi, tìm kiếm tuyến tính trả lời trong mili giây; tệp phẳng đọc được bằng git và Obsidian; không trạng thái nên chạy ở đâu cũng được. Phiên bản v2.0.0 từng ghi song song JSON và TinyDB, và chính tác giả đã bỏ TinyDB ở v2.8.0 vì hai nguồn sự thật.
+Không Cơ Sở Dữ Liệu (Chương 10 - IE221):
 
-Không giao diện đồ hoạ (chương 09): người dùng mục tiêu là kỹ sư làm việc trong terminal; giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri; báo cáo này tập trung vào lõi.
+- Kho có dưới 5.000 bản ghi, Tìm Kiếm Tuyến Tính có cơ thể trả về kết quả trong mili giây.
+- Tệp phẳng (flat-file) và văn bản thuần (plain text), nên đọc được bằng git và Obsidian hoặc bất kỳ công cụ nào khác.
+- Không trạng thái (stateless) nên chạy ở đâu cũng được.
 
-Đây là quyết định thiết kế có lý do, không phải bỏ sót kỹ năng đã học.
+#co-note(title: [Ghi Chú])[Phiên bản v2.0.0 từng ghi song song JSON và TinyDB, và hiện đã bỏ TinyDB ở các phiên bản sau vì không xứng đáng để bảo trì một lúc hai nguồn sự thật trong khi không đem lại giá trị quá khác biệt.]
+
+Không Giao Diện Đồ Hoạ (Chương 09 -- IE221):
+
+- Người dùng mục tiêu là kỹ sư làm việc trong terminal.
+- Giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri (như một ví dụ về khả năng mở rộng) nhưng sẽ không được ghép vào dòng/chức năng chính.
+- Báo cáo này sẽ chỉ tập trung vào phần vào lõi của công cụ (model) nơi biểu hiện rõ nhất các nội dung của chương trình học.
+
+#co-note(title: [Ghi Chú])[Đây đều là các quyết định thiết kế có lý do và chủ đích, mà không phải là sự vô tình bỏ sót kỹ năng đã học hoặc nội dung chương trình].
 
 == Tổng Kết Chương 2
 <tong-ket-chuong-2>
