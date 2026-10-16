@@ -197,7 +197,29 @@ Lặp có ngắt `break`: `Collection.fetch_catalog()`
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
 
-#co-note[Chương 07. Nguyên tắc: một activity hỏng không làm hỏng cả course. Ba nhóm ngoại lệ: của thư viện (`NoSuchElementException`, `json.JSONDecodeError`, `OSError`), của Python (`KeyboardInterrupt`, `EOFError` khi bỏ đăng nhập), tự định nghĩa (nếu P10 đã làm thì `ConnectionLostError`, nếu chưa thì bỏ và ghi ở hướng phát triển). Đoạn mã chính: `services/store.py` `write_text` (ghi tệp tạm, `os.replace`, `except BaseException` dọn tệp tạm rồi `raise`).]
+#co-note(title: [Nguyên Tắc])[
+  - Một _activity_ hỏng không làm hỏng cả _course_ trong quá trình `fetch`.
+]
+
+Ba nhóm ngoại lệ:
+
+- Của thư viện (`NoSuchElementException`, `json.JSONDecodeError`, `OSError`).
+- Của Python (`KeyboardInterrupt`, `EOFError` khi dừng đăng nhập).
+- Tự định nghĩa (`ConnectionLostError`).
+
+`services/store.py`: ghi file nguyên tử (atomic).
+
+- Đảm bảo việc ghi file không làm hỏng tính nhất quán.
+- Nếu có lỗi phát sinh tương ứng, hãy thông báo.
+
+#code-file("/content/code/store_write_text.py", from: 6, to: 20, size: 0.8em)
+
+`services/browser.py`: người dùng bỏ dở thao tác.
+
+- Nếu có yêu cầu đăng nhập website để thực hiện thao tác, và người dùng hủy bỏ bước thực hiện.
+- Hãy thông báo một cách tường minh.
+
+#code-file("/content/code/browser_ensure_authenticated.py", from: 10, to: 19, size: 0.8em)
 
 == Phiên Đăng Nhập Và Thu Thập
 <phien-dang-nhap-va-thu-thap>
