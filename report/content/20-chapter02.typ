@@ -154,15 +154,15 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 == Hai Quyết Định Không Dùng
 <hai-quyet-dinh-khong-dung>
 
-Không Cơ Sở Dữ Liệu (Chương 10 - IE221):
+=== Không Cơ Sở Dữ Liệu (Chương 10 - IE221)
 
 - Kho có dưới 5.000 bản ghi, Tìm Kiếm Tuyến Tính có cơ thể trả về kết quả trong mili giây.
 - Tệp phẳng (flat-file) và văn bản thuần (plain text), nên đọc được bằng git và Obsidian hoặc bất kỳ công cụ nào khác.
 - Không trạng thái (stateless) nên chạy ở đâu cũng được.
 
-#co-note(title: [Ghi Chú])[Phiên bản v2.0.0 từng ghi song song JSON và TinyDB, và hiện đã bỏ TinyDB ở các phiên bản sau vì không xứng đáng để bảo trì một lúc hai nguồn sự thật trong khi không đem lại giá trị quá khác biệt.]
+#co-note(title: [Ghi Chú])[Phiên bản v2.0.0 từng dùng song song JSON và TinyDB, và hiện đã bỏ TinyDB ở các phiên bản sau, vì không xứng đáng để bảo trì một lúc hai nguồn sự thật (flat-file trong git và database trong TinyDB) trong khi không đem lại giá trị quá khác biệt.]
 
-Không Giao Diện Đồ Hoạ (Chương 09 -- IE221):
+=== Không Giao Diện Đồ Hoạ (Chương 09 -- IE221)
 
 - Người dùng mục tiêu là kỹ sư làm việc trong terminal.
 - Giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri (như một ví dụ về khả năng mở rộng) nhưng sẽ không được ghép vào dòng/chức năng chính.
