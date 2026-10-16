@@ -30,7 +30,15 @@
 == Package Và Module
 <package-va-module>
 
-#co-note[Chương 06. Cây `src/skills_scraper/`; `model/__init__.py` là mặt tiền export; import tuyệt đối thay cho `sys.path.append` của v2.0.0 (đoạn mã trước và sau); `__version__` đọc bằng `importlib.metadata`. Nhấn mạnh commit di chuyển thuần (`git mv`) giữ được lịch sử `git log --follow` của `course.py` về tới 2025.]
+Cấu trúc cây dưới đây cho biết cách tổ chức gói và module trong mã nguồn của công cụ:
+
+- Một package.
+- Các modules chính:
+  - `model`: cốt lõi, chứa nội dung chính.
+  - `services`: các dịch vụ, ở đây là chạy trình duyệt và lưu files.
+  - `utils`: các tiện ích, ví dụ lọc ký tự không Unicode và chuyển đổi.
+
+#code-file("/content/code/tree.yaml", lang: "yaml", size: 1em)
 
 == Mô Hình Hướng Đối Tượng
 <mo-hinh-huong-doi-tuong>
