@@ -48,9 +48,20 @@ Cấu trúc cây dưới đây cho biết cách tổ chức gói và module tron
 === Hai Cây Kế Thừa
 <hai-cay-ke-thua>
 
-#co-note[Chương 08. Sơ đồ lớp: `Serialize` sinh ra `BaseEntity` (Path, Course, Lab) và `Collection` (Paths, Courses, Labs, Topics). Một câu: cây trái là "một thứ", cây phải là "danh sách thứ đó", cả hai tự ghi JSON nhờ `Serialize`.]
+Hai nhánh kế thừa xuất phát từ cùng một điểm: `Serialize`: thân thiện với JSON.
 
 #align(center)[#class-diagram-report(highlight: ("base", "collection"))]
+
+Trong đó:
+
+- Trái: *thực thể $x$* cụ thể: Ở đây là Path/Course/Lab.
+  - `BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.
+- Phải: *danh sách của $x$*: Ở đây là chuỗi/tập hợp của Path/Course/Lab.
+  - `Collection` là `{id: name}` cộng `fetch_catalog`. Lớp con chỉ khai `API_URL`.
+- *Kết Hợp*:
+  - `Course` tạo `Lab` và cập nhật `Labs`;
+  - `Path` giữ dict course;
+  - `Topics` đọc `Courses`.
 
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
