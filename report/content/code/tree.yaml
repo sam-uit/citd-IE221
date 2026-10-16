@@ -1,0 +1,23 @@
+    src/skills_scraper/
+    ├── __init__.py           # __version__
+    ├── config.py             # defaults < yaml < env
+    ├── cli.py                # cli (Command Line Interface)
+    ├── tui.py                # tui (Text User Interface)
+    ├── model/                # LÕI QUAN TRỌNG
+    │   ├── __init__.py       # __init__
+    │   ├── base_entity.py
+    │   ├── collection.py
+    │   ├── path.py
+    │   ├── course.py
+    │   ├── courses.py
+    │   ├── lab.py
+    │   ├── labs.py
+    │   ├── paths.py
+    │   └── serialize.py
+    ├── services/
+    │   ├── __init__.py       # __init__
+    │   ├── browser.py        # browser (Selenium)
+    │   └── store.py          # store (JSON, index, atomic)
+    └── utils/
+        ├── __init__.py       # __init__
+        └── utils.py
