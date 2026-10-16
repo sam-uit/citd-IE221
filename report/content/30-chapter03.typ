@@ -143,7 +143,7 @@ Hình ảnh biểu hiện trong code base thực tế:
 
   - `Course.process_lab` tạo `Lab`, và gọi `load_json`.
   - Nếu file JSON cho Lab đó đã tồn tại thì bỏ qua để giữ trạng thái "như vậy" (idempotent).
-  - Nếu chưa có file JSON của Lab đó thì thì lưu và cập nhật `Labs` (danh sách các Lab được ghi nhận).
+  - Nếu chưa có file JSON của Lab đó thì lưu và cập nhật `Labs` (danh sách các Lab được ghi nhận).
 
 `Course.process_lab`: một course tạo ra một lab, và lưu lab đó với `lab.save_json()`.
 
@@ -187,7 +187,7 @@ Ví dụ trong `Course.process_step()`:
 
 Lặp có ngắt `break`: `Collection.fetch_catalog()`
 
-- Nếu số thứ tự của trang hiệnt tại vượt giới hạn số trang được quét, sẽ dừng lại.
+- Nếu số thứ tự của trang hiện tại vượt giới hạn số trang được quét, sẽ dừng lại.
 - Sử dụng khi lấy danh sách tất cả các _items_ (Path/Course/Lab) có trên skills.google.
 
 #code-file("/content/code/collection_fetch_catalog.py", from: 1, to: 5, size: 0.8em)
