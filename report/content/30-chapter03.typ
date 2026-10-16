@@ -93,7 +93,38 @@ Loại (`type`) của một thực thể không cần được lưu sẵn mà t�
 === Kế Thừa Và Đa Hình
 <ke-thua-va-da-hinh>
 
-#co-note[`class Course(BaseEntity)` với `super().__init__`; `generate_markdown` mặc định ở lớp cha và ghi đè ở Path, Course, Lab; `save_markdown` là template method. `Collection.fetch_catalog` với `API_URL`, `MAX_PAGES` là thuộc tính lớp mà `Paths` ghi đè (commit `ae21659`, kế thừa thay cho ba bản sao).]
+Kế Thừa và Đa Hình được biểu hiện ở nhiều nơi trong code base, như ví dụ dưới đây.
+
+- `generate_markdown` mặc định ở lớp cha và được ghi đè (override) ở Path, Course, Lab như ví dụ sau đây.
+
+`model/base_entity.py`: lớp cha.
+
+- `generate_markdown`:
+
+#code-file(
+  "/content/code/base_entity_generate_markdown.py",
+  from: 1,
+  to: 10,
+  size: 0.8em
+)
+
+- `save_markdown`:
+ - `save_markdown` ở lớp cha gọi `self.generate_markdown(**kwargs)` mà không (cần) biết lớp con nào đang chạy.
+
+#code-file("/content/code/base_entity_save_markdown.py", from: 1, to: 11, size: 0.8em)
+
+`model/lab.py`: lớp con kế thừa và ghi đè `generate_markdown`.
+
+#code-file("/content/code/lab_class.py", size: 0.8em)
+// #code-file("/content/code/lab_class.py", from: 19, to: 19, size: 0.8em)
+
+Hình ảnh biểu hiện trong code base thực tế:
+
+#align(center)[
+  #image("images/model-serialize-baseentity.png")
+]
+
+
 
 === Đóng Gói Và Kết Hợp
 <dong-goi-va-ket-hop>
