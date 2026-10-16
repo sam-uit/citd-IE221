@@ -12,7 +12,7 @@ GCP,Google Cloud Platform
 GUI,Graphical User Interface (giao diện đồ hoạ)
 HTML,HyperText Markup Language
 JSON,JavaScript Object Notation
-KISS,Keep It Simple Stupid
+KISS,"Keep It Simple, Stupid"
 LLM,Large Language Model (mô hình ngôn ngữ lớn)
 NFR,Non-Functional Requirement (yêu cầu phi chức năng)
 OKF,Open Knowledge Format (Google)
@@ -23,6 +23,7 @@ PEP,Python Enhancement Proposal
 PKB,Personal Knowledge Base (kho kiến thức cá nhân)
 SSOT,Single Source Of Truth (nguồn sự thật duy nhất)
 TOC,Table Of Contents (mục lục)
+TOML,"Tom's Obvious, Minimal Language"
 TUI,Text User Interface (giao diện tương tác trong terminal)
 URL,Uniform Resource Locator
 UTF-8,Unicode Transformation Format 8-bit
