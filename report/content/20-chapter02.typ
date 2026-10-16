@@ -1,9 +1,10 @@
 #import "../lib.typ": *
 #import "diagrams.typ": *
 
-= Triết Lý Và Thiết Kế
+= TRIẾT LÝ VÀ THIẾT KẾ
 <triet-ly-va-thiet-ke>
 
+Trước khi đi vào mã nguồn, chương này trình bày cách nghĩ đã quyết định hình hài của công cụ: vì sao nó là một ứng dụng nhỏ chứ không phải một hệ thống, vì sao con người vẫn ở trong vòng lặp khi site thay đổi, vault sinh ra đóng vai trò gì trong mô hình Bộ Não Thứ Hai và khớp với Open Knowledge Format của Google ở đâu, kiến trúc gói được chia thế nào, và hai quyết định cố ý không dùng (cơ sở dữ liệu, giao diện đồ hoạ) dù đó là hai chương của môn học.
 
 == Một Ứng Dụng, Không Phải Một Hệ Thống
 <mot-ung-dung-khong-phai-mot-he-thong>
@@ -90,9 +91,14 @@ Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Orga
     ([partner], [181], [899], [1209]),
   ),
   options: (index: false, align: ("left", "left", "left", "left")),
+  caption: [Quy mô hai portal theo danh mục đã kéo về (09/2026)],
+  label: "tb-quy-mo-portal",
 ))
 
-#image("images/obsidian-pkb-2nd-brain.png")
+#figure(
+  image("images/obsidian-pkb-2nd-brain.png"),
+  caption: [Graph view của vault trong Obsidian: mỗi nút là một note, mỗi cạnh là một liên kết tương đối mà note tự ghi ra],
+) <hinh-graph-view>
 
 == Đối Chiếu Với Open Knowledge Format
 <doi-chieu-voi-open-knowledge-format>
@@ -116,10 +122,13 @@ OKF v0.2 chỉ bắt buộc mọi tệp `.md` có frontmatter YAML đọc đư�
     ([không có], [`index.md`, `log.md`], [hướng phát triển]),
   ),
   options: (index: false, align: ("left", "left", "left")),
+  caption: [Đối chiếu khoá frontmatter của vault với OKF v0.2],
+  label: "tb-okf",
 ))
 
-Mẫu frontmatter ví dụ:
+Frontmatter của một note ở v2.0.0, trước khi đối chiếu; bản sau khi mở rộng được trình bày ở @ket-xuat-markdown:
 
+#figure(
 ```yaml
 "id": "892"
 name: "Conversational AI on Vertex AI and Dialogflow CX"
@@ -128,7 +137,10 @@ url: "https://www.cloudskillsboost.google/course_templates/892"
 description: "In this course you will learn how to use the new generative AI features..."
 date: "2025-01-06"
 datePublished: "2023-11-21",
-```
+```,
+  kind: raw,
+  caption: [Frontmatter của note course 892 ở v2.0.0],
+) <ma-frontmatter-v200>
 
 == Kiến Trúc Gói
 <kien-truc-goi>
@@ -146,10 +158,10 @@ src/skills_scraper/
 
 Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `services/` và `utils/`. Toàn bộ kiến thức về skills.google nằm trong `config.py` và các phương thức phân tích trang; mô hình, lưu trữ, kết xuất và giao diện không biết Google.
 
-#align(center)[
-  #arch-min(highlight: ("model",))
-  #text(size: 1em)[Phụ thuộc một chiều: runner gọi model, model gọi services, services làm việc với file và trình duyệt (các tài nguyên).]
-]
+#figure(
+  arch-min(highlight: ("model",)),
+  caption: [Phụ thuộc một chiều: runner gọi `model`, `model` gọi `services`, `services` làm việc với file và trình duyệt],
+) <hinh-kien-truc>
 
 == Hai Quyết Định Không Dùng
 <hai-quyet-dinh-khong-dung>
@@ -170,9 +182,9 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 
 #co-note(title: [Ghi Chú])[Đây đều là các quyết định thiết kế có lý do và chủ đích, mà không phải là sự vô tình bỏ sót kỹ năng đã học hoặc nội dung chương trình].
 
-== Tổng Kết Chương 2
-<tong-ket-chuong-2>
+== Kết Chương
+<ket-chuong-2>
 
-Trong Chương 2 này, sinh viên đã trình bày về các lý do và các quyết định trong quá trình xây dựng công cụ, bao gồm nhấn mạnh những mục tiêu, miêu tả kiến trúc cơ bản, những phần CÓ và KHÔNG và nguyên do tương ứng.
+Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ: năm nguyên tắc của một ứng dụng nhỏ, vai trò của con người khi site thay đổi, vị trí của vault trong khung CODE và sự trùng khớp với OKF (@tb-okf), kiến trúc gói phụ thuộc một chiều (@hinh-kien-truc), cùng những phần CÓ và KHÔNG với nguyên do tương ứng.
 
-Đây là tiền đề để khi vào Chương 3, nơi các nội dung cốt lõi được trình bày, sẽ miêu tả rõ hơn nữa các nguyên tắc đã được chọn ở đây.
+Đây là tiền đề cho Chương 3, nơi các nội dung cốt lõi của môn học được chỉ ra trên chính mã nguồn đã chọn theo các nguyên tắc ở đây.
