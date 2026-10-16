@@ -66,6 +66,9 @@ Trong đó:
 
 `Serialize` thực ra rất đơn giản, `serialize.py`:
 
+- `to_dict`: Chuyển đối tượng thành dạng Từ Điển, vốn thân thiện với JSON.
+- `to_json`: Lưu JSON: đây là chức năng cốt lõi.
+
 #code-file("/content/code/serialize.py", lang: "python", size: 0.8em)
 
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
