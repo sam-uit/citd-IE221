@@ -82,7 +82,7 @@ Mục tiêu thứ hai, về mặt học thuật, là dùng chính ứng dụng n
 == Phạm Vi Ứng Dụng
 <pham-vi>
 
-Bao gồm:
+=== Bao Gồm
 
 - Public portal;
 - Ba loại thực thể chính: Path, Course, Lab;
@@ -90,7 +90,7 @@ Bao gồm:
 - Kết xuất JSON và Markdown;
 - Hai runner terminal: CLI, TUI (Terminal User Interface).
 
-Không bao gồm:
+=== Không Bao Gồm
 
 - Partner Portal (sinh viên không còn quyền truy cập);
 - Chạy Lab;
