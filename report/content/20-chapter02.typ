@@ -172,3 +172,7 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 
 == Tổng Kết Chương 2
 <tong-ket-chuong-2>
+
+Trong Chương 2 này, sinh viên đã trình bày về các lý do và các quyết định trong quá trình xây dựng công cụ, bao gồm nhấn mạnh những mục tiêu, miêu tả kiến trúc cơ bản, những phần CÓ và KHÔNG và nguyên do tương ứng.
+
+Đây là tiền đề để khi vào Chương 3, nơi các nội dung cốt lõi được trình bày, sẽ miêu tả rõ hơn nữa các nguyên tắc đã được chọn ở đây.
