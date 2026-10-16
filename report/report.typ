@@ -36,4 +36,4 @@
 
 // Show bibliography
 #show: bibliography-page
-#bibliography("content/98-bibliography.bib", title: "Tài Liệu Tham Khảo")
+#bibliography("content/98-bibliography.yaml", title: "Tài Liệu Tham Khảo")
