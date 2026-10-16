@@ -32,6 +32,18 @@ Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã 
   options: (index: false, align: ("right", "left", "left"), columns: ("8%", "15%", "auto")),
 ))
 
+```
+Portal (public | partner)
+└─ Path (learning path)
+  └─ Course
+    └─ Module
+      └─ Step
+        └─ Activity
+          └─ video | lab        | quiz        |
+          └─ link  | document   | html_bundle |
+          └─ badge | credential | ...
+```
+
 #co-note(title: [Ghi Chú])[
   - Lab vừa là một hoạt động trong Course vừa là một thực thể độc lập, đôi khi được tham chiếu trực tiếp bởi Path, điều này đôi lúc tạo nên sự phức tạp trong logic của việc liên kết các thực thể.
   - Tập các loại hoạt động (*Activity*) thuộc về Google chứ không thuộc về ứng dụng: Google Skills có thể thay đổi các loại hoặc động bất kỳ lúc nào, hiện tại thường là sẽ thêm mới dựa theo cách triển khai nội dung của các khóa học/môn học mới.
