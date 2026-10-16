@@ -9,7 +9,7 @@ Trước khi đi vào mã nguồn, chương này trình bày cách nghĩ đã qu
 == Một Ứng Dụng, Không Phải Một Hệ Thống
 <mot-ung-dung-khong-phai-mot-he-thong>
 
-Công cụ được thiết kế dưới góc nhìn của kỹ sư hệ thống: một thành phần nhỏ, đúng một việc, ghép được với các công cụ khác, mà không phải là một "hệ thống" hay một nền tảng hoàn toàn độc lập. Năm nguyên tắc dưới đây quyết định mọi lựa chọn trong các chương sau.
+Công cụ được thiết kế dưới góc nhìn của kỹ sư hệ thống và theo triết lý Unix @unix-philosophy: một thành phần nhỏ, đúng một việc, ghép được với các công cụ khác, mà không phải là một "hệ thống" hay một nền tảng hoàn toàn độc lập. Năm nguyên tắc dưới đây quyết định mọi lựa chọn trong các chương sau.
 
 === Làm Một Việc Và Làm Tốt
 <don-gian-lam-mot-viec-va-lam-tot>
@@ -82,7 +82,7 @@ Lịch sử dự án đã kiểm chứng cách làm này (chương 4): mỗi tha
 == Vault Như Bộ Não Thứ Hai
 <vault-nhu-bo-nao-thu-hai>
 
-Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Organize, Distill, Express)], ứng dụng làm *Capture* và một phần *Distill* (`--toc`, `--no-transcript`, tệp prompt). *Organize* thuộc về Obsidian, *Express* thuộc về người học. Ứng dụng cố ý và nên dừng ở mức đó.
+Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Organize, Distill, Express)] của Tiago Forte @building-second-brain, ứng dụng làm *Capture* và một phần *Distill* (`--toc`, `--no-transcript`, tệp prompt). *Organize* thuộc về Obsidian, *Express* thuộc về người học. Ứng dụng cố ý và nên dừng ở mức đó.
 
 #datatable-data((
   headers: ([Portal], [Paths], [Courses], [Labs]),
@@ -103,7 +103,7 @@ Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Orga
 == Đối Chiếu Với Open Knowledge Format
 <doi-chieu-voi-open-knowledge-format>
 
-OKF v0.2 chỉ bắt buộc mọi tệp `.md` có frontmatter YAML đọc được với khoá `type` không được rỗng. Vault đã thoả điều này từ 2025 vì `type` được suy ra từ tên lớp. Việc trùng khớp không phải ngẫu nhiên: cả hai cùng xuất phát từ ràng buộc "một khái niệm là một tệp, siêu dữ liệu (metadata) ở đầu, thân bài cho người đọc".
+OKF v0.2 @okf-spec chỉ bắt buộc mọi tệp `.md` có frontmatter YAML đọc được với khoá `type` không được rỗng. Vault đã thoả điều này từ 2025 vì `type` được suy ra từ tên lớp. Việc trùng khớp không phải ngẫu nhiên: cả hai cùng xuất phát từ ràng buộc "một khái niệm là một tệp, siêu dữ liệu (metadata) ở đầu, thân bài cho người đọc".
 
 #co-info(title: [Fun Fact])[
   Thực ra cách trình bày file Markdown này là kế thừa từ thời sử dụng #link("https://jekyllrb.com/")[Jekyll].

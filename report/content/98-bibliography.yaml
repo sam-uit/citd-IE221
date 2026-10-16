@@ -1,4 +1,4 @@
-# Hayagriva. Bổ sung slide bài giảng từng chương theo đúng tên tệp trong ~/UIT/citd-IE221/lectures.
+# Hayagriva. Slide bài giảng IE221 theo đúng tên tệp trong ~/UIT/citd-IE221/lectures.
 okf-spec:
   type: web
   title: Open Knowledge Format Specification v0.2
@@ -7,7 +7,7 @@ okf-spec:
 pep8:
   type: web
   title: "PEP 8: Style Guide for Python Code"
-  author: [van Rossum, Guido, Warsaw, Barry, Coghlan, Alyssa]
+  author: ["van Rossum, Guido", "Warsaw, Barry", "Coghlan, Alyssa"]
   url: https://peps.python.org/pep-0008/
 selenium-docs:
   type: web
@@ -41,3 +41,75 @@ building-second-brain:
   author: Forte, Tiago
   date: 2022
   publisher: Atria Books
+
+# Slide bài giảng IE221 (ThS. Nghi Hoàng Khoa), tệp trong thư mục lectures/ của lớp.
+ie221-l01:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 01: Giới thiệu Python và môi trường"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l01-intro-python.pdf"
+ie221-l02:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 02: Kiểu dữ liệu"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l02-data-types.pdf"
+ie221-l03:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 03: Cấu trúc rẽ nhánh"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l03-if.pdf"
+ie221-l04:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 04: Vòng lặp"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l04-loop.pdf"
+ie221-l05:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 05: Hàm"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l05-functions.pdf"
+ie221-l06:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 06: Module và package"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l06-modules-packages.pdf"
+ie221-l07:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 07: Xử lý ngoại lệ"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l07-exceptions.pdf"
+ie221-l08:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 08: Lập trình hướng đối tượng"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l08-oop.pdf"
+ie221-l09:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 09: Giao diện đồ hoạ (tkinter, PyQt)"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l09-gui.pdf"
+ie221-l10:
+  type: misc
+  title: "IE221 Kỹ Thuật Lập Trình Python, Chương 10: Cơ sở dữ liệu (MySQL, MS SQL)"
+  author: Nghi Hoàng Khoa
+  publisher: Trường Đại Học Công Nghệ Thông Tin, ĐHQG-HCM
+  date: 2026
+  note: "Slide bài giảng, l10-database.pdf"
