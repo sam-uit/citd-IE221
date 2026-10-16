@@ -163,8 +163,6 @@ Hình ảnh biểu hiện trong code base thực tế:
 == Kiểu Dữ Liệu, Hàm Và Cấu Trúc Điều Khiển
 <kieu-du-lieu-re-nhanh-vong-lap-ham>
 
-#co-note[Chương 02 tới 05, mỗi chương một đoạn mã ngắn. 02: cấu trúc dict lồng `modules[].steps[].activities[]`, định dạng chuỗi. 03: dispatch dict theo loại activity trong `process_step` thay chuỗi `elif`, loại lạ giữ nguyên. 04: `while has_more` phân trang với cầu chì số trang; ba tầng `for` module, step, activity. 05: tham số mặc định và `**kwargs` của `generate_markdown`, `lambda` làm khoá sắp xếp, đệ quy `_parse_lesson_item`.]
-
 === Cấu Trúc Điều Khiển
 
 Rẽ nhánh bằng `dict`: data-driven.
@@ -174,8 +172,25 @@ Rẽ nhánh bằng `dict`: data-driven.
 
 Ví dụ trong `Course.process_step()`:
 
-#code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 0.8em)
-#code-file("/content/code/course_process_step.py", from: 25, to: 29, size: 0.8em)
+#code-file("/content/code/course_process_step.py", size: 0.8em)
+
+// #code-file("/content/code/course_process_step.py", from: 8, to: 15, size: 0.8em)
+// #code-file("/content/code/course_process_step.py", from: 25, to: 29, size: 0.8em)
+
+=== Vòng Lặp
+
+Đệ quy: lồng `items`:
+
+- Với mỗi _item_ trong danh sách, xử lý tương ứng.
+
+#code-file("/content/code/course_parse_lesson_item.py", from: 9, to: 15, size: 0.8em)
+
+Lặp có ngắt `break`:
+
+- Nếu số thứ tự của trang hiệnt tại vượt giới hạn số trang được quét, sẽ dừng lại.
+- Sử dụng khi lấy danh sách tất cả các _items_ (Path/Course/Lab) có trên skills.google.
+
+#code-file("/content/code/collection_fetch_catalog.py", from: 54, to: 57, size: 0.8em)
 
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
