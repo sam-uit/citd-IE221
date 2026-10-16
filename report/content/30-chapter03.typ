@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#import "diagrams.typ": *
 
 = Cài Đặt
 <cai-dat>
@@ -48,6 +49,8 @@ Cấu trúc cây dưới đây cho biết cách tổ chức gói và module tron
 <hai-cay-ke-thua>
 
 #co-note[Chương 08. Sơ đồ lớp: `Serialize` sinh ra `BaseEntity` (Path, Course, Lab) và `Collection` (Paths, Courses, Labs, Topics). Một câu: cây trái là "một thứ", cây phải là "danh sách thứ đó", cả hai tự ghi JSON nhờ `Serialize`.]
+
+#align(center)[#class-diagram-report(highlight: ("base", "collection"))]
 
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
