@@ -1,5 +1,5 @@
     src/skills_scraper/
-    ├── __init__.py           # __version__
+    ├── __init__.py           # __version__ đọc từ pyproject
     ├── config.py             # defaults < yaml < env
     ├── cli.py                # cli (Command Line Interface)
     ├── tui.py                # tui (Text User Interface)
@@ -13,7 +13,8 @@
     │   ├── lab.py
     │   ├── labs.py
     │   ├── paths.py
-    │   └── serialize.py
+    │   ├── serialize.py
+    │   └── topics.py
     ├── services/
     │   ├── __init__.py       # __init__
     │   ├── browser.py        # browser (Selenium)

@@ -8,6 +8,9 @@
 
     @property
     def url(self):
+        """
+        Dynamically generate the URL based on the type.
+        """
 
         base_url = {
             "Path": BASE_URL_PATHS,

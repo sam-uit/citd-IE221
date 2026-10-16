@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Extract real code from the scraper repo into content/code/, by symbol, with ast.
-# The slides then read those files, so a slide can never show code that does not exist.
+# The slides and the thesis then read those files, so a page can never show code that does not exist.
 #
 #   python3 tools/snippets.py --repo ~/repos/gcpcta/skills-google-scrapper
 import argparse
@@ -28,6 +28,23 @@ SNIPPETS = [
     ("browser_ensure_authenticated", "src/skills_scraper/services/browser.py", "ensure_authenticated"),
     ("cli_cmd_list_getattr", "src/skills_scraper/cli.py", "cmd_list"),
     ("pyproject", "pyproject.toml", None),
+    # Thêm cho thesis (chương 3.6-3.9, chương 4): phiên đăng nhập, lưu trữ, frontmatter, hai runner.
+    ("python-version", ".python-version", None),
+    ("serialize", "src/skills_scraper/model/serialize.py", None),
+    ("init_version", "src/skills_scraper/__init__.py", None),
+    ("browser_launch_browser", "src/skills_scraper/services/browser.py", "launch_browser"),
+    ("browser_get_page", "src/skills_scraper/services/browser.py", "open_page+get_page"),
+    ("store_index_rebuild", "src/skills_scraper/services/store.py", "Index.upsert+rebuild"),
+    ("store_index_search", "src/skills_scraper/services/store.py", "Index.search"),
+    ("base_entity_json", "src/skills_scraper/model/base_entity.py", "BaseEntity.load_json+save_json"),
+    ("base_entity_front_matter", "src/skills_scraper/model/base_entity.py", "BaseEntity.generate_front_matter"),
+    ("base_entity_yaml_scalar", "src/skills_scraper/model/base_entity.py", "yaml_scalar+yaml_list"),
+    ("collection_numeric_id", "src/skills_scraper/model/collection.py", "numeric_id"),
+    ("courses_class", "src/skills_scraper/model/courses.py", "Courses"),
+    ("cli_main", "src/skills_scraper/cli.py", "main"),
+    ("cli_cmd_reindex", "src/skills_scraper/cli.py", "cmd_reindex"),
+    ("tui_driver", "src/skills_scraper/tui.py", "CloudSkillsBoost.driver+close"),
+    ("tui_main", "src/skills_scraper/tui.py", "main"),
 ]
 
 
@@ -48,9 +65,11 @@ def extract(source: str, symbols: str) -> str:
     lines = source.split("\n")
     parts = []
     for dotted in symbols.split("+"):
-        # "BaseEntity.type+url": the second name shares the first's class
-        if "." not in dotted and parts:
-            dotted = symbols.split("+")[0].rsplit(".", 1)[0] + "." + dotted
+        # "BaseEntity.type+url": the second name shares the first's class.
+        # "open_page+get_page": two module-level functions, nothing to share.
+        head = symbols.split("+")[0]
+        if "." not in dotted and parts and "." in head:
+            dotted = head.rsplit(".", 1)[0] + "." + dotted
         first, last = span(tree, dotted)
         parts.append("\n".join(lines[first - 1:last]))
     return "\n\n".join(parts).rstrip() + "\n"

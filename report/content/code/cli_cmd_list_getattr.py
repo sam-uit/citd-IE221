@@ -1,6 +1,6 @@
 def cmd_list(args):
     """Handle list command"""
-    
+
     # Determine type
     if args.courses:
         target_class = Courses
@@ -18,12 +18,12 @@ def cmd_list(args):
         print(f"Reloading {label} list from remote...")
         collection = target_class(driver=launch_browser(headless=args.headless))
         collection.load_json()
-        
+
         # Ensure URL is up to date (specifically for Paths)
         if label == "paths":
             from skills_scraper.config import BASE_URL_PATHS
             collection.url = BASE_URL_PATHS
-            
+
         # Fetch list (Supports Path and Courses as they have fetch implemented)
         # Labs fetch might need implementation check, but we assume pattern holds or fails gracefully.
         try:
@@ -45,11 +45,11 @@ def cmd_list(args):
             collection.driver.quit()
 
     print(f"Listing all {label}...")
-    
+
     # Instantiate and load (reload might have updated DB)
     collection = target_class()
     collection.load_json()
-    
+
     # Check if empty (only for Paths/Courses mostly)
     if not collection.collection:
         print(f"No {label} found locally.")
@@ -62,5 +62,5 @@ def cmd_list(args):
 
     # Determine sort
     sort_by = 'id' if args.id else 'name'
-    
+
     collection.print_list(sort_by=sort_by)
