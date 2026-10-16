@@ -124,12 +124,41 @@ Hình ảnh biểu hiện trong code base thực tế:
   #image("images/model-serialize-baseentity.png")
 ]
 
-
-
 === Đóng Gói Và Kết Hợp
 <dong-goi-va-ket-hop>
 
-#co-note[Quy ước `_json_path`, `_md_path`; `to_dict` lọc khoá bắt đầu bằng `_` và `driver`, nên JSON trên đĩa không chứa tài nguyên hay đường dẫn máy. Composition: `Course.process_lab` tạo `Lab`, gọi `load_json`, có rồi thì bỏ qua (idempotent), chưa có thì lưu và cập nhật `Labs`.]
+==== Đóng Gói
+
+  - Thuộc tính "ẩn" và động: `_json_path`, `_md_path`.
+  - `to_dict` lọc khoá bắt đầu bằng `_` và `driver`, nên JSON được ghi ra sẽ không chứa tài nguyên hay đường dẫn máy.
+    - `driver`: đây là tài nguyên, không phải là thuộc tính của các thực thể, không cần lưu giữ.
+
+`BaseEntity.to_dict`: cho biết cần lưu gì ra đĩa/file JSON.
+
+- Các thuộc tính bổ sung để theo dõi như `scrapedTime` được thêm vào.
+
+#code-file("/content/code/base_entity_to_dict.py", from: 10, to: 17, size: 0.8em)
+
+==== Kết Hợp (Composition)
+
+  - `Course.process_lab` tạo `Lab`, và gọi `load_json`.
+  - Nếu file JSON cho Lab đó đã tồn tại thì bỏ qua để giữ trạng thái "như vậy" (idempotent).
+  - Nếu chưa có file JSON của Lab đó thì thì lưu và cập nhật `Labs` (danh sách các Lab được ghi nhận).
+
+`Course.process_lab`: một course tạo ra một lab, và lưu lab đó với `lab.save_json()`.
+
+- `lab.load_json()` để tải lên file JSON của lab vừa tạo, nếu có file, có nghĩa lab đó đã được tải, sẽ bỏ qua.
+
+#code-file("/content/code/course_process_lab.py", from: 32, to: 41, size: 0.8em)
+
+- Nếu không có, thì sẽ tải lab về, sau đó gọi `lab.save_json()` (cùng với `lab.save_markdown()`) để lưu.
+
+#code-file("/content/code/course_process_lab.py", from: 56, to: 58, size: 0.8em)
+
+- Đồng thời, đưa lab vào danh sách các lab đã biết.
+
+#code-file("/content/code/course_process_lab.py", from: 60, to: 64, size: 0.8em)
+
 
 == Kiểu Dữ Liệu, Rẽ Nhánh, Vòng Lặp, Hàm
 <kieu-du-lieu-re-nhanh-vong-lap-ham>
