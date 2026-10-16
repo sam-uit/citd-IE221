@@ -159,7 +159,6 @@ Hình ảnh biểu hiện trong code base thực tế:
 
 #code-file("/content/code/course_process_lab.py", from: 60, to: 64, size: 0.8em)
 
-
 == Kiểu Dữ Liệu, Hàm Và Cấu Trúc Điều Khiển
 <kieu-du-lieu-re-nhanh-vong-lap-ham>
 
