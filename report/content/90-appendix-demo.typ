@@ -20,10 +20,10 @@ Phần DEMO được tách thành Phụ Lục để tránh loãng nội dung ch�
 
 #image("images/demo-cli-md-toc-outcome.png")
 
-- `list -c` liệt kê danh sách các Course đã biết.
+- `list -c` liệt kê danh sách các Course đã biết, hoàn toàn có thể kết hợp với các _pager_ (chia trang nội dung) như `less`, `more`, vv.. cho các nhu cầu cụ thể.
 
 #image("images/demo-cli-list-c.png")
 
-- TUI: liệt kê sử dụng menu.
+- TUI: liệt kê sử dụng menu tương tác, nên khó kết hợp với các _pager_.
 
 #image("images/demo-tui-list.png")
