@@ -107,7 +107,7 @@ Trong đó:
 
 #code-figure(
   "/content/code/serialize.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`model/serialize.py`: Gốc Của Cây Kế Thừa],
   label: "ma-serialize",
 )
@@ -124,7 +124,7 @@ Trong đó:
 
 #code-figure(
   "/content/code/base_entity_init.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.__init__()` -- Ba Thuộc Tính Định Danh],
   label: "ma-base-init",
 )
@@ -136,7 +136,7 @@ Nhưng để tự nhận diện và phân loại các thực thể, `BaseEntity`
 
 #code-figure(
   "/content/code/base_entity_type_url.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.type` và `BaseEntity.url`],
   label: "ma-base-type-url",
 )
@@ -157,14 +157,14 @@ Kế Thừa và Đa Hình xuất hiện ở nhiều nơi trong mã nguồn, ví 
   "/content/code/base_entity_generate_markdown.py",
   from: 1,
   to: 10,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.generate_markdown` -- Mặc Định Chỉ Có Frontmatter],
   label: "ma-base-generate-markdown",
 )
 
 #code-figure(
   "/content/code/base_entity_save_markdown.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.save_markdown`: gọi `generate_markdown` Của Lớp Con],
   label: "ma-base-save-markdown",
 )
@@ -202,7 +202,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
 
 #code-figure(
   "/content/code/courses_class.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`model/courses.py` -- Lớp Con Chỉ Khai `API_URL`],
   label: "ma-courses-class",
 )
@@ -221,7 +221,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   "/content/code/base_entity_to_dict.py",
   from: 10,
   to: 17,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.to_dict()` -- Lưu Gì Ra File JSON],
   label: "ma-base-to-dict",
 )
@@ -236,7 +236,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   "/content/code/course_process_lab.py",
   from: 32,
   to: 41,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Course.process_lab()` -- Tạo `Lab`, Nạp JSON],
   label: "ma-process-lab-1",
 )
@@ -247,7 +247,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   "/content/code/course_process_lab.py",
   from: 56,
   to: 58,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Course.process_lab()` -- Lưu `Lab` Vừa Tải],
   label: "ma-process-lab-2",
 )
@@ -258,7 +258,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   "/content/code/course_process_lab.py",
   from: 60,
   to: 64,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Course.process_lab()` -- Cập Nhật Tập Hợp `Labs`],
   label: "ma-process-lab-3",
 )
@@ -290,7 +290,7 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   "/content/code/course_process_step.py",
   from: 1,
   to: 15,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Course.process_step()` -- Bảng `handlers`],
   label: "ma-process-step-1",
 )
@@ -299,7 +299,7 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   "/content/code/course_process_step.py",
   from: 16,
   to: 29,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Course.process_step()` -- Loại Lạ Được Giữ Nguyên và Thông Báo],
   label: "ma-process-step-2",
 )
@@ -324,7 +324,7 @@ Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` v
   "/content/code/collection_fetch_catalog.py",
   from: 1,
   to: 5,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Collection.fetch_catalog()` -- Bắt Đầu],
   label: "ma-fetch-catalog-1",
 )
@@ -333,7 +333,7 @@ Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` v
   "/content/code/collection_fetch_catalog.py",
   from: 44,
   to: 59,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`Collection.fetch_catalog()` -- Vòng Lặp Có Điểm Ngắt],
   label: "ma-fetch-catalog-2",
 )
@@ -359,7 +359,7 @@ Các ngoại lệ gặp trong mã thuộc ba nhóm:
   "/content/code/store_write_text.py",
   from: 1,
   to: 20,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`store.write_text()` -- Ghi Nguyên Tử Với `try/except/raise`],
   label: "ma-write-text",
 )
@@ -370,7 +370,7 @@ Các ngoại lệ gặp trong mã thuộc ba nhóm:
   "/content/code/browser_ensure_authenticated.py",
   from: 10,
   to: 23,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`browser.ensure_authenticated()` -- `KeyboardInterrupt`, `EOFError`],
   label: "ma-ensure-authenticated",
 )
@@ -381,7 +381,7 @@ Các ngoại lệ gặp trong mã thuộc ba nhóm:
   "/content/code/base_entity_json.py",
   from: 10,
   to: 24,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`BaseEntity.save_json()` -- Ghi File Trước, Cập Nhật Chỉ Mục Sau],
   label: "ma-save-json",
 )
@@ -389,77 +389,73 @@ Các ngoại lệ gặp trong mã thuộc ba nhóm:
 == Phiên Đăng Nhập Và Thu Thập
 <phien-dang-nhap-va-thu-thap>
 
-Từ đầu 2026, trang course trên skills.google chuyển hướng về trang đăng nhập nếu không có phiên; vì vậy mọi trang đều đi qua một trình duyệt Chrome (hoặc Edge) do Selenium @selenium-docs điều khiển, `requests` chỉ còn dùng để tải tài liệu PDF với cookie lấy từ trình duyệt. Toàn bộ việc này nằm trong `services/browser.py`, khoảng một trăm dòng, với ba hàm công khai:
+Từ đầu 2026, trang Course trên skills.google chuyển hướng về trang đăng nhập nếu chưa đăng nhập; vì vậy mọi trang đều đi qua một trình duyệt Chrome (hoặc Edge) do Selenium @selenium-docs điều khiển, `requests` chỉ còn dùng để tải tài liệu PDF với cookie lấy từ trình duyệt. Thay đổi này được cập nhật ở phiên bản v2.0.0 của nhánh chính (_master_) trong kho git.
 
-- `launch_browser` mở trình duyệt trên một _profile_ cố định (`.webdriver_profiles` theo mặc định), nên phiên đăng nhập được giữ qua các lần chạy: đăng nhập một lần, những lần sau đi thẳng. Một danh sách cờ dùng chung cho Chrome và Edge; `--headless=new` khi profile đã đăng nhập.
-- `ensure_authenticated` là *chỗ duy nhất* chờ người dùng: nếu URL hiện tại chứa `sign_in` thì in hướng dẫn, chờ Enter, tải lại trang, lặp tới khi qua được hoặc người dùng bỏ. Ở v2.0.0 có sáu khối `input()` rải trong `course.py`.
-- `get_page` gói hai bước trên và trả về cây `BeautifulSoup` @bs4-docs của trang đã render; `model/` chỉ gọi hàm này, không biết Selenium.
+Toàn bộ việc này nằm trong `services/browser.py`, với ba hàm công khai:
+
+- `launch_browser()` mở trình duyệt trên một _profile_ cố định (`.webdriver_profiles` theo mặc định), nên phiên đăng nhập được giữ qua các lần chạy: đăng nhập một lần, những lần sau mở trực tiếp. Một danh sách cờ dùng chung cho Chrome và Edge.
+- `ensure_authenticated()` chờ người dùng: nếu URL hiện tại chứa `sign_in` thì in hướng dẫn, chờ Enter, tải lại trang, lặp tới khi hoàn thành hoặc người dùng hủy bỏ.
+- `get_page()` gói hai bước trên và trả về cây `BeautifulSoup` @bs4-docs của trang đã render; `model/` chỉ gọi hàm này, không (cần) biết Selenium.
 
 #code-figure(
   "/content/code/browser_launch_browser.py",
   from: 11,
   to: 28,
-  size: 0.85em,
-  caption: [`browser.launch_browser`: tra bảng trình duyệt, cờ dùng chung, profile cố định],
+  size: 0.8em,
+  caption: [`browser.launch_browser()` -- Khởi Chạy Trình Duyệt],
   label: "ma-launch-browser",
 )
 
 #code-figure(
   "/content/code/browser_get_page.py",
-  size: 0.85em,
-  caption: [`browser.open_page`, `browser.get_page`: cửa duy nhất tới trang web cho `model/`],
+  size: 0.8em,
+  caption: [`browser.open_page()`, `browser.get_page()` -- Duyệt Trang],
   label: "ma-get-page",
 )
 
-Việc thu thập một course (`Course.extract_transcript`) đi theo bốn bước, mỗi bước là một phương thức:
+Việc thu thập một course (`Course.extract_transcript()`) đi theo bốn bước, mỗi bước là một phương thức:
 
-+ `extract_course_metadata` đọc khối `ld+json` của trang: `@id`, `name`, `datePublished`, `about` (topics), `teaches` (objectives); mô tả lấy từ `meta[name=description]`.
-+ `extract_course_outline` đọc đề cương từ thẻ `ql-contents-menu`, cho ra cây `modules` → `steps` → `activities`.
-+ `process_step` cho từng step, dispatch theo loại activity (@ma-process-step-1): video thì lấy transcript YouTube, lab thì tạo `Lab`, quiz thì lấy câu hỏi, document thì tải file, link và html_bundle thì giữ URL.
-+ `save_json` rồi `save_markdown`.
++ `extract_course_metadata()` đọc khối `ld+json` của trang: `@id`, `name`, `datePublished`, `about` (topics), `teaches` (objectives); mô tả lấy từ `meta[name=description]`.
++ `extract_course_outline()` đọc đề cương từ thẻ `ql-contents-menu`, cho ra cây `modules` → `steps` → `activities`.
++ `process_step()` cho từng step, xử lý theo loại activity (@ma-process-step-1): video thì lấy transcript YouTube, lab thì tạo `Lab`, quiz thì lấy câu hỏi, document thì tải file, link và html_bundle thì giữ URL.
++ `save_json()` để lưu file JSON rồi `save_markdown()` để lưu file Markdown.
 
-Quy tắc bỏ qua nằm ở bước đầu: nếu `datePublished` trên trang bằng giá trị đã lưu trong JSON và không có `--force`, phương thức in lý do và trả `False`, course dừng tại đó; đây là FR-05 và cũng là lý do chạy lại là idempotent.
+Quy tắc bỏ qua nằm ở bước đầu: nếu `datePublished` trên trang bằng giá trị đã lưu trong JSON và không có `--force` trong lệnh gọi, phương thức in lý do và trả về `False`, `course` dừng tại đó; đây là FR-05: nếu chạy lại trên cùng một Path/Course/Lab đã tồn tại thì kết quả vẫn là nguyên bản (idempotent).
 
 #code-figure(
   "/content/code/course_extract_metadata.py",
   from: 18,
   to: 31,
-  size: 0.85em,
-  caption: [`Course.extract_course_metadata`: bỏ qua theo `datePublished`, tường minh],
+  size: 0.8em,
+  caption: [`Course.extract_course_metadata()` -- Bỏ Qua Theo `datePublished`],
   label: "ma-extract-metadata",
 )
 
-Với path, `Path.fetch_data` đọc `ql-contents-menu[modules]` của trang path làm nguồn sự thật về thành viên, vì `href` ở đó phân biệt `/course_templates/<id>` với `/focuses/<id>` (lab), còn `ld+json.hasPart` chỉ dùng để bổ sung tên và mô tả; `fetch -p ID --cascade` sau đó lần lượt thu thập từng course trong path. Danh mục (`list -r`) cũng đi qua trình duyệt: endpoint `/catalog/list?format[]=...` trả 403 cho `requests` trần, nhưng khi Chrome mở nó thì JSON nằm trong thẻ `<pre>`, `fetch_catalog` đọc thẻ đó rồi `json.loads`.
+Với path, `Path.fetch_data()` đọc `ql-contents-menu[modules]` của trang path làm nguồn sự thật, vì `href` ở đó phân biệt `/course_templates/<id>` (course) với `/focuses/<id>` (lab), còn `ld+json.hasPart` chỉ dùng để bổ sung tên và mô tả; `fetch -p ID --cascade` sau đó lần lượt thu thập từng course trong path.
 
 == Lưu Trữ
 <luu-tru>
 
 Không có cơ sở dữ liệu. Mỗi thực thể là một file JSON và file đó là nguồn sự thật (SSOT); mọi thứ khác đều dẫn xuất và dựng lại được.
 
-#figure(
-```
-data/
-├── index.json          chỉ mục dẫn xuất: {kind: {id: {name, datePublished, scrapedTime}}}
-├── paths.json          tập hợp {id: name} của Paths (Collection)
-├── paths/280.json      một path
-├── courses/892.json    một course, đầy đủ modules/steps/activities
-└── labs/<id>.json      một lab
-```,
-  kind: raw,
-  caption: [Thư mục `data/`: một thực thể, một file],
-) <ma-data-tree>
+#code-figure(
+  "/content/code/store.txt",
+  size: 0.8em,
+  lang: "ini",
+  caption: [`data/` -- Mỗi Thực Thể Một File],
+  label: "ma-data-tree",
+)
 
 `services/store.py` cung cấp đúng những gì `model/` cần:
 
-- `write_text`, `write_json`, `read_json`: đọc ghi UTF-8, ghi luôn nguyên tử (@ma-write-text).
-- `Index`: lớp bọc `data/index.json`. `upsert` trộn ba trường chỉ mục của một document vào bảng và giữ giá trị cũ cho trường document không mang (một dòng danh mục trần chưa có ngày); `search` tìm chuỗi con không phân biệt hoa thường, trả lời từ chỉ mục khi hỏi `name`/`id`, mở file thực thể khi hỏi trường khác; `rebuild` quét `data/<kind>/*.json` và dựng lại toàn bộ, đó là lệnh `reindex`.
+- `write_text()`, `write_json()`, `read_json()`: đọc ghi UTF-8, ghi luôn nguyên tử (@ma-write-text).
 
-#code-figure(
-  "/content/code/store_index_rebuild.py",
-  size: 0.85em,
-  caption: [`Index.upsert` và `Index.rebuild`: chỉ mục luôn dựng lại được từ file],
-  label: "ma-index-rebuild",
-)
+// #code-figure(
+//   "/content/code/store_index_rebuild.py",
+//   size: 0.8em,
+//   caption: [`Index.upsert` và `Index.rebuild`: chỉ mục luôn dựng lại được từ file],
+//   label: "ma-index-rebuild",
+// )
 
 `BaseEntity.load_json` chỉ là `self.__dict__.update(data)`: đối tượng Python và file JSON có cùng hình dạng (@ma-save-json), nên không cần tầng ORM hay schema riêng. Ở v2.0.0, TinyDB (`database.json`) chạy song song với các file JSON; bản này bỏ TinyDB vì hai nguồn sự thật phải được giữ đồng bộ mà không đem lại gì hơn một `index.json` dựng lại được trong một giây.
 
@@ -547,14 +543,14 @@ Cả hai runner đều chỉ `import` từ `model/` và `services/`; không có 
   "/content/code/cli_main.py",
   from: 1,
   to: 23,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`cli.main`: sub-parser `list` với hai nhóm loại trừ lẫn nhau],
   label: "ma-cli-main",
 )
 
 #code-figure(
   "/content/code/cli_cmd_reindex.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`cli.cmd_reindex`: một lệnh CLI là một hàm gọi vào `services`],
   label: "ma-cli-reindex",
 )
@@ -585,7 +581,7 @@ git -C csbmdvault diff --stat
 
 #code-figure(
   "/content/code/tui_driver.py",
-  size: 0.85em,
+  size: 0.8em,
   caption: [`CloudSkillsBoost.driver`: trình duyệt khởi tạo lười, dùng chung cho cả phiên],
   label: "ma-tui-driver",
 )
@@ -594,7 +590,7 @@ git -C csbmdvault diff --stat
   "/content/code/tui_main.py",
   from: 18,
   to: 30,
-  size: 0.85em,
+  size: 0.8em,
   caption: [`tui.main`: `try/finally` đảm bảo đóng trình duyệt khi thoát],
   label: "ma-tui-main",
 )
