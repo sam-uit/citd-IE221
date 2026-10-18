@@ -313,8 +313,8 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   "/content/code/course_parse_lesson_item.py",
   from: 1,
   to: 15,
-  size: 0.85em,
-  caption: [`Course._parse_lesson_item`: đệ quy trên cây item],
+  size: 0.8em,
+  caption: [`Course._parse_lesson_item()`: Lặp Đệ Quy Trên Cây _item_],
   label: "ma-parse-lesson-item",
 )
 
