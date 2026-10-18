@@ -94,6 +94,15 @@ Theo thứ tự nên làm, mỗi mục là một hoặc vài commit nhỏ trên 
 
 Tuy nhiên, sinh viên kỳ vọng một sự đóng góp từ bên ngoài hơn là tự thực hiện, vì cơ bản công cụ hiện đang phục vụ được nhu cần cá nhân nên thiếu động lực để phát triển tiếp.
 
+== Các Bài Học Từ Dự Án
+
+- Trên một hệ thống lớn, bản chất là sự hợp tác (collaboration) của các công cụ nhỏ qua các dịch vụ điều phối (orchestrator).
+- Chia nhỏ vấn đề đến mức có thể xử lý một cách rành mạch mà không cần giải thích quá nhiều.
+- "Đừng lặp lại", tái sử dụng các thành phần đã có.
+- Giữ sự đơn giản, để có thể luôn luôn thay thế khi cần.
+- Tạo sự hiệu quả, để không phải đầu tư (thời gian, công sức) vào việc thay thế.
+- Làm gì, hoặc không làm gì, đều cần được miêu tả rõ ràng.
+
 == Lời Kết
 <loi-ket>
 
