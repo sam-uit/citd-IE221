@@ -7,24 +7,24 @@ CSB,Cloud Skills Boost (tên cũ của Google Skills)
 CSV,Comma-Separated Values
 CTA,Cloud Technical Architect
 DOM,Document Object Model
-FR,Functional Requirement (yêu cầu chức năng)
+FR,Functional Requirement
 GCP,Google Cloud Platform
-GUI,Graphical User Interface (giao diện đồ hoạ)
+GUI,Graphical User Interface
 HTML,HyperText Markup Language
 JSON,JavaScript Object Notation
 KISS,"Keep It Simple, Stupid"
-LLM,Large Language Model (mô hình ngôn ngữ lớn)
-NFR,Non-Functional Requirement (yêu cầu phi chức năng)
+LLM,Large Language Model
+NFR,Non-Functional Requirement
 OKF,Open Knowledge Format (Google)
-OOP,Object-Oriented Programming (lập trình hướng đối tượng)
-PARA,"Projects, Areas, Resources, Archives (cách tổ chức kho ghi chú)"
+OOP,Object-Oriented Programming
+PARA,"Projects, Areas, Resources, Archives"
 PDF,Portable Document Format
 PEP,Python Enhancement Proposal
-PKB,Personal Knowledge Base (kho kiến thức cá nhân)
-SSOT,Single Source Of Truth (nguồn sự thật duy nhất)
-TOC,Table Of Contents (mục lục)
+PKB,Personal Knowledge Base
+SSOT,Single Source Of Truth
+TOC,Table Of Contents
 TOML,"Tom's Obvious, Minimal Language"
-TUI,Text User Interface (giao diện tương tác trong terminal)
+TUI,Text User Interface
 URL,Uniform Resource Locator
 UTF-8,Unicode Transformation Format 8-bit
 YAML,YAML Ain't Markup Language
