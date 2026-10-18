@@ -464,55 +464,47 @@ Không có cơ sở dữ liệu. Mỗi thực thể là một file JSON và file
 
 Lệnh `md` (và bước cuối của `fetch`) biến JSON thành note Markdown cho Obsidian, hoàn toàn offline. Mỗi note gồm frontmatter YAML và thân bài.
 
-Frontmatter do `BaseEntity.generate_front_matter` sinh, là tập mở rộng (superset) của OKF v0.2 @okf-spec: các khoá OKF (`type`, `title`, `description`, `resource`, `tags`, `sources`, `generated`), hai khoá riêng của công cụ (`id`, `portal`), và các tên cũ mà vault hiện có đang truy vấn (`url`, `date_published`, `topics`, `scraped_date`). Mọi giá trị vô hướng đi qua `yaml_scalar`, nên tên course có dấu nháy đơn không còn làm hỏng YAML như ở v2.0.0.
+Frontmatter do `BaseEntity.generate_front_matter()` sinh, là tập mở rộng (superset) của OKF v0.2 @okf-spec: các khoá OKF (`type`, `title`, `description`, `resource`, `tags`, `sources`, `generated`), hai khoá riêng của công cụ (`id`, `portal`), và các tên cũ mà vault hiện có đang truy vấn (`url`, `date_published`, `topics`, `scraped_date`).
+
+Kết quả thật cho course 892 từ `docs/samples/data/` trong repo:
+
+Tạo file bằng:
+
+```bash
+uv run skills-scraper md -c 892 --toc
+```
+
+Kết quả:
+
+#code-figure(
+  "/content/code/892.md",
+  from: 1,
+  to: 20,
+  size: 0.8em,
+  lang: "yaml",
+  caption: [`892.md` -- Frontmatter Từ JSON],
+  label: "ma-note-mau",
+)
 
 #code-figure(
   "/content/code/base_entity_front_matter.py",
   from: 21,
   to: 48,
   size: 0.75em,
-  caption: [`BaseEntity.generate_front_matter`: khoá OKF, khoá riêng và alias cũ],
-  label: "ma-front-matter",
+  caption: [`BaseEntity.generate_front_matter()` -- Tạo Frontmatter],
+  label: "code-front-matter",
 )
 
-Kết quả thật cho course 892, sinh bằng `uv run skills-scraper md -c 892 --toc` từ `docs/samples/data/` trong repo, không cần mạng:
+Quy ước cấu trúc nội dung file Markdown:
 
-#figure(
-```yaml
----
-id: "892"
-title: "Conversational AI on Vertex AI and Dialogflow CX"
-type: Course
-portal: public
-description: "In this course you will learn how to use the new generative AI features in Dialogflow CX ..."
-resource: https://www.skills.google/course_templates/892
-sources:
-  - resource: https://www.skills.google/course_templates/892
-    title: "Google Skills course 892"
-    author: Google Cloud
-    last_modified: 2023-11-21
-generated:
-  by: skills-scraper/2.0.1
-  at: 2026-10-16T14:16:02+00:00
-url: https://www.skills.google/course_templates/892
-date_published: 2023-11-21
-topics: []
-scraped_date: 2026-10-16
----
-
-# [Conversational AI on Vertex AI and Dialogflow CX](https://www.skills.google/course_templates/892)
-
-## Course Introduction
-
-### Video - [Course Introduction](https://www.skills.google/course_templates/892/video/425551)
-
-- [YouTube: Course Introduction](https://www.youtube.com/watch?v=JiLHQnBW92U)
-```,
-  kind: raw,
-  caption: [Note `courses/Conversational-AI-on-Vertex-AI-and-Dialogflow-CX.md`, rút gọn],
-) <ma-note-mau>
-
-Quy ước thân bài: tiêu đề cấp 1 là tên course có liên kết về trang gốc; mỗi module một tiêu đề cấp 2; mỗi activity một tiêu đề cấp 3 có loại và liên kết; video kèm liên kết YouTube và transcript (bỏ khi `--toc` hoặc `--no-transcript`); quiz là callout với từng câu hỏi; tài liệu PDF được tải vào `<vault>/materials/courses/<id>/` và liên kết tương đối từ note. Note của path liệt kê các course và lab của nó bằng liên kết tương đối `../courses/...`, `../labs/...`; chính các liên kết này tạo nên đồ thị ở @hinh-graph-view mà không ai thiết kế trước.
+- Tiêu đề cấp 1 là tên course có liên kết về trang gốc trên Google Cloud.
+- Mỗi module một tiêu đề cấp 2.
+- Mỗi activity một tiêu đề cấp 3 có loại và liên kết
+  - Video kèm liên kết YouTube và transcript (không sinh transcript khi gọi lệnh `md` với `--toc` hoặc `--no-transcript`)
+  - Quiz là callout với từng câu hỏi.
+  - Tài liệu PDF được tải vào `<vault>/materials/courses/<id>/` và liên kết tương đối từ MD.
+- MD của path liệt kê các course và lab của nó bằng liên kết tương đối `../courses/...`, `../labs/...`
+  - Chính các liên kết này tạo nên đồ thị ở @hinh-graph-view mà không cần thiết kế trước.
 
 == Hai Runner
 <hai-runner>
@@ -603,4 +595,4 @@ git -C csbmdvault diff --stat
 == Kết Chương
 <ket-chuong-3>
 
-Chương này chỉ ra trên mã thật của branch `refactor-ie221` các nội dung của môn học: gói và module với `uv` và `src/` (@ma-tree); hai cây kế thừa từ `Serialize` với `@property`, `super()` và ghi đè (@hinh-so-do-lop); kiểu dữ liệu lồng, dispatch bằng `dict`, đệ quy và vòng lặp có cầu chì; ngoại lệ được bắt ở đúng phạm vi cùng ghi file nguyên tử (@ma-write-text). Ba mảng còn lại, phiên đăng nhập đi qua một cửa duy nhất (@ma-get-page), lưu trữ bằng file JSON làm nguồn sự thật (@ma-data-tree) và kết xuất Markdown theo OKF (@ma-front-matter), tạo nên công cụ hoàn chỉnh mà hai runner (@tb-cli, @hinh-demo-tui) chỉ là hai lớp vỏ mỏng. Chương 4 trả lời câu hỏi: làm sao biết tất cả những điều trên vẫn đúng khi site đổi.
+Chương này chỉ ra trên mã thật của branch `refactor-ie221` các nội dung của môn học: gói và module với `uv` và `src/` (@ma-tree); hai cây kế thừa từ `Serialize` với `@property`, `super()` và ghi đè (@hinh-so-do-lop); kiểu dữ liệu lồng, dispatch bằng `dict`, đệ quy và vòng lặp có cầu chì; ngoại lệ được bắt ở đúng phạm vi cùng ghi file nguyên tử (@ma-write-text). Ba mảng còn lại, phiên đăng nhập đi qua một cửa duy nhất (@ma-get-page), lưu trữ bằng file JSON làm nguồn sự thật (@ma-data-tree) và kết xuất Markdown theo OKF (@code-front-matter), tạo nên công cụ hoàn chỉnh mà hai runner (@tb-cli, @hinh-demo-tui) chỉ là hai lớp vỏ mỏng. Chương 4 trả lời câu hỏi: làm sao biết tất cả những điều trên vẫn đúng khi site đổi.
