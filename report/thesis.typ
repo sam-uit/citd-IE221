@@ -65,6 +65,7 @@
 // Show appendix
 #show: appendix
 #include "content/90-appendixA.typ"
+#include "content/90-appendix-demo.typ"
 
 // Show bibliography
 #show: bibliography-page
