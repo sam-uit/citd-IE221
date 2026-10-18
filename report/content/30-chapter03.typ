@@ -318,14 +318,14 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   label: "ma-parse-lesson-item",
 )
 
-Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` với một "cầu chì" `MAX_PAGES`, dừng khi trang trả về rỗng hoặc vượt giới hạn; dùng khi lấy danh sách toàn bộ Path, Course, Lab có trên skills.google.
+Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` với một "điểm ngắt" `MAX_PAGES`, dừng khi trang trả về rỗng hoặc vượt giới hạn; dùng khi lấy danh sách toàn bộ Path, Course, Lab có trên skills.google.
 
 #code-figure(
   "/content/code/collection_fetch_catalog.py",
   from: 1,
   to: 5,
   size: 0.85em,
-  caption: [`Collection.fetch_catalog`: chữ ký và tham số mặc định],
+  caption: [`Collection.fetch_catalog()` -- Bắt Đầu],
   label: "ma-fetch-catalog-1",
 )
 
@@ -334,11 +334,11 @@ Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` v
   from: 44,
   to: 59,
   size: 0.85em,
-  caption: [`Collection.fetch_catalog`: vòng lặp phân trang có cầu chì],
+  caption: [`Collection.fetch_catalog()` -- Vòng Lặp Có Điểm Ngắt],
   label: "ma-fetch-catalog-2",
 )
 
-Về hàm: tham số có giá trị mặc định (`force=False`, `toc_only=False`), `**kwargs` chuyển tiếp từ `save_markdown` sang `generate_markdown`, hàm trả `bool` để người gọi quyết định đi tiếp hay dừng (`extract_course_metadata`, `ensure_authenticated`), và `@staticmethod` cho hàm không cần `self` (`Path.menu_activities`).
+// Về hàm: tham số có giá trị mặc định (`force=False`, `toc_only=False`), `**kwargs` chuyển tiếp từ `save_markdown()` sang `generate_markdown()`, hàm trả `bool` để người gọi quyết định đi tiếp hay dừng (`extract_course_metadata()`, `ensure_authenticated()`), và `@staticmethod` cho hàm không cần `self` (`Path.menu_activities()`).
 
 == Xử Lý Ngoại Lệ
 <xu-ly-ngoai-le>
