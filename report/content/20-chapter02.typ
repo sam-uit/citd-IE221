@@ -191,6 +191,6 @@ Tương tự, GUI không được triển khai vì đặc thù nhu cầu không 
 == Kết Chương
 <ket-chuong-2>
 
-Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ: năm nguyên tắc của một ứng dụng nhỏ, vai trò của con người khi website thay đổi, vị trí của vault trong khung CODE và sự trùng khớp với OKF (@tb-okf), kiến trúc gói phụ thuộc một chiều (@hinh-kien-truc), cùng những phần CÓ và KHÔNG triển khai với nguyên do tương ứng.
+// Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ: năm nguyên tắc của một ứng dụng nhỏ, vai trò của con người khi website thay đổi, vị trí của vault trong khung CODE và sự trùng khớp với OKF (@tb-okf), kiến trúc gói phụ thuộc một chiều (@hinh-kien-truc), cùng những phần CÓ và KHÔNG triển khai với nguyên do tương ứng.
 
-Đây là tiền đề cho Chương 3, nơi các nội dung cốt lõi của môn học được chỉ ra trên chính mã nguồn đã chọn theo các nguyên tắc đã được trình bày ở đây.
+Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ. Đây là tiền đề cho Chương 3, nơi các nội dung cốt lõi của môn học được chỉ ra trên chính mã nguồn đã chọn theo các nguyên tắc đã được trình bày ở đây.
