@@ -1,6 +1,7 @@
 #import "../lib.typ": *
 
 = DEMO
+<appendix-demo>
 
 Phần DEMO được tách thành Phụ Lục để tránh loãng nội dung chính và sẽ được trình bày theo một số ví dụ như dưới đây ở bản CLI. Bản TUI cơ bản là tương tự, chỉ khác là sử dụng menu chọn từ Terminal.
 
