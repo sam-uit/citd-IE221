@@ -51,9 +51,17 @@ Bộ test đồng thời còn là các *cảnh báo sớm*: khi nghi vấn hoặ
 
 NFR-01 là một yêu cầu phi chức năng, nhưng tập trung vào tính toàn vẹn/nhất quán của dữ liệu. Yêu cầu này cho biết nếu chạy lại cùng một lệnh $n$ lần không làm hỏng và không làm thừa (dữ liệu đã có). Ba cơ chế trong mã nguồn sau bảo đảm điều đó, mỗi cơ chế thực ra đều đã được chỉ ra ở Chương 3:
 
-- `fetch -c 892` lần hai: `extract_course_metadata` so `datePublished` trên trang với giá trị đã lưu, bằng nhau thì in `Course 892 already extracted. datePublished: 2023-11-21` và trả `False`, course dừng tại đó (@ma-extract-metadata); `--force` để ép thu thập lại. Hành vi này có test (`test_metadata_skips_when_date_published_unchanged`).
-- Lab đã có file JSON thì `process_lab` không tải lại (@ma-process-lab-1), vì một lab xuất hiện trong nhiều course và nhiều path.
-- Ctrl+C giữa chừng: mọi file đi qua `write_text` nguyên tử (@ma-write-text), nên trên đĩa hoặc là bản cũ nguyên vẹn hoặc là bản mới hoàn chỉnh, không bao giờ là nửa file; `test_write_json_leaves_no_temp_files` kiểm tra không còn `.tmp-*` sau khi ghi.
+- `fetch -c 892` lần hai:
+  - `extract_course_metadata` so `datePublished` trên trang với giá trị đã lưu, bằng nhau thì in `Course 892 already extracted. datePublished: 2023-11-21` và trả `False`, course dừng tại đó (@ma-extract-metadata);
+  - `--force` để ép thu thập lại và thay thế nội dung, không quan trọng là `datePublished` có cùng giá trị hay không.
+- Lab đã có file JSON thì `process_lab` không tải lại (@ma-process-lab-1):
+  - Vì một lab xuất hiện trong nhiều course và nhiều path.
+  - Giả sử lab 123 thuộc cả course ABC và XYZ, nếu đã được hoàn thành ở course ABC thì không ghi đè và khi duyệt tới course XYZ sẽ vẫn thấy là lab 123 đã được hoàn thành, làm lại lab hay không là quyền của người học, công cụ không nên và không được thay đổi bản chất tình huống.
+- Ctrl+C giữa chừng:
+  - Mọi file đi qua `write_text` nguyên tử (@ma-write-text).
+  - Vì vậy nên trên đĩa hoặc là bản cũ nguyên vẹn hoặc là bản mới hoàn chỉnh, không bao giờ là nửa file.
+  - Cơ chế kiểm tra không còn `.tmp-*` sau khi ghi, có nghĩa là việc hoàn thành ghi file không chỉ đơn giản hoàn thành ở đoạn _cuối_ (file JSON được tạo ra), mà đoạn _đầu_ (file `.tmp-*`) phải không còn tồn tại nữa.
+  - Hay nói cách khác: tại bất kỳ mọi thời điểm, luôn bảo đảm chỉ có một và một SSOT.
 
 Lệnh `md` thì thuần hàm: cùng JSON vào, cùng Markdown ra; chạy bao nhiêu lần cũng được và `git diff` trên vault rỗng nếu dữ liệu không đổi. Đây cũng là cách phát hiện site đã đổi gì: `fetch --force` rồi `git diff` vault.
 
