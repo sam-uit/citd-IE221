@@ -143,21 +143,24 @@ Nhưng để tự nhận diện và phân loại các thực thể, `BaseEntity`
 === Kế Thừa Và Đa Hình
 <ke-thua-va-da-hinh>
 
-Kế thừa và đa hình xuất hiện ở nhiều nơi trong mã, rõ nhất là cặp `generate_markdown` và `save_markdown`: phương thức thứ nhất có bản mặc định ở lớp cha và được ghi đè (override) ở Path, Course, Lab; phương thức thứ hai ở lớp cha gọi `self.generate_markdown(**kwargs)` mà không cần biết lớp con nào đang chạy (mẫu _template method_).
+Kế Thừa và Đa Hình xuất hiện ở nhiều nơi trong mã nguồn, ví dụ là cặp `generate_markdown` và `save_markdown`:
+
+- `generate_markdown`: có bản mặc định ở lớp cha và được ghi đè (override) ở Path, Course, Lab.
+- `save_markdown`: ở lớp cha gọi `self.generate_markdown(**kwargs)` mà không cần biết lớp con nào đang chạy (_template method_).
 
 #code-figure(
   "/content/code/base_entity_generate_markdown.py",
   from: 1,
   to: 10,
   size: 0.85em,
-  caption: [`BaseEntity.generate_markdown`: bản mặc định chỉ có frontmatter],
+  caption: [`BaseEntity.generate_markdown` -- Mặc Định Chỉ Có Frontmatter],
   label: "ma-base-generate-markdown",
 )
 
 #code-figure(
   "/content/code/base_entity_save_markdown.py",
   size: 0.85em,
-  caption: [`BaseEntity.save_markdown`: gọi `generate_markdown` của lớp con đang chạy],
+  caption: [`BaseEntity.save_markdown`: gọi `generate_markdown` Của Lớp Con],
   label: "ma-base-save-markdown",
 )
 
