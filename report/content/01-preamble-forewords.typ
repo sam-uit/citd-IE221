@@ -36,13 +36,3 @@ Mục tiêu đầu tiên của công cụ ban đầu hoàn toàn không có ý t
 Tuy nhiên, báo cáo này chỉ tập trung vào phần kỹ thuật của công cụ, các nội dung khác liên quan về cách tổ chức kho PKB sẽ không được đề cập ở đây hoặc chỉ được nhắc qua, ví dụ: backlink hoặc graph view trong Obsidian giúp trực quan hóa mối quan hệ giữa các khóa học/môn học; cách tổ chức kho theo mô hình PARA và cách khai thác, vv..
 
 Hi vọng với các nội dung dưới đây, sẽ đem đến một vài tham khảo có ý nghĩa cho các bạn sinh viên cùng lớp, cũng như biểu hiện được các nội dung kiến thức đã được Giảng Viên truyền đạt trong môn học IE221 tại UIT.
-
-= Tuyên Bố Miễn Trừ Trách Nhiệm
-
-#co-warn(title: [TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM])[
-Tất cả các nội dung của Google Skills đều là sở hữu của Google hoặc/và Google Skills. Không sao chép một phần hoặc tất cả nội dung cho mục đích khác ngoài mục đích ban đầu là phục vụ đào tạo các sản phẩm/dịch vụ của Google.
-
-Công cụ này chỉ cung cấp một cách làm việc với các nội dung trên cho mục tiêu học tập cá nhân, KHÔNG CHỊU TRÁCH NHIỆM cho bất kỳ mục đích nào khác, và mọi quyền hạn hoặc trách nhiệm liên quan đến các nội dung được tải, vui lòng tham khảo Quy Định Sử Dụng của và trực tiếp tại Google Skills.
-
-Đồng thời, Báo Cáo này không sao chép hoặc trình bày các nội dung của các khóa học/bài học, vv.. trên Google Skills mà chỉ tập trung vào khía cạnh kỹ thuật hoặc/và cấu trúc dữ liệu đằng sau.
-]
