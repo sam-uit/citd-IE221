@@ -42,7 +42,7 @@ Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng
 === Là Một Phần Của Hệ Thống
 <la-mot-phan-cua-he-thong>
 
-Ứng dụng giao tiếp bằng tệp văn bản và mã thoát, nên ghép được với `grep`, `jq`, `git`, `cron`, Obsidian và các plugin AI mà không cần API riêng. Đồ thị khoảng 3.600 note trong vault không được thiết kế trước: nó hình thành từ các liên kết tương đối mà mỗi note tự ghi ra.
+Ứng dụng giao tiếp bằng tệp văn bản thuần (plain text) và mã thoát (exit code), nên ghép được với `grep`, `jq`, `git`, `cron`, Obsidian và các plugin AI mà không cần API riêng. Đồ thị của khoảng 3000 note trong vault không được thiết kế trước: nó hình thành từ các liên kết tương đối mà mỗi note tự ghi ra.
 
 #co-info(title: [Emergence])[Nguyên Lý Đột Sinh (Emergence) -- một phần "ngốc nghếch" của một hệ thống _thông minh_.]
 
