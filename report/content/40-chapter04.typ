@@ -1,32 +1,36 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
 = KIỂM THỬ, VẬN HÀNH VÀ BẢO TRÌ
 <kiem-thu-van-hanh-va-bao-tri>
 
-Một scraper sống bằng cách bám theo một website không thuộc về mình, nên câu hỏi quan trọng hơn "có chạy không" là "làm sao biết nó còn chạy đúng, và khi không còn đúng thì biết ở đâu". Chương này trả lời bằng bốn mảng: bộ test offline trên các trang đã ghi lại, tính idempotent khi chạy lại, quy trình khi nền tảng thay đổi với các thay đổi thật từ v2.0.0 tới nay, và cấu hình ba lớp cho tính di động.
+Vốn chỉ là một công cụ (scraper) và chỉ làm đúng một việc, có nghĩa công cụ chỉ tồn tại bằng cách theo đuổi yếu tố bên ngoài: một website không thuộc về mình; nên câu hỏi quan trọng hơn cần được xử lý không phải là "có chạy được không", mà là "làm sao biết nó còn chạy đúng, và khi không còn đúng thì biết là sai ở đâu".
+
+// Trong Chương này, trả lời bằng bốn mảng: bộ test offline trên các trang đã ghi lại, tính idempotent khi chạy lại, quy trình khi nền tảng thay đổi với các thay đổi thật từ v2.0.0 tới nay, và cấu hình ba lớp cho tính di động.
 
 == Kiểm Thử Offline
 <kiem-thu-offline>
 
-Mọi test chạy không cần mạng và không cần Chrome. Nguồn vào là các trang đã ghi lại từ site trong `tests/fixtures/google_skills/`: trang course 72 (`course-72.html`), riêng thẻ `ql-contents-menu` của nó, cây `modules` đã phân tích (`course-72-modules.json`, có mang loại `badge` mà công cụ không có handler), và trang video 613054 trước và sau khi render. Test khẳng định trên *cấu trúc* (có `datePublished`, mỗi activity có `id`, `type`, `title`, `href`), không trên *giá trị* (tiêu đề course 72 đã đổi trong bảy tháng), nên fixture không phải ghi lại mỗi khi Google sửa chữ.
+Mọi test chạy không cần mạng và không cần trình duyệt. Nguồn vào là các trang đã ghi lại từ website trong `tests/fixtures/google_skills/`, thực ra là các trang được lưu thủ công, và chỉ giữ lại phần mã nguồn html, ví dụ: trang course 72 (`course-72.html`), thẻ `ql-contents-menu`, cây `modules` đã phân tích (`course-72-modules.json`, vv..).
+
+Test sẽ khẳng định dựa trên *cấu trúc* (schema) của dữ liệu mẫu tại thời điểm đó (có `datePublished`, mỗi activity có `id`, `type`, `title`, `href`), mà không phải là dựa trên *giá trị* (tiêu đề course, description, vv.. vì đây là các giá trị có thể thay đổi bất kỳ lúc nào), nên mẫu (fixture) không phải soi chiếu lại mỗi khi Google chỉ thay đổi các phần giá trị mà không thay đổi cấu trúc.
 
 #datatable-data((
   headers: ([Tệp], [Kiểm tra], [Số test]),
   rows: (
-    ([`test_course.py`], [Metadata từ `ld+json`; bỏ qua khi `datePublished` không đổi; đề cương từ `ql-contents-menu`; Markdown render được mọi loại activity kể cả loại lạ; danh sách dùng dấu gạch], [5]),
-    ([`test_frontmatter.py`], [Dấu nháy trong tiêu đề vẫn là YAML hợp lệ; đủ khoá OKF và alias cũ; mọi loại thực thể đều có `type`], [3]),
-    ([`test_path.py`], [`ql-contents-menu` phân biệt lab với course; không có menu thì lùi về `ld+json`; note path liên kết lab tới `labs/`], [3]),
-    ([`test_store.py`], [`write_json` không để lại file tạm; `upsert` giữ trường cũ; `search` theo tên rồi theo nội dung file; `rebuild` bỏ qua file prompt], [4]),
+    ([`test_course.py`], [- Metadata từ `ld+json`; bỏ qua khi `datePublished` không đổi; đề cương nội dung từ `ql-contents-menu`; Markdown render được mọi loại activity kể cả loại lạ; danh sách dùng dấu gạch], [5]),
+    ([`test_frontmatter.py`], [- Dấu nháy trong tiêu đề vẫn là YAML hợp lệ (trong YAML rất nhạy cảm với các dấu nháy đơn/kép) ; đủ khoá OKF và alias cũ; mọi loại thực thể đều có `type`.], [3]),
+    ([`test_path.py`], [- `ql-contents-menu` phân biệt lab với course; không có menu thì lùi về `ld+json`; note path liên kết lab tới `labs/`], [3]),
+    ([`test_store.py`], [- `write_json` không để lại file tạm; `upsert` giữ trường cũ; `search` theo tên rồi theo nội dung file; `rebuild` bỏ qua file prompt], [4]),
   ),
   options: (index: false, align: ("left", "left", "right"), columns: ("22%", "auto", "10%")),
-  caption: [Bộ test offline, 15 test trong 4 tệp],
+  caption: [Kiểm Thử -- Bộ Test Offline],
   label: "tb-tests",
 ))
 
-Kết quả chạy từ một bản clone sạch trên máy ảo Linux (aarch64), Python 3.12.14 do `uv` tải, ngày 16/10/2026:
+Ví dụ với Python 3.12.14 do `uv` tải:
 
 #figure(
-```
+```ini
 $ uv sync
 Using CPython 3.12.14
 Creating virtual environment at: .venv
@@ -37,10 +41,10 @@ $ uv run pytest -q
 15 passed in 0.20s
 ```,
   kind: raw,
-  caption: [`uv sync` và `uv run pytest` từ clone sạch: 15/15, không cần mạng],
+  caption: [`uv sync` và `uv run pytest`],
 ) <ma-pytest>
 
-Bộ test còn đóng vai trò *cảnh báo sớm*: khi Google đổi markup, bước đầu tiên của người bảo trì là ghi lại trang mới vào `tests/fixtures/`; test nào đỏ chỉ đúng chỗ cần sửa, trước khi chạy bất kỳ lệnh nào lên site thật.
+Bộ test đồng thời còn là các *cảnh báo sớm*: khi nghi vấn hoặc đã biết Google đổi markup, bước đầu tiên của người bảo trì là ghi lại trang mới vào `tests/fixtures/` (thực ra là save as và chọn lưu ở dạng html không kèm theo asset, hoặc đơn giản là mở Source và copy phần chứa các selector được đề cập ở trên); test nào báo lỗi thì đó là chỗ cần sửa, và từ đó thay đổi mã nguồn trước khi thực hiện lại trên website thật.
 
 == Chạy Lại Và Tính Idempotent
 <chay-lai-va-tinh-idempotent>
