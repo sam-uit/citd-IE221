@@ -213,31 +213,31 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
 ==== Đóng Gói
 
 - Thuộc tính "ẩn" và động: `_json_path`, `_md_path`, `_kind` là property bắt đầu bằng `_`, suy ra từ `type` và `id`.
-- `to_dict` lọc khoá bắt đầu bằng `_` và khoá `driver`, nên JSON ghi ra không chứa tài nguyên hay đường dẫn máy.
+- `to_dict()` lọc khoá bắt đầu bằng `_` và khoá `driver`, nên JSON ghi ra không chứa tài nguyên hay đường dẫn máy.
   - `driver` là tài nguyên (một cửa sổ Chrome), không phải thuộc tính của thực thể, không cần lưu giữ.
-- Các thuộc tính theo dõi như `scrapedTime` được thêm vào lúc ghi.
+- Các thuộc tính theo dõi như `scrapedTime` được thêm vào lúc ghi file JSON.
 
 #code-figure(
   "/content/code/base_entity_to_dict.py",
   from: 10,
   to: 17,
   size: 0.85em,
-  caption: [`BaseEntity.to_dict`: cái gì được lưu ra đĩa],
+  caption: [`BaseEntity.to_dict()` -- Lưu Gì Ra File JSON],
   label: "ma-base-to-dict",
 )
 
 ==== Kết Hợp (Composition)
 
-`Course.process_lab` là chỗ một course tạo ra một lab và lưu lab đó, đồng thời cập nhật tập hợp `Labs`:
+`Course.process_lab()` là chỗ một course tạo ra một lab và lưu lab đó, đồng thời cập nhật tập hợp `Labs`:
 
-- `lab.load_json()` nạp file JSON của lab nếu đã có; đã có nghĩa là đã tải, bỏ qua để giữ tính idempotent.
+- `lab.load_json()` nạp file JSON của lab nếu đã có; đã có nghĩa là đã tải, bỏ qua để giữ tính nguyên vẹn như thế (idempotent).
 
 #code-figure(
   "/content/code/course_process_lab.py",
   from: 32,
   to: 41,
   size: 0.85em,
-  caption: [`Course.process_lab`: tạo `Lab`, nạp JSON, bỏ qua nếu đã có],
+  caption: [`Course.process_lab()` -- Tạo `Lab`, Nạp JSON],
   label: "ma-process-lab-1",
 )
 
@@ -248,7 +248,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   from: 56,
   to: 58,
   size: 0.85em,
-  caption: [`Course.process_lab`: lưu lab vừa tải],
+  caption: [`Course.process_lab()` -- Lưu `Lab` Vừa Tải],
   label: "ma-process-lab-2",
 )
 
@@ -259,7 +259,7 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
   from: 60,
   to: 64,
   size: 0.85em,
-  caption: [`Course.process_lab`: cập nhật tập hợp `Labs`],
+  caption: [`Course.process_lab()` -- Cập Nhật Tập Hợp `Labs`],
   label: "ma-process-lab-3",
 )
 
