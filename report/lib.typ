@@ -66,7 +66,7 @@
   from: 1,
   to: none,
   lang: "python",
-  size: 0.85em,
+  size: 0.8em,
 ) = {
   let lines = read(path).split("\n")
   let stop = if to == none { lines.len() } else { calc.min(to, lines.len()) }
