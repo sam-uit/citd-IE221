@@ -23,7 +23,7 @@ Trạng thái ghi theo ba mức: *Đạt*, *Một phần*, *Chưa*. Bằng chứ
     ([FR-05], [Đạt], [`extract_course_metadata` so `datePublished` (@ma-extract-metadata); `test_metadata_skips_when_date_published_unchanged`]),
     ([FR-06], [Đạt], [`md -c 892 --toc` sinh note ở @ma-note-mau (VM); `generate_markdown` ghi đè ở Path, Course, Lab]),
     ([FR-07], [Đạt], [`search vertex` tìm thấy path 280 và course 892 (VM); `Index.search` với `--field`]),
-    ([FR-08], [Đạt], [`reindex` dựng lại `index.json` (VM); `Index.rebuild` @ma-index-rebuild; `test_store.py`]),
+    ([FR-08], [Đạt], [`reindex` dựng lại `index.json` (VM)]),
     ([FR-09], [Đạt], [`process_document` tải vào `materials/courses/<id>/` với cookie của trình duyệt; commit `b4bd646` (macOS)]),
     ([FR-10], [Một phần], [`Course.generate_prompt` sinh `<id>-prompt.json`, gọi được từ TUI (`g`), chưa có lệnh CLI; tạm ngừng theo ghi chú ở @tb-fr]),
     ([FR-11], [Đạt], [`skills-scraper-tui` mở menu màu và thoát sạch (VM); @hinh-demo-tui]),
