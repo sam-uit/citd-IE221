@@ -48,7 +48,7 @@ Hai mục "Một phần" đều có cùng một nguyên nhân: ở v2.0.0 chúng
   headers: ([Chương], [Nội dung], [Bằng chứng trong mã]),
   rows: (
     ([01 @ie221-l01], [Môi trường Python], [`pyproject.toml`, `.python-version`, `uv.lock`; @ma-pyproject-deps]),
-    ([02 @ie221-l02], [Kiểu dữ liệu], [`dict` lồng modules/steps/activities; f-string; `tuple` làm khoá sắp xếp; @ma-yaml-scalar, @ma-numeric-id]),
+    ([02 @ie221-l02], [Kiểu dữ liệu], [`dict` lồng modules/steps/activities; f-string; `tuple` làm khoá sắp xếp;]),
     ([03 @ie221-l03], [Rẽ nhánh], [dispatch bằng `dict` theo loại activity; bỏ qua theo `datePublished`; @ma-process-step-1]),
     ([04 @ie221-l04], [Vòng lặp], [phân trang `while` có cầu chì `MAX_PAGES`; ba tầng `for`; @ma-fetch-catalog-2]),
     ([05 @ie221-l05], [Hàm], [tham số mặc định, `**kwargs`, `lambda`, `@staticmethod`, đệ quy `_parse_lesson_item`; @ma-parse-lesson-item]),
