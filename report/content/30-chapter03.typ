@@ -80,11 +80,11 @@ Mã nguồn nằm trong một package `skills_scraper` dưới `src/`, cách b�
 === Hai Cây Kế Thừa
 <hai-cay-ke-thua>
 
-Hai nhánh kế thừa xuất phát từ cùng một điểm, `Serialize`, lớp biết biến một đối tượng thành dạng thân thiện với JSON.
+Hai nhánh kế thừa xuất phát từ cùng một điểm, `Serialize`, là lớp biết biến một đối tượng thành dạng thân thiện với JSON.
 
 #figure(
   class-diagram-report(highlight: ("base", "collection")),
-  caption: [Sơ đồ lớp của `model/`: hai nhánh kế thừa từ `Serialize`],
+  caption: [`model/` -- `Serialize` và Sơ Đồ Lớp ],
 ) <hinh-so-do-lop>
 
 Trong đó:
@@ -93,7 +93,7 @@ Trong đó:
   - `BaseEntity` biết id, tên, mô tả, đường dẫn file và cách ghi JSON, Markdown. Lớp con chỉ thêm dữ liệu riêng và cách render.
 - Phải: *danh sách của $x$*, ở đây là tập hợp của Path, Course, Lab.
   - `Collection` là `{id: name}` cộng `fetch_catalog` (kéo danh sách của một loại).
-  - Lớp con chỉ khai `API_URL`.
+  - Lớp con chỉ khai `API_URL` (danh sách các Path/Course/Lab có các URL khác nhau).
 - *Kết hợp*:
   - #text(fill: gray)[`Portal` cho biết các `Path` khả dụng (không triển khai ở bản IE221).]
   - `Path` cho biết danh sách các khoá học (`Course`).
@@ -108,7 +108,7 @@ Trong đó:
 #code-figure(
   "/content/code/serialize.py",
   size: 0.85em,
-  caption: [`model/serialize.py`: gốc của cả hai cây kế thừa],
+  caption: [`model/serialize.py`: Gốc Của Cây Kế Thừa],
   label: "ma-serialize",
 )
 
