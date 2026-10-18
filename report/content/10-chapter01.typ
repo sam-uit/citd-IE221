@@ -100,11 +100,25 @@ Mục tiêu thứ hai, về mặt học thuật:
 
 === Bao Gồm
 
-- Public portal;
-- Ba loại thực thể chính: Path, Course, Lab;
-- Activity: transcript video, quiz, lab, link, tài liệu PDF, html_bundle;
-- Kết xuất JSON và Markdown;
-- Hai runner terminal: CLI, TUI (Terminal User Interface).
+// - Public portal;
+// - Ba loại thực thể chính: Path, Course, Lab;
+// - Activity: transcript video, quiz, lab, link, tài liệu PDF, html_bundle;
+// - Kết xuất JSON và Markdown;
+// - Hai runner terminal: CLI, TUI (Terminal User Interface).
+
+#grid(
+  columns: (30%, 70%),
+  row-gutter: 0.5em,
+  inset: (bottom: 0.5em),
+  stroke: (bottom: 0.5pt + orange.lighten(60%)),
+  grid.header([*Thành Phần*], [*Nội Dung*]),
+  [- Portal], [Public],
+  [- Entity], [Path, Course, Lab],
+  [- Activity], [video transcript, quiz, lab, link, pdf, html_bundle],
+  [- Output], [JSON, Markdown],
+  [- Runner], [CLI, TUI]
+)
+
 
 === Không Bao Gồm
 
