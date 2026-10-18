@@ -107,28 +107,28 @@ Obsidian -- Graph View Của Vault: mỗi nút là một thực thể, mỗi c�
 
 OKF v0.2 @okf-spec chỉ bắt buộc mọi tệp `.md` có frontmatter YAML đọc được với khoá `type` không được rỗng. Vault đã thoả điều này từ 2025 vì `type` được suy ra từ tên lớp. Việc trùng khớp không phải ngẫu nhiên: cả hai cùng xuất phát từ ràng buộc "một khái niệm là một tệp, siêu dữ liệu (metadata) ở đầu, thân bài cho người đọc".
 
-#co-info(title: [Fun Fact])[
-  Thực ra cách trình bày file Markdown này là kế thừa từ thời sử dụng #link("https://jekyllrb.com/")[Jekyll].
+#co-succ(title: [Fun Fact])[
+  Thực ra cách trình bày file Markdown này không mới, là kế thừa từ thời sử dụng #link("https://jekyllrb.com/")[Jekyll].
 ]
 
 #datatable-data((
-  headers: ([Vault v2.0.0], [OKF v0.2], [Trạng thái]),
+  headers: ([OKF v0.2], [Vault v2.0.0], [Trạng thái]),
   rows: (
-    ([`type`], [`type` (bắt buộc)], [đã có]),
+    ([`type` (bắt buộc)], [`type`], [đã có]),
     ([`title`], [`title`], [đã có]),
-    ([`url`], [`resource`], [khác tên, giữ làm alias]),
-    ([`topics`], [`tags`], [khác tên, giữ làm alias]),
-    ([mô tả trong thân bài], [`description`], [bổ sung]),
-    ([`scraped_date`], [`generated {by, at}`], [bổ sung]),
-    ([`date_published`], [`sources[].last_modified`], [bổ sung]),
-    ([không có], [`index.md`, `log.md`], [hướng phát triển]),
+    ([`resource`], [`url`], [khác tên, giữ làm alias]),
+    ([`tags`], [`topics`], [khác tên, giữ làm alias]),
+    ([`description`], [mô tả trong thân bài], [bổ sung]),
+    ([`generated {by, at}`], [`scraped_date`], [bổ sung]),
+    ([`sources[].last_modified`], [`date_published`], [bổ sung]),
+    ([`index.md`, `log.md`], [không có], [hướng phát triển]),
   ),
   options: (index: false, align: ("left", "left", "left")),
-  caption: [Đối chiếu khoá frontmatter của vault với OKF v0.2],
+  caption: [OKF v0.2 -- Đối Chiếu Các Yêu Cầu],
   label: "tb-okf",
 ))
 
-Frontmatter của một note ở v2.0.0, trước khi đối chiếu; bản sau khi mở rộng được trình bày ở @ket-xuat-markdown:
+Frontmatter của một thực thể ở v2.0.0, trước khi đối chiếu; bản sau khi mở rộng được trình bày ở @ket-xuat-markdown:
 
 #figure(
 ```yaml
@@ -153,19 +153,19 @@ src/skills_scraper/
   config.py     cấu hình, URL, selector
   cli.py        runner dòng lệnh
   tui.py        runner tương tác
-  model/        lõi: Serialize, BaseEntity, Collection và các lớp con
+  model/        LÕI: Serialize, BaseEntity, Collection và các lớp con
   services/     browser.py (phiên đăng nhập), store.py (lưu trữ)
   utils/        xử lý văn bản, ghi tệp nguyên tử
 ```
 
-Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `services/` và `utils/`. Toàn bộ kiến thức về skills.google nằm trong `config.py` và các phương thức phân tích trang; mô hình, lưu trữ, kết xuất và giao diện không biết Google.
+Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `services/` và `utils/`; `services` làm việc với file và trình duyệt; `utils` thực hiện một số tác vụ rất nhỏ.
 
 #figure(
   arch-min(highlight: ("model",)),
-  caption: [Phụ thuộc một chiều: runner gọi `model`, `model` gọi `services`, `services` làm việc với file và trình duyệt],
+  caption: [Kiến Trúc Gói],
 ) <hinh-kien-truc>
 
-== Hai Quyết Định Không Dùng
+== Hai Quyết Định về Thành Phần
 <hai-quyet-dinh-khong-dung>
 
 === Không Cơ Sở Dữ Liệu (Chương 10 - IE221)
