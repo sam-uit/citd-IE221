@@ -450,14 +450,14 @@ Không có cơ sở dữ liệu. Mỗi thực thể là một file JSON và file
 
 - `write_text()`, `write_json()`, `read_json()`: đọc ghi UTF-8, ghi luôn nguyên tử (@ma-write-text).
 
-// #code-figure(
-//   "/content/code/store_index_rebuild.py",
-//   size: 0.8em,
-//   caption: [`Index.upsert` và `Index.rebuild`: chỉ mục luôn dựng lại được từ file],
-//   label: "ma-index-rebuild",
-// )
+#code-figure(
+  "/content/code/store_write_text.py",
+  size: 0.8em,
+  caption: [`store.write_text()` -- Lưu File],
+  label: "code-storage-write-text",
+)
 
-`BaseEntity.load_json` chỉ là `self.__dict__.update(data)`: đối tượng Python và file JSON có cùng hình dạng (@ma-save-json), nên không cần tầng ORM hay schema riêng. Ở v2.0.0, TinyDB (`database.json`) chạy song song với các file JSON; bản này bỏ TinyDB vì hai nguồn sự thật phải được giữ đồng bộ mà không đem lại gì hơn một `index.json` dựng lại được trong một giây.
+// `BaseEntity.load_json` chỉ là `self.__dict__.update(data)`: đối tượng Python và file JSON có cùng hình dạng (@ma-save-json), nên không cần tầng ORM hay schema riêng. Ở v2.0.0, TinyDB (`database.json`) chạy song song với các file JSON; bản này bỏ TinyDB vì hai nguồn sự thật phải được giữ đồng bộ mà không đem lại gì hơn một `index.json` dựng lại được trong một giây.
 
 == Kết Xuất Markdown
 <ket-xuat-markdown>
