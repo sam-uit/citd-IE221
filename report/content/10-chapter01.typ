@@ -88,8 +88,12 @@ Mục tiêu đầu tiên, công cụ thực tiễn:
 - Thu thập Path, Course, Lab từ skills.google vào kho JSON (file-based database).
 - Sinh ra một vault Markdown dùng được ngay trong Obsidian
 - Cung cấp hai giao diện terminal (CLI cho tự động hoá, TUI cho tương tác).
+- Hoàn toàn có thể mở rộng sang các nền tảng khác.
 
-Mục tiêu thứ hai, về mặt học thuật, là dùng chính ứng dụng này làm chứng cứ cho các kiến thức của môn học: *module* và *package*, *lớp* và *đối tượng*, *kế thừa*, xử lý ngoại lệ, vv...
+Mục tiêu thứ hai, về mặt học thuật:
+
+- Là dùng chính ứng dụng này làm chứng cứ cho các kiến thức của môn học IE221: *module* và *package*, *lớp* và *đối tượng*, *kế thừa*, xử lý ngoại lệ, vv... trong Python.
+- Như một tiền đề để phát triển các chức năng hay ứng dụng như _một phần của hệ thống_ vốn thường gặp trong thực tế khi các công cụ thường là một phần của một hệ sinh thái lớn với nhiều công cụ riêng lẻ.
 
 == Phạm Vi Ứng Dụng
 <pham-vi>
