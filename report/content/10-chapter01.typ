@@ -98,13 +98,11 @@ Mục tiêu thứ hai, về mặt học thuật:
 == Phạm Vi Ứng Dụng
 <pham-vi>
 
+Các phạm vi chức năng sẽ được/không được triển khai, tương ứng như sau đây.
+
 === Bao Gồm
 
-// - Public portal;
-// - Ba loại thực thể chính: Path, Course, Lab;
-// - Activity: transcript video, quiz, lab, link, tài liệu PDF, html_bundle;
-// - Kết xuất JSON và Markdown;
-// - Hai runner terminal: CLI, TUI (Terminal User Interface).
+Đây là các chức năng được triển khai trực tiếp, và đã sẵn sàng.
 
 #grid(
   columns: (30%, 70%),
@@ -121,6 +119,8 @@ Mục tiêu thứ hai, về mặt học thuật:
 
 === Không Bao Gồm
 
+Đây là các chức năng không được triển khai, hoặc đã loại bỏ, hoặc chưa từng được đề cập trong quá trình xây dựng.
+
 #grid(
   columns: (30%, 70%),
   row-gutter: 0.5em,
@@ -128,7 +128,7 @@ Mục tiêu thứ hai, về mặt học thuật:
   stroke: (bottom: 0.5pt + orange.lighten(60%)),
   grid.header([*Thành Phần*], [*Nội Dung*]),
   [- Portal], [Partner (sinh viên không còn quyền truy cập)],
-  [- Automation], [Chạy (hoàn thành) Lab (đây là phần thực hành trực tiếp)],
+  [- Automation], [Chạy (hoàn thành) Lab (phần thực hành của người học)],
   [- Account], [Quản lý tài khoản, mua khoá học],
   [- GUI], [Không (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<hai-quyet-dinh-khong-dung>, form: "page"))],
   [- Database], [Không (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<hai-quyet-dinh-khong-dung>, form: "page"))]
@@ -136,7 +136,6 @@ Mục tiêu thứ hai, về mặt học thuật:
 
 == Yêu Cầu
 <yeu-cau>
-
 
 === Yêu Cầu Chức Năng
 <yeu-cau-chuc-nang>
