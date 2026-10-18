@@ -18,6 +18,7 @@
 //
 // Bỏ `summary` vì nó vẫn đang rỗng; cần thì thêm một khóa `summary:` ở đây.
 #let preamble = (
+  summary: include "content/00-preamble-summary.typ",
   forewords: include "content/01-preamble-forewords.typ",
   acknowledgement: include "content/02-preamble-acknowledgement.typ",
   comment: include "content/03-preamble-comment.typ",
