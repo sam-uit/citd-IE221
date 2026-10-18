@@ -50,8 +50,8 @@ Dự án đã tự chứng minh: dòng chính của repo thay lõi Python bằng
 <tuong-minh>
 
 - Cấu hình nằm trong biến môi trường và tệp `config.yaml` văn bản thuần, có tệp mẫu trong repo.
-- Mỗi note Markdown tự khai nó được sinh bởi phiên bản nào, từ trang nào, trang đó sửa lần cuối khi nào đều được nêu rõ tường minh.
-- Khi bỏ qua một `course` vì course đó không đổi, ứng dụng nêu rõ ra là đã bỏ qua và vì lý do gì.
+- Mỗi note Markdown tự khai nó được sinh bởi phiên bản nào, từ trang nào, trang đó sửa lần cuối khi nào đều được nêu rõ, ví dụ bằng YAML frontmatter.
+- Khi bỏ qua một `course` vì course đó không đổi, ứng dụng nêu rõ ra là đã bỏ qua (course nào) và vì lý do gì.
 
 === Thêm Hay Không Thêm
 <them-hay-khong-them>
