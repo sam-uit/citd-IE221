@@ -69,28 +69,28 @@ Lệnh `md` thì thuần hàm sinh file, không thay đổi (và quan tâm) dữ
 - Chạy bao nhiêu lần cũng được và `git diff` trên vault trả về rỗng nếu dữ liệu không đổi.
 - Đây cũng là một cách phát hiện site đã đổi gì: `fetch --force` rồi `git diff` vault (nếu không `git diff` trong data/json).
 
-== Khi Nền Tảng Thay Đổi
+== Khi Nền Tảng Thay Đổi Và Hành Vi
 <khi-nen-tang-thay-doi>
 
 Quy trình xử lý thay đổi của site gồm ba bước, như đã nêu ở @con-nguoi-trong-vong-lap: ứng dụng phát hiện và báo (log, test thất bại, dừng rõ ràng); con người đánh giá giá trị và chi phí; thay đổi được thực hiện thành một commit có nguồn và lý do (justification): không tùy tiện, phải chỉ rõ thay đổi đó là gì, tại sao, giá trị mang lại là gì, và thời điểm nào, vv...
 
-Bảng dưới là các thay đổi thật của skills.google từ v2.0.0 (02/2026) tới nay, cách dòng chính (Go) đã xử lý, và commit tương ứng trên `refactor-ie221` đưa cách xử lý đó về lại Python.
+Bảng dưới là các thay đổi thật của skills.google từ v2.0.0 (02/2026) tới nay, cách dòng chính đã xử lý, và commit tương ứng trên `refactor-ie221`.
 
 #datatable-data((
-  headers: ([Thay đổi của site], [Triệu chứng ở v2.0.0], [Cách xử lý], [Dòng chính], [`refactor-ie221`]),
+  headers: ([Thay Đổi], [Triệu Chứng], [Cách Xử Lý], [`master`], [`ie221`]),
   rows: (
-    ([Trang course bắt buộc đăng nhập (07/2026)], [`requests.get` nhận trang sign-in, hoặc dừng chờ ở sáu chỗ], [mọi trang qua trình duyệt, `ensure_authenticated` một chỗ], [`7637ba2`], [`9cc37c4`]),
-    ([API danh mục trả 403 cho request trần], [`list -r` rỗng], [đọc JSON trong `<pre>` qua trình duyệt, một `fetch_catalog` cho ba lớp], [`61f2cbf`], [`ae21659`]),
-    ([Loại activity mới: `html_bundle`, `badge`, `credential`], [bị bỏ qua lặng lẽ], [dispatch bằng `dict`, loại lạ giữ nguyên và log], [`31390c6`], [`9cfcd03`]),
-    ([`ld+json.hasPart` gắn nhãn lab thành Course], [path trỏ sai course], [`ql-contents-menu` là nguồn sự thật, `ld+json` chỉ bổ sung], [`0b3c374`], [`1167943`]),
-    ([Tên course có dấu nháy đơn], [frontmatter YAML hỏng, Obsidian báo lỗi], [`json.dumps` cho giá trị vô hướng, `title` thay `name`], [`1aa2f3e`], [`23d5a63`]),
+    ([Trang course bắt buộc đăng nhập], [`requests.get` nhận trang sign-in, hoặc dừng chờ], [mọi trang qua trình duyệt, đảm bảo sign in], [`7637ba2`], [`9cc37c4`]),
+    ([API danh mục trả 403 cho request], [`list -r` rỗng], [đọc JSON trong `<pre>` qua trình duyệt, một `fetch_catalog` cho ba lớp], [`61f2cbf`], [`ae21659`]),
+    ([Loại activity mới: `html_bundle`, `badge`, `credential`], [bị bỏ qua trong im lặng], [chuyển hướng bằng `dict`, loại lạ giữ nguyên và log], [`31390c6`], [`9cfcd03`]),
+    ([`ld+json.hasPart` gắn nhãn Lab thành Course], [Path trỏ sai Course], [`ql-contents-menu` mới là nguồn sự thật, `ld+json` chỉ bổ sung], [`0b3c374`], [`1167943`]),
+    ([Tên Course có dấu nháy đơn], [frontmatter YAML hỏng, Obsidian báo lỗi], [`json.dumps` cho giá trị vô hướng, `title` thay `name`], [`1aa2f3e`], [`23d5a63`]),
   ),
-  options: (index: false, align: ("left", "left", "left", "left", "left"), columns: ("22%", "22%", "28%", "14%", "14%")),
-  caption: [Site đổi, mã đổi theo: năm thay đổi thật và commit xử lý],
+  options: (index: false, align: ("left", "left", "left", "left", "left"), columns: ("25%", "25%", "30%", "10%", "10%")),
+  caption: [Khi Nền Tảng Thay Đổi Và Hành Vi],
   label: "tb-site-changes",
 ))
 
-Mỗi dòng của bảng là một lần con người quyết định "đáng để theo"; không có dòng nào do công cụ tự sửa. Những gì chưa theo (ví dụ partner portal, phần Lab chạy thật) cũng là quyết định có lý do và được ghi ở @han-che.
+Mỗi dòng của bảng là một lần con người quyết định "thay đổi này xứng đáng để được xử lý"; không có dòng nào do công cụ tự sửa (phán đoán và hành động). Những gì chưa được triển khai (ví dụ duyệt partner portal, tự động phần Lab) cũng là quyết định có lý do và được trình bày ở @han-che.
 
 == Cấu Hình Và Tính Di Động
 <cau-hinh-va-tinh-di-dong>
