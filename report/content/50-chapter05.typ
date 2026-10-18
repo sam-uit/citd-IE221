@@ -44,22 +44,24 @@ Hai mục "Một phần" đều có cùng một nguyên nhân: ở v2.0.0 chúng
 === Đối Chiếu Với Chương Bài Giảng
 <doi-chieu-voi-chuong-bai-giang>
 
+Tương tự, các kiến thức của môn học được phản ánh trong mã nguồn như các ví dụ dưới đây. Đồng thời, phần nào được bỏ qua sẽ có ghi chú _tường minh_ tương ứng.
+
 #datatable-data((
   headers: ([Chương], [Nội dung], [Bằng chứng trong mã]),
   rows: (
-    ([01 @ie221-l01], [Môi trường Python], [`pyproject.toml`, `.python-version`, `uv.lock`; @ma-pyproject-deps]),
-    ([02 @ie221-l02], [Kiểu dữ liệu], [`dict` lồng modules/steps/activities; f-string; `tuple` làm khoá sắp xếp;]),
-    ([03 @ie221-l03], [Rẽ nhánh], [dispatch bằng `dict` theo loại activity; bỏ qua theo `datePublished`; @ma-process-step-1]),
-    ([04 @ie221-l04], [Vòng lặp], [phân trang `while` có cầu chì `MAX_PAGES`; ba tầng `for`; @ma-fetch-catalog-2]),
-    ([05 @ie221-l05], [Hàm], [tham số mặc định, `**kwargs`, `lambda`, `@staticmethod`, đệ quy `_parse_lesson_item`; @ma-parse-lesson-item]),
-    ([06 @ie221-l06], [Module, package], [`src/skills_scraper/` với ba sub-package, `__init__.py`, hai entry point; @ma-tree]),
-    ([07 @ie221-l07], [Ngoại lệ], [bắt theo activity, `try/except/raise` khi ghi nguyên tử, `KeyboardInterrupt`; @ma-write-text]),
-    ([08 @ie221-l08], [Hướng đối tượng], [`Serialize`, `BaseEntity`, `Collection`, `@property`, `super()`, ghi đè, composition; @hinh-so-do-lop]),
+    ([01 @ie221-l01], [Môi trường Python], [`pyproject.toml`, `.python-version`, `uv.lock` (@ma-pyproject-deps)]),
+    ([02 @ie221-l02], [Kiểu dữ liệu], [`dict` lồng modules/steps/activities; f-string; `tuple` làm khoá sắp xếp]),
+    ([03 @ie221-l03], [Rẽ nhánh], [chuyển hướng bằng `dict` theo loại activity; bỏ qua theo `datePublished` (@ma-process-step-1)]),
+    ([04 @ie221-l04], [Vòng lặp], [phân trang `while` có điểm ngắt `MAX_PAGES` (@ma-fetch-catalog-2)]),
+    ([05 @ie221-l05], [Hàm], [tham số mặc định, `**kwargs`, đệ quy `_parse_lesson_item` (@ma-parse-lesson-item)]),
+    ([06 @ie221-l06], [Module, package], [`src/skills_scraper/` với ba sub-package, `__init__.py` @ma-tree]),
+    ([07 @ie221-l07], [Ngoại lệ], [bắt ngoại lệ theo activity, `try/except/raise` khi ghi nguyên tử, `KeyboardInterrupt` (@ma-write-text)]),
+    ([08 @ie221-l08], [Hướng đối tượng], [`Serialize`, `BaseEntity`, `Collection`, `@property`, `super()`, ghi đè, composition (@hinh-so-do-lop)]),
     ([09 @ie221-l09], [Giao diện đồ hoạ], [không dùng, có lý do ở @hai-quyet-dinh-khong-dung; TUI thay thế]),
     ([10 @ie221-l10], [Cơ sở dữ liệu], [không dùng, có lý do ở @hai-quyet-dinh-khong-dung; file JSON và `index.json` dựng lại được]),
   ),
-  options: (index: false, align: ("left", "left", "left"), columns: ("16%", "24%", "auto")),
-  caption: [Mười chương của IE221 và nơi chúng xuất hiện trong mã],
+  options: (index: false, align: ("left", "left", "left"), columns: ("10%", "22%", "auto")),
+  caption: [Đối Chiếu Với Kiến Thức Môn Học],
   label: "tb-lecture-map",
 ))
 
