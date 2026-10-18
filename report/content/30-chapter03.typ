@@ -59,10 +59,10 @@
 == Package Và Module
 <package-va-module>
 
-Mã nằm trong một package `skills_scraper` dưới `src/`, cách bố trí được Python Packaging User Guide khuyến nghị để mã chỉ chạy được khi đã cài, không chạy nhầm từ thư mục làm việc. Package có ba sub-package và ba module ở gốc:
+Mã nguồn nằm trong một package `skills_scraper` dưới `src/`, cách bố trí được Python Packaging User Guide khuyến nghị để mã chỉ chạy được khi đã cài, không chạy nhầm từ thư mục làm việc. Package có ba sub-package và ba module ở gốc:
 
-- `model`: cốt lõi, các lớp thực thể và tập hợp; là nơi biểu hiện rõ nhất nội dung môn học.
-- `services`: hai dịch vụ mà `model` cần: `browser.py` chạy trình duyệt, `store.py` ghi và đọc file.
+- `model`: cốt lõi, các lớp thực thể và tập hợp (Collection); là nơi biểu hiện rõ nhất của nội dung môn học.
+- `services`: hai dịch vụ mà `model` cần, `browser.py` chạy trình duyệt; `store.py` ghi và đọc file.
 - `utils`: tiện ích văn bản, ví dụ lọc ký tự không hợp lệ cho tên file và bỏ thẻ HTML.
 - `config.py`, `cli.py`, `tui.py`: cấu hình và hai runner.
 
@@ -70,7 +70,7 @@ Mã nằm trong một package `skills_scraper` dưới `src/`, cách bố trí �
   "/content/code/tree.yaml",
   lang: "yaml",
   size: 1em,
-  caption: [Cây package `src/skills_scraper/`],
+  caption: [Cây Package `src/skills_scraper/`],
   label: "ma-tree",
 )
 
