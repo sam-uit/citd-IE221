@@ -1,7 +1,6 @@
 def write_text(path, text: str) -> None:
     """
-    Write UTF-8 text atomically: tmp file in the same folder, fsync, then
-    os.replace(). A Ctrl+C can never leave half a file behind.
+    Write UTF-8 text atomically.
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
