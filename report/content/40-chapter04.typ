@@ -72,7 +72,9 @@ Lệnh `md` thì thuần hàm sinh file, không thay đổi (và quan tâm) dữ
 == Khi Nền Tảng Thay Đổi
 <khi-nen-tang-thay-doi>
 
-Quy trình xử lý thay đổi của site gồm ba bước, như đã nêu ở @con-nguoi-trong-vong-lap: ứng dụng phát hiện và báo (log, test thất bại, dừng rõ ràng); con người đánh giá giá trị và chi phí; thay đổi được thực hiện thành một commit có nguồn và lý do. Bảng dưới là các thay đổi thật của skills.google từ v2.0.0 (02/2026) tới nay, cách dòng chính (Go) đã xử lý, và commit tương ứng trên `refactor-ie221` đưa cách xử lý đó về lại Python.
+Quy trình xử lý thay đổi của site gồm ba bước, như đã nêu ở @con-nguoi-trong-vong-lap: ứng dụng phát hiện và báo (log, test thất bại, dừng rõ ràng); con người đánh giá giá trị và chi phí; thay đổi được thực hiện thành một commit có nguồn và lý do (justification): không tùy tiện, phải chỉ rõ thay đổi đó là gì, tại sao, giá trị mang lại là gì, và thời điểm nào, vv...
+
+Bảng dưới là các thay đổi thật của skills.google từ v2.0.0 (02/2026) tới nay, cách dòng chính (Go) đã xử lý, và commit tương ứng trên `refactor-ie221` đưa cách xử lý đó về lại Python.
 
 #datatable-data((
   headers: ([Thay đổi của site], [Triệu chứng ở v2.0.0], [Cách xử lý], [Dòng chính], [`refactor-ie221`]),
