@@ -3,18 +3,17 @@
 = MÔ TẢ BÀI TOÁN
 <mo-ta-bai-toan>
 
-Chương này đặt bài toán: Google Skills là gì và đã thay đổi thế nào trong hai năm gần đây, nội dung trên đó được phân cấp ra sao, người học thiếu gì khi chỉ có một trang web, và từ đó công cụ cần làm gì (yêu cầu chức năng) và phải có tính chất gì (yêu cầu phi chức năng). Phạm vi được khoanh rõ ngay từ đầu, bao gồm cả những thứ cố ý không làm, để các chương sau không phải giải thích lại.
+Trong chương này, sinh viên thực hiện sẽ trình bày ngữ cảnh, bài toán cần giải quyết, và các câu hỏi đặt vấn đề cho một công cụ. Từ đó, khoanh vùng phạm vi các mục tiêu cần thực hiện cũng như các nội dung được và không được đề cập trong báo cáo này.
 
 == Bối Cảnh
 <boi-canh>
 
-
-=== Google Skills và những thay đổi gần đây
+=== Giới Thiệu Google Skills
 <google-skills-va-nhung-thay-doi-gan-day>
 
 Như đã đề cập, Google Skills (skills.google), trước đây là Google Cloud Skills Boost, là nền tảng đào tạo chính thức của Google Cloud, gồm hàng trăm lộ trình học (path), hàng nghìn khoá học (course) và bài thực hành (lab).
 
-Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã có những thay đổi trong cả định hướng hoạt động và trong bộ nội dung được triển khai, và từ đó ảnh hưởng trực tiếp tới cách thu thập nội dung, ví dụ: từ một nền tảng mở, Google Skills bây giờ đã yêu cầu phải có tài khoản đăng nhập để có thể xem nội dung môn học, từ đó một hệ quả kỹ thuật phát sinh: thư viện `requests` không còn đủ, việc thu thập phải đi qua một phiên trình duyệt đã đăng nhập (Selenium), vì vậy công cụ sẽ cần thực hiện thêm việc quản lý phiên thay vì chỉ kéo nội dung như trước.
+Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã có những thay đổi trong cả định hướng hoạt động và trong bộ nội dung được triển khai, và từ đó ảnh hưởng trực tiếp tới cách thu thập nội dung, ví dụ: từ một nền tảng mở, Google Skills bây giờ đã yêu cầu phải có tài khoản đăng nhập để có thể xem nội dung môn học, từ đó một hệ quả kỹ thuật phát sinh: thư viện `requests` không còn đủ, việc thu thập phải đi qua một phiên trình duyệt đã đăng nhập (Selenium), vì vậy công cụ đã thay đổi hành vi đáng kể so với ngày đầu tiên được tạo dựng.
 
 === Phân Cấp Dữ Liệu
 <phan-cap-du-lieu>
