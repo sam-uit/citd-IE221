@@ -1,5 +1,35 @@
 #import "../lib.typ": *
 
+= Công Cụ Sử Dụng
+<cong-cu-su-dung>
+
+== Mã Nguồn
+
+- Python 3.12
+- uv
+- Selenium 4
+- Beautiful Soup 4
+- requests
+- PyYAML
+- pytest
+- ruff (language server trong ZED Editor)
+- Chrome
+- Obsidian.
+
+== Báo Cáo
+
+- #link("https://typst.app")[Typst 0.15.1]: Một typesetting mã nguồn mở, thay thế cho LaTex.
+  - Báo cáo và slides được với theme `uit-theme` của sinh viên.
+  - Bản dòng chính (master): #link("https://github.com/sam-uit/typst-report-template")[sam-uit/typst-report-template] (đã thay đổi rất nhiều với phiên bản đang sử dụng trong báo cáo này).
+  - Vốn được sử dụng tại các môn học khác như #link("https://github.com/sam-uit/ie103-project-report/tree/main/baocao")[sam-uit/ie103-project-report/tree/main/baocao]
+
+== Khai Báo Sử Dụng AI
+
+- Claude:
+  - Hỗ trợ rà soát mã nguồn và soạn tài liệu
+  - Thực hiện một số thay đổi trên nhánh `refactor-ie221`
+  - Không thay đổi phần lõi `/model` đặc biệt các phần về cấu trúc và phân cấp dữ liệu.
+
 = Nguồn Gốc Và Tư Liệu
 <nguon-goc-va-tu-lieu>
 
@@ -115,8 +145,3 @@ uv run skills-scraper list -p -r
   kind: raw,
   caption: [Các lệnh để chạy từ bản zip nộp kèm],
 ) <ma-chay-tu-ban-nop>
-
-== Công Cụ Sử Dụng
-<cong-cu-su-dung>
-
-Python 3.12, uv, Selenium 4, Beautiful Soup 4, requests, PyYAML, pytest, ruff, Chrome, Obsidian; báo cáo và slides soạn bằng Typst 0.15.1 với theme `uit-theme` của cùng tác giả, dựng bằng `just`; Claude (hỗ trợ rà soát mã và soạn tài liệu, mọi đoạn mã và số liệu trong báo cáo đều được kiểm lại trên repo).
