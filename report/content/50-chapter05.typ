@@ -68,15 +68,15 @@ Tương tự, các kiến thức của môn học được phản ánh trong mã
 == Hạn Chế
 <han-che>
 
-Tính đến ngày nộp, công cụ còn những giới hạn sau, tất cả đều được nói ra trong mã hoặc tài liệu kèm repo:
+Công cụ còn những giới hạn sau, tất cả đều được nói ra trong mã nguồn hoặc tài liệu kèm repo, hoặc bản thân báo cáo này:
 
-- Cần một phiên đăng nhập thật nên không chạy hoàn toàn không người trông; `--headless` chỉ dùng được sau khi profile đã đăng nhập.
+- Cần một phiên đăng nhập thật trên trình duyệt, nên không chạy hoàn toàn không người dùng trực tiếp; `--headless` chỉ dùng được sau khi profile đã đăng nhập và được dùng lại.
 - Chưa thu thập lab độc lập (FR-04) và chưa có lệnh CLI cho tệp prompt (FR-10).
-- Chưa thử lại khi mất mạng (P10 ở @bang-port-tu-dong-chinh): một lần rớt kết nối giữa `--cascade` dừng course đang chạy, chạy lại lệnh sẽ tiếp từ course đó nhờ idempotent.
-- `print()` còn 60 chỗ trong `model/` thay cho `logging`; `ruff check` (theo PEP 8 @pep8) còn 90 cảnh báo, đa số về kiểu (`implicit-optional`, `blind-except`, thứ tự import), chưa có lỗi logic.
-- Chất lượng transcript phụ thuộc phụ đề của site; tên file Markdown lấy từ tiêu đề nên khi Google đổi tiêu đề thì liên kết trong vault gãy; checkbox tiến độ người học tự đánh bị ghi đè khi sinh lại Markdown.
+- Chưa thử lại khi mất kết nối (P10 ở @bang-port-tu-dong-chinh) vì cơ chế _tất cả hoặc không gì cả_: một lần rớt kết nối giữa `--cascade` dừng course đang chạy, chạy lại lệnh sẽ tiếp từ course đó nhờ idempotent.
+- Bảo trì: Vẫn sử dụng `print()` trong `model/` thay cho `logging`.
+- Chất lượng mã nguồn: `ruff check` (theo PEP 8 @pep8) còn nhiều cảnh báo, đa số về kiểu (`implicit-optional`, `blind-except`, thứ tự import), chưa có lỗi logic.
+- Tên file Markdown thực tế lấy từ tiêu đề của thực thể nên khi Google đổi tiêu đề thì liên kết trong vault bị gãy (orphaned/broken); checkbox tiến độ người học tự đánh bị ghi đè khi sinh lại Markdown (cần kiểm tra sự thay đổi khi cần).
 - Partner portal không còn kiểm thử được vì sinh viên không còn quyền truy cập.
-- Nội dung transcript và tài liệu thuộc về Google: vault công khai chỉ nên chứa cấu trúc (`--toc --no-transcript`).
 
 == Hướng Phát Triển
 <huong-phat-trien>
