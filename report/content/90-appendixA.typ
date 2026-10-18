@@ -36,7 +36,9 @@
 == Mã Nguồn
 <nguon-goc-ma-nguon>
 
-Ứng dụng trong báo cáo là branch `refactor-ie221` của repo `github.com/ggcta/skills-scrapper`, tách từ tag `v2.0.0` (commit `ac49ba2`, 18/02/2026), công cụ hoàn toàn là công trình/dự án của sinh viên, bắt đầu từ 05/01/2025 dưới tên Cloud Skills Boost helper. Dòng chính (master) của repo đã chuyển sang lõi Go và giao diện Tauri (tới v2.17.0); báo cáo này chỉ xét phần Python và chỉ dùng dòng chính làm nguồn tham khảo cho các thay đổi của site.
+- Kho mã nguồn (repo): #link("https://github.com/ggcta/skills-scrapper/tree/refactor-ie221")[github.com/ggcta/skills-scrapper], nhánh `refactor-ie221`.
+
+Ứng dụng trong báo cáo là branch `refactor-ie221` của repo, tách từ tag `v2.0.0` (commit `ac49ba2`, 18/02/2026), công cụ hoàn toàn là công trình/dự án của sinh viên, bắt đầu từ 05/01/2025 dưới tên Cloud Skills Boost helper. Dòng chính (master) của repo đã chuyển sang lõi Go và giao diện Tauri (tới v2.17.0); báo cáo này chỉ xét phần Python và chỉ dùng dòng chính làm nguồn tham khảo cho các thay đổi của site.
 
 #co-note(title: [Ghi Chú])[
   - `ggcta` (Google Cloud Technical Architect), là một tổ chức trên Github, được tạo bởi sinh viên, phục vụ cho công việc, repo ở đây nhưng vẫn dưới quyền sở hữu hoàn toàn của sinh viên.
