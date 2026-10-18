@@ -91,13 +91,15 @@ Theo khung #link("https://fortelabs.com/blog/basboverview/")[CODE (Capture, Orga
     ([partner], [181], [899], [1209]),
   ),
   options: (index: false, align: ("left", "left", "left", "left")),
-  caption: [Quy mô hai portal theo danh mục đã kéo về (09/2026)],
+  caption: [Hai Portal và Danh Mục Tương Ứng (09/2026)],
   label: "tb-quy-mo-portal",
 ))
 
+Obsidian -- Graph View Của Vault: mỗi nút là một thực thể, mỗi cạnh là một liên kết tương đối mà note tự ghi ra; càng nhiều liên kết (và thường kích thước càng lớn), có nghĩa thực thể đó càng được tham chiếu tới, có nghĩa có lượng ảnh hưởng càng lớn trên tổng nội dung của Google Skills.
+
 #figure(
   image("images/obsidian-pkb-2nd-brain.png"),
-  caption: [Graph view của vault trong Obsidian: mỗi nút là một note, mỗi cạnh là một liên kết tương đối mà note tự ghi ra],
+  caption: [Obsidian -- Graph View Của Vault],
 ) <hinh-graph-view>
 
 == Đối Chiếu Với Open Knowledge Format
