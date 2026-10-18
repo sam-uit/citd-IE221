@@ -4,7 +4,11 @@
 = CÀI ĐẶT
 <cai-dat>
 
-Chương này đi vào mã nguồn theo đúng thứ tự các chương của môn học: môi trường và gói (chương 01, 06), mô hình hướng đối tượng (chương 08), kiểu dữ liệu, rẽ nhánh, vòng lặp và hàm (chương 02 tới 05), xử lý ngoại lệ (chương 07); rồi tới ba mảng mà bất kỳ công cụ thu thập nào cũng phải có: phiên đăng nhập và thu thập, lưu trữ, kết xuất Markdown; và cuối cùng là hai runner trên cùng một lõi. Mọi đoạn mã trong chương được `tools/snippets.py` bóc bằng `ast` từ branch `refactor-ie221` theo tên symbol, không gõ tay, nên không thể có đoạn mã nào trên giấy mà không có trong repo.
+Đây là phần nội dung chính của báo cáo, và để dễ theo dõi, cũng như bám sát các khối kiến thức của môn học IE221, sinh viên sẽ trình bày lần lượt các nội dung tương ứng.
+
+// Mọi đoạn mã trong chương được tách trực tiếp từ branch `refactor-ie221` của kho git.
+
+// Lần lượt: môi trường và gói (chương 01, 06), mô hình hướng đối tượng (chương 08), kiểu dữ liệu, rẽ nhánh, vòng lặp và hàm (chương 02 tới 05), xử lý ngoại lệ (chương 07); rồi tới ba mảng mà bất kỳ công cụ thu thập nào cũng phải có: phiên đăng nhập và thu thập, lưu trữ, kết xuất Markdown; và cuối cùng là hai runner trên cùng một lõi.
 
 == Môi Trường Phát Triển
 <moi-truong-phat-trien>
