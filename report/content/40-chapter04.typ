@@ -49,7 +49,7 @@ Bộ test đồng thời còn là các *cảnh báo sớm*: khi nghi vấn hoặ
 == Chạy Lại Và Tính Idempotent
 <chay-lai-va-tinh-idempotent>
 
-NFR-01 yêu cầu chạy lại cùng một lệnh không làm hỏng và không làm thừa. Ba cơ chế trong mã bảo đảm điều đó, mỗi cơ chế đều đã được chỉ ra ở chương 3:
+NFR-01 là một yêu cầu phi chức năng, nhưng tập trung vào tính toàn vẹn/nhất quán của dữ liệu. Yêu cầu này cho biết nếu chạy lại cùng một lệnh $n$ lần không làm hỏng và không làm thừa (dữ liệu đã có). Ba cơ chế trong mã nguồn sau bảo đảm điều đó, mỗi cơ chế thực ra đều đã được chỉ ra ở Chương 3:
 
 - `fetch -c 892` lần hai: `extract_course_metadata` so `datePublished` trên trang với giá trị đã lưu, bằng nhau thì in `Course 892 already extracted. datePublished: 2023-11-21` và trả `False`, course dừng tại đó (@ma-extract-metadata); `--force` để ép thu thập lại. Hành vi này có test (`test_metadata_skips_when_date_published_unchanged`).
 - Lab đã có file JSON thì `process_lab` không tải lại (@ma-process-lab-1), vì một lab xuất hiện trong nhiều course và nhiều path.
