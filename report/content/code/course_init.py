@@ -1,3 +1,4 @@
+class Course(BaseEntity):
     def __init__(self,
                  id: str,
                  name: str = None,
