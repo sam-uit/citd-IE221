@@ -1,9 +1,9 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
 = KẾT LUẬN
 <ket-luan>
 
-Chương cuối đối chiếu kết quả với hai bộ yêu cầu đã đặt ở chương 1 và với mười chương của môn học, nói thẳng những hạn chế còn lại tính đến ngày nộp, và nêu hướng phát triển đã được xếp thứ tự. Cột bằng chứng trong các bảng chỉ về mã, test hoặc lần chạy cụ thể, không về ý định.
+Trong Chương cuối này, sinhv viên thực hiện xin đối chiếu kết quả với hai bộ yêu cầu đã đặt ở Chương 1 so với các Chương của môn học IE221, từ đó trình bày những hạn chế còn lại tính đến ngày hôm nay, và nêu hướng phát triển về sau. Đồng thời cũng nêu lên những kinh nghiệm đúc kết được từ quá trình phát triển công cụ như một dự án cá nhân và trong góc nhìn của Thiết Kế Hệ Thống (System Design).
 
 == Kết Quả Đạt Được
 <ket-qua-dat-duoc>
@@ -11,35 +11,35 @@ Chương cuối đối chiếu kết quả với hai bộ yêu cầu đã đặt
 === Đối Chiếu Với Yêu Cầu
 <doi-chieu-voi-yeu-cau>
 
-Trạng thái ghi theo ba mức: *Đạt*, *Một phần*, *Chưa*. Bằng chứng "VM" là lần chạy offline từ clone sạch trên máy ảo Linux ngày 16/10/2026 (@ma-pytest); "macOS" là lần chạy thật qua Chrome ngày 26/09/2026 (@chay-lai-va-tinh-idempotent).
+Trạng thái ghi theo ba mức: *Đạt*, *Một phần*, *Chưa*.
 
 #datatable-data((
   headers: ([Mã], [Trạng thái], [Bằng chứng]),
   rows: (
-    ([FR-01], [Đạt], [`list -p` đọc offline (VM); `list -p -r` làm mới qua trình duyệt (macOS); `fetch_catalog` @ma-fetch-catalog-2]),
-    ([FR-02], [Đạt], [`fetch -p 280 --cascade --toc` (macOS); commit `cc06f45`; `test_path.py`]),
-    ([FR-03], [Đạt], [`fetch -c 892 --toc` (macOS); bốn bước của `extract_transcript` ở @phien-dang-nhap-va-thu-thap; `test_course.py`]),
-    ([FR-04], [Một phần], [`fetch -l ID` được nhận nhưng in "not yet fully supported": lab chỉ được thu thập qua course chứa nó (`process_lab`, @ma-process-lab-1); `md -l` và `list -l` chạy được]),
-    ([FR-05], [Đạt], [`extract_course_metadata` so `datePublished` (@ma-extract-metadata); `test_metadata_skips_when_date_published_unchanged`]),
-    ([FR-06], [Đạt], [`md -c 892 --toc` sinh note ở @ma-note-mau (VM); `generate_markdown` ghi đè ở Path, Course, Lab]),
-    ([FR-07], [Đạt], [`search vertex` tìm thấy path 280 và course 892 (VM); `Index.search` với `--field`]),
-    ([FR-08], [Đạt], [`reindex` dựng lại `index.json` (VM)]),
-    ([FR-09], [Đạt], [`process_document` tải vào `materials/courses/<id>/` với cookie của trình duyệt; commit `b4bd646` (macOS)]),
+    ([FR-01], [Đạt], [`list -p` đọc offline; `list -p -r` làm mới qua trình duyệt (macOS); `fetch_catalog` (@ma-fetch-catalog-2)]),
+    ([FR-02], [Đạt], [`fetch -p 280 --cascade --toc` (macOS)]),
+    ([FR-03], [Đạt], [`fetch -c 892 --toc` (macOS); bốn bước của `extract_transcript` ở @phien-dang-nhap-va-thu-thap[Mục]]),
+    ([FR-04], [Một phần], [`fetch -l ID` được nhận nhưng in "not yet fully supported": lab chỉ được thu thập qua course chứa nó, có nghĩa là mối quan hệ trực tiếp trong cây Tổ Chức Dữ Liệu (`process_lab`, @ma-process-lab-1); `md -l` và `list -l` chạy được]),
+    ([FR-05], [Đạt], [`extract_course_metadata` so sánh `datePublished` (@ma-extract-metadata)]),
+    ([FR-06], [Đạt], [`md -c 892 --toc` sinh note ở @ma-note-mau; `generate_markdown` ghi đè ở Path, Course, Lab]),
+    ([FR-07], [Đạt], [`search vertex` tìm thấy path 280 và course 892]),
+    ([FR-08], [Đạt], [`reindex` dựng lại `index.json`]),
+    ([FR-09], [Đạt], [`process_document` tải file pdf vào `materials/courses/<id>/` với cookie của trình duyệt]),
     ([FR-10], [Một phần], [`Course.generate_prompt` sinh `<id>-prompt.json`, gọi được từ TUI (`g`), chưa có lệnh CLI; tạm ngừng theo ghi chú ở @tb-fr]),
-    ([FR-11], [Đạt], [`skills-scraper-tui` mở menu màu và thoát sạch (VM); @hinh-demo-tui]),
-    ([NFR-01], [Đạt], [ba cơ chế ở @chay-lai-va-tinh-idempotent, có test]),
-    ([NFR-02], [Đạt], [JSON UTF-8 có thụt lề, Markdown thuần; `git diff` trên vault là cách phát hiện thay đổi]),
+    ([FR-11], [Đạt], [`skills-scraper-tui` mở menu màu trong Terminal và thoát không lỗi (@hinh-demo-tui)]),
+    ([NFR-01], [Đạt], [ba cơ chế ở @chay-lai-va-tinh-idempotent]),
+    ([NFR-02], [Đạt], [JSON UTF-8 có thụt lề, Markdown thuần; `git diff` là cách phát hiện thay đổi]),
     ([NFR-03], [Đạt], [ba lớp cấu hình ở @ma-load-settings, `config.example.yaml` có chú thích]),
-    ([NFR-04], [Đạt], [`try/except` theo từng activity; loại lạ giữ nguyên và báo (@ma-process-step-2); bỏ qua course có in lý do]),
-    ([NFR-05], [Đạt], [`write_text` nguyên tử (@ma-write-text); `test_write_json_leaves_no_temp_files`]),
-    ([NFR-06], [Đạt], [`uv sync` rồi `pytest` xanh từ clone sạch trên hệ điều hành khác máy phát triển (@ma-pytest); `grep -rn "/Users/" src` rỗng]),
+    ([NFR-04], [Đạt], [`try/except` theo từng activity; loại lạ giữ nguyên và báo (@ma-process-step-2); bỏ qua course có nêu rõ lý do]),
+    ([NFR-05], [Đạt], [`write_text` nguyên tử (@ma-write-text)]),
+    ([NFR-06], [Đạt], [`uv sync` rồi test phải xanh từ clone sạch trên hệ điều hành khác/máy khác (@ma-pytest)]),
   ),
   options: (index: false, align: ("left", "left", "left"), columns: ("12%", "14%", "auto")),
-  caption: [Trạng thái 11 yêu cầu chức năng và 6 yêu cầu phi chức năng],
+  caption: [Kết Quả Đạt Được],
   label: "tb-trang-thai-fr",
 ))
 
-Hai mục "Một phần" đều có cùng một nguyên nhân: ở v2.0.0 chúng cũng chưa hoàn chỉnh, và trong phạm vi đồ án sinh viên ưu tiên làm cho những gì đã có chạy đúng với site hiện tại hơn là mở thêm tính năng. Cả hai được giữ nguyên trong mã với thông báo tường minh thay vì bị giấu đi.
+Hai mục "Một phần" đều có cùng một nguyên nhân: ở v2.0.0 chúng cũng chưa hoàn chỉnh (chưa đủ độ cấp thiết), và trong phạm vi đồ án sinh viên ưu tiên làm cho những gì đã có chạy đúng với site hiện tại hơn là mở thêm tính năng. Cả hai được giữ nguyên trong mã nguồn với thông báo tường minh thay vì bị giấu đi trong im lặng.
 
 === Đối Chiếu Với Chương Bài Giảng
 <doi-chieu-voi-chuong-bai-giang>
