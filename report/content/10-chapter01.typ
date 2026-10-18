@@ -155,8 +155,8 @@ Các phạm vi chức năng sẽ được/không được triển khai, tương 
     ([FR-10], [Sinh tệp prompt JSON cho mô hình ngôn ngữ lớn (LLM).]),
     ([FR-11], [Giao diện tương tác dạng menu (TUI)]),
   ),
-  options: (index: false, align: ("left", "left"), columns: ("15%", "auto")),
-  caption: [Yêu cầu chức năng],
+  options: (index: false, align: ("left", "left"), columns: ("15%", "85%")),
+  caption: [Yêu Cầu Chức Năng],
   label: "tb-fr",
 ))
 
@@ -175,8 +175,8 @@ Các phạm vi chức năng sẽ được/không được triển khai, tương 
     ([NFR-05], [Ghi tệp nguyên tử (`atomic`): nếu gặp ngắt giữa chừng không để lại nửa tệp lỗi]),
     ([NFR-06], [Môi trường tái lập: `uv sync` từ một bản clone sạch là có thể bắt đầu]),
   ),
-  options: (index: false, align: ("left", "left"), columns: ("15%", "auto")),
-  caption: [Yêu cầu phi chức năng],
+  options: (index: false, align: ("left", "left"), columns: ("15%", "85%")),
+  caption: [Yêu Cầu Phi Chức Năng],
   label: "tb-nfr",
 ))
 
