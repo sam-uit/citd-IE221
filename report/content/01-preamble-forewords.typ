@@ -1,5 +1,13 @@
 #import "../lib.typ": *
 
+#co-warn(title: [TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM])[
+Tất cả các nội dung của Google Skills đều là sở hữu của Google hoặc/và Google Skills. Không sao chép một phần hoặc tất cả nội dung cho mục đích khác ngoài mục đích ban đầu là phục vụ đào tạo các sản phẩm/dịch vụ của Google.
+
+Công cụ này chỉ cung cấp một cách làm việc với các nội dung trên cho mục tiêu học tập cá nhân, KHÔNG CHỊU TRÁCH NHIỆM cho bất kỳ mục đích nào khác, và mọi quyền hạn hoặc trách nhiệm liên quan đến các nội dung được tải, vui lòng tham khảo Quy Định Sử Dụng của và trực tiếp tại Google Skills.
+
+Đồng thời, Báo Cáo này không sao chép hoặc trình bày các nội dung của các khóa học/bài học, vv.. trên Google Skills mà chỉ tập trung vào khía cạnh kỹ thuật hoặc/và cấu trúc dữ liệu đằng sau.
+]
+
 = Lời Nói Đầu
 <loi-noi-dau>
 
