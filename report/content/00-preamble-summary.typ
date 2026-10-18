@@ -51,6 +51,7 @@ Báo Cáo này được thực hiện với các tiêu chí:
   - Được khởi tạo từ tháng 01/2025.
   - Và vẫn được duy trì hiện tại.
   - Hoàn toàn mở.
+- Git Commit: File git log từ `git log --oneline` đính kèm.
 
 == Khai Báo Sử Dụng AI
 
