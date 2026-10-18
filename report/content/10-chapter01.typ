@@ -62,22 +62,22 @@ Portal (public | partner)
 == Vấn Đề Cần Giải Quyết
 <van-de-can-giai-quyet>
 
-Nền tảng cho xem một trang tại một thời điểm. Bốn câu hỏi người học hay đặt ra nhất lại không trả lời được trên bản thân trang độc lập đó, trong khi chúng là tính năng có sẵn của Obsidian khi nội dung là Markdown liên kết:
+Website Google Skills cho người dùng xem một trang tại một thời điểm. Một số câu hỏi người học hay đặt ra nhất lại không trả lời được trên bản thân trang độc lập đó. Để so sánh, đây là các tính năng có sẵn của Obsidian khi nội dung là Markdown liên kết:
 
 #datatable-data((
-  headers: ([Câu hỏi], [Trên skills.google], [Trong vault Obsidian]),
+  headers: ([Câu hỏi], [skills.google], [Obsidian Vault]),
   rows: (
-    ([Course này *thuộc những path* nào?], [phải tìm ngược từng path], [backlink của note]),
-    ([Hai path *chồng lấn bao nhiêu* course?], [không có], [graph view, truy vấn]),
-    ([Transcript nào *nhắc tới một khái niệm*?], [khó tìm trong transcript], [tìm toàn văn, offline]),
-    ([Course này *thay đổi gì* từ lần học trước?], [không có lịch sử], [`date_published` và `git diff`]),
+    ([Course này *thuộc những Path* nào?], [phải tìm ngược từng path], [backlink/wikilink]),
+    ([Hai Path *chồng lấn* (dùng chung) *bao nhiêu* Course?], [không có], [graph view, truy vấn]),
+    ([Transcript/Course nào *nhắc tới một khái niệm* cụ thể?], [khó tìm trong transcript], [tìm toàn văn, offline]),
+    ([Course này đã *thay đổi gì* từ lần học trước?], [không có lịch sử], [`date_published` và `git diff`]),
   ),
   options: (index: false, align: ("left", "left", "left"), columns: ("1fr", "auto", "auto")),
-  caption: [Bốn câu hỏi của người học: trên site và trong vault],
+  caption: [Một Số Câu Hỏi Thường Gặp],
   label: "tb-bon-cau-hoi",
 ))
 
-Quy trình hiện tại của người học trên Google Skills: duyệt danh mục, mở từng khoá, xem video, ghi chú tay. Nội dung nằm rải rác qua video, quiz, lab, tài liệu; không có bản xuất, không có bản offline, không tìm kiếm xuyên khoá. Có một sự rời rạc trong một hệ thống được thiết kế trông rất chặt chẽ.
+Quy trình hiện tại của người học trên Google Skills: duyệt danh mục, mở từng khoá, xem video, ghi chú tay. Nội dung nằm rải rác qua video, quiz, lab, tài liệu; không có bản xuất (export) để lưu lại, không có bản offline, không tìm kiếm xuyên khoá. Có một sự rời rạc trong một hệ thống được thiết kế trông rất chặt chẽ.
 
 == Mục Tiêu Đề Tài
 <muc-tieu-de-tai>
