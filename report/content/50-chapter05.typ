@@ -81,14 +81,18 @@ Công cụ còn những giới hạn sau, tất cả đều được nói ra tro
 == Hướng Phát Triển
 <huong-phat-trien>
 
-Theo thứ tự nên làm, mỗi mục là một hoặc vài commit nhỏ trên cùng kiến trúc, không mục nào đòi sửa `model/` về căn bản:
+Theo thứ tự nên làm, mỗi mục là một hoặc vài commit nhỏ trên cùng kiến trúc, không mục nào cần phải sửa `model/` về căn bản, trừ khi Google có một sự thay lớn về Cấu Trúc Dữ Liệu của nội dung trên website.
 
-+ Thử lại khi mất mạng (P10) và tái dùng cửa sổ Chrome đang mở qua `debuggerAddress` (P11), để `--cascade` dài hơi chạy ổn.
-+ Bundle OKF đầy đủ: lệnh `index` sinh `index.md` cho mỗi thư mục và `log.md` ở gốc vault; khi đó `docs/data.md` và `docs/output.md` viết lại cho khớp mã.
-+ Tên file dạng `<id>-<slug>.md` để liên kết không gãy khi đổi tiêu đề; `print()` sang `logging`; dọn các cảnh báo `ruff`.
-+ Thu thập lab độc lập và lệnh `prompt` trên CLI, khép lại hai mục "Một phần".
-+ Portal khác (AWS Skill Builder, NVIDIA DLI) bằng cấu hình và lớp con ghi đè phần phân tích trang, đúng cách `Paths` ghi đè `API_URL`.
++ Thử lại khi mất kết nối giữa chừng (P10) và tái dùng cửa sổ Chrome đang mở.
++ Bundle OKF đầy đủ: lệnh `index` sinh `index.md` cho mỗi thư mục và `log.md` ở gốc vault.
++ Tên file dạng `<id>-<slug>.md` để liên kết không gãy khi đổi tiêu đề, có nghĩa sự nhất quán đến mức các file Markdown xuất ra.
++ Đổi `print()` sang `logging` để tăng khả năng bảo trì.
++ Xử lý các cảnh báo từ `ruff check` để tăng chất lượng mã nguồn.
++ Thu thập lab độc lập và lệnh `prompt` trên CLI, hoàn thành khép lại hai mục "Một phần".
++ Portal khác (AWS Skill Builder, vv..) bằng cấu hình và lớp con ghi đè phần phân tích trang, như cách `Paths` ghi đè `API_URL`.
 + Dùng vault làm kho tri thức cho AI agent qua plugin Obsidian hoặc MCP, với tệp prompt JSON làm đầu vào tóm tắt; đây là nơi khung CODE đi hết bước *Distill*.
+
+Tuy nhiên, sinh viên kỳ vọng một sự đóng góp từ bên ngoài hơn là tự thực hiện, vì cơ bản công cụ hiện đang phục vụ được nhu cần cá nhân nên thiếu động lực để phát triển tiếp.
 
 == Lời Kết
 <loi-ket>
