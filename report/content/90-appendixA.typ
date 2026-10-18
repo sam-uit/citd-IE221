@@ -102,7 +102,7 @@ f864415 drop the Flask web UI and the dead code around it
 == Kịch Bản Demo
 <kich-ban-demo>
 
-Năm bước, 5 tới 7 phút, theo thứ tự offline trước, mạng sau, để nếu mạng hay đăng nhập có vấn đề thì phần cốt lõi vẫn đã được thấy.
+Sinh viên khuyến nghị một kịch bản demo gồm năm bước như dưới đây, 5 tới 7 phút, theo thứ tự offline trước, mạng sau, và nếu kết nối mạng hay đăng nhập có vấn đề thì phần cốt lõi vẫn được thể hiện.
 
 #datatable-data((
   headers: ([Bước], [Lệnh], [Điều cần chỉ ra]),
@@ -113,12 +113,12 @@ Năm bước, 5 tới 7 phút, theo thứ tự offline trước, mạng sau, đ�
     ([4], [`uv run skills-scraper-tui`], [cùng lõi, giao diện khác; thoát bằng `q`, Chrome đóng theo]),
     ([5], [vòng `for` shell, `jq`, `git diff --stat` (@ma-ghep-shell)], [ghép được với công cụ khác mà không cần API]),
   ),
-  options: (index: false, align: ("left", "left", "left"), columns: ("8%", "40%", "auto")),
-  caption: [Kịch bản demo năm bước],
+  options: (index: false, align: ("left", "left", "left"), columns: ("8%", "40%", "52%")),
+  caption: [Phụ Lục -- Kịch Bản Demo],
   label: "tb-demo",
 ))
 
-== Chạy Từ Bản Nộp
+== Chạy Từ Bản Nộp Bài
 <chay-tu-ban-nop>
 
 Giải nén, rồi trong thư mục gốc của repo:
@@ -128,7 +128,7 @@ Giải nén, rồi trong thư mục gốc của repo:
 # Python 3.12, thư viện, hai lệnh skills-scraper*
 uv sync
 
-# 15 test offline, không cần mạng
+# 15 test offline, không cần kết nối mạng
 uv run pytest
 
 # help
@@ -145,5 +145,5 @@ cp config.example.yaml config.yaml
 uv run skills-scraper list -p -r
 ```,
   kind: raw,
-  caption: [Các lệnh để chạy từ bản zip nộp kèm],
+  caption: [Phụ Lục -- Các Lệnh Để Chạy Từ Bản Nộp Kèm],
 ) <ma-chay-tu-ban-nop>
