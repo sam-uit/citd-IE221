@@ -291,7 +291,7 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   from: 1,
   to: 15,
   size: 0.85em,
-  caption: [`Course.process_step`: bảng dispatch theo loại activity],
+  caption: [`Course.process_step()` -- Bảng `handlers`],
   label: "ma-process-step-1",
 )
 
@@ -300,7 +300,7 @@ Rẽ nhánh bằng `dict` (data-driven) thay cho chuỗi `if/elif`: `Course.proc
   from: 16,
   to: 29,
   size: 0.85em,
-  caption: [`Course.process_step`: loại lạ được giữ nguyên và báo],
+  caption: [`Course.process_step()` -- Loại Lạ Được Giữ Nguyên và Thông Báo],
   label: "ma-process-step-2",
 )
 
