@@ -61,11 +61,13 @@ NFR-01 là một yêu cầu phi chức năng, nhưng tập trung vào tính toà
   - Mọi file đi qua `write_text` nguyên tử (@ma-write-text).
   - Vì vậy nên trên đĩa hoặc là bản cũ nguyên vẹn hoặc là bản mới hoàn chỉnh, không bao giờ là nửa file.
   - Cơ chế kiểm tra không còn `.tmp-*` sau khi ghi, có nghĩa là việc hoàn thành ghi file không chỉ đơn giản hoàn thành ở đoạn _cuối_ (file JSON được tạo ra), mà đoạn _đầu_ (file `.tmp-*`) phải không còn tồn tại nữa.
-  - Hay nói cách khác: tại bất kỳ mọi thời điểm, luôn bảo đảm chỉ có một và một SSOT.
+  - Hay nói cách khác: tại bất kỳ mọi thời điểm, luôn bảo đảm chỉ có một và một _SSOT_.
 
-Lệnh `md` thì thuần hàm: cùng JSON vào, cùng Markdown ra; chạy bao nhiêu lần cũng được và `git diff` trên vault rỗng nếu dữ liệu không đổi. Đây cũng là cách phát hiện site đã đổi gì: `fetch --force` rồi `git diff` vault.
+Lệnh `md` thì thuần hàm sinh file, không thay đổi (và quan tâm) dữ liệu của SSOT:
 
-Đường đi qua Chrome (`fetch`, `list -r`, `--cascade`) đã được sinh viên chạy thật trên macOS ngày 26/09/2026 với các lệnh `uv run skills-scraper list -p -r`, `fetch -c 892 --toc`, `fetch -p 280 --cascade --toc`; ba giả định lấy từ dòng chính (JSON danh mục nằm trong `<pre>`, `driver.current_url` chứa `sign_in` khi bị chuyển hướng, `href` dạng `/focuses/<id>` cho lab trong menu của path) đều đúng với site hiện tại.
+- Cùng JSON vào, cùng Markdown ra.
+- Chạy bao nhiêu lần cũng được và `git diff` trên vault trả về rỗng nếu dữ liệu không đổi.
+- Đây cũng là một cách phát hiện site đã đổi gì: `fetch --force` rồi `git diff` vault (nếu không `git diff` trong data/json).
 
 == Khi Nền Tảng Thay Đổi
 <khi-nen-tang-thay-doi>
