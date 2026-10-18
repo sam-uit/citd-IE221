@@ -4,7 +4,7 @@
 = TRIẾT LÝ VÀ THIẾT KẾ
 <triet-ly-va-thiet-ke>
 
-Trước khi đi vào mã nguồn, chương này trình bày cách nghĩ đã quyết định hình hài của công cụ: vì sao nó là một ứng dụng nhỏ chứ không phải một hệ thống, vì sao con người vẫn ở trong vòng lặp khi site thay đổi, vault sinh ra đóng vai trò gì trong mô hình Bộ Não Thứ Hai và khớp với Open Knowledge Format của Google ở đâu, kiến trúc gói được chia thế nào, và hai quyết định cố ý không dùng (cơ sở dữ liệu, giao diện đồ hoạ) dù đó là hai chương của môn học.
+Trước khi đi vào mã nguồn, trong chương này, sinh viên thực hiện xin trình bày các điểm về tư duy xây dựng và các quyết định về thiết kế đã ảnh hưởng đến sự hành thành của công cụ: vì sao nó là một ứng dụng nhỏ chứ không phải một hệ thống, vì sao con người vẫn ở trong vòng lặp khi site thay đổi, vault sinh ra đóng vai trò gì trong mô hình Bộ Não Thứ Hai và khớp với Open Knowledge Format của Google ở đâu, kiến trúc gói được chia thế nào, và cuối cùng là hai quyết định cố ý không dùng (cơ sở dữ liệu, giao diện đồ hoạ) dù đó là hai chương trong khung kiến thức của môn học.
 
 == Một Ứng Dụng, Không Phải Một Hệ Thống
 <mot-ung-dung-khong-phai-mot-he-thong>
