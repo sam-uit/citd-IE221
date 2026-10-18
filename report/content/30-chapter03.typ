@@ -18,15 +18,15 @@
 - Nhất quán, có thể tái lập ở một môi trường mới bất kỳ đâu: `uv sync` từ một bản clone sạch tải đúng Python 3.12 và đúng các phiên bản trong `uv.lock`.
 - Một công cụ duy nhất, `uv`, với một định dạng đánh dấu (markup) thân thiện, `toml`.
 
-`pyproject.toml` @python-packaging khai báo tên và phiên bản của công cụ, bốn thư viện lúc chạy (selenium, beautifulsoup4, requests, pyyaml), và hai _runner_ dưới dạng console script, tức hai lệnh `skills-scraper` và `skills-scraper-tui` xuất hiện trong `PATH` sau khi cài.
+`pyproject.toml` @python-packaging khai báo tên và phiên bản của công cụ, bốn thư viện lúc chạy (selenium, beautifulsoup4, requests, pyyaml), và hai _runner_ dưới dạng console script, tức hai lệnh `skills-scraper` và `skills-scraper-tui` xuất hiện trong `PATH` sau khi cài đặt.
 
 #code-figure(
   "/content/code/pyproject.toml",
   from: 1,
   to: 11,
   lang: "toml",
-  size: 1em,
-  caption: [`pyproject.toml`: tên, phiên bản, Python tối thiểu và các thư viện lúc chạy],
+  size: 0.8em,
+  caption: [`pyproject.toml` -- Tên, Phiên Bản, Các Thư Viện],
   label: "ma-pyproject-deps",
 )
 
@@ -36,7 +36,7 @@
   to: 26,
   lang: "toml",
   size: 1em,
-  caption: [`pyproject.toml`: hai entry point và build backend],
+  caption: [`pyproject.toml` -- Hai Runner và Build Toolkits],
   label: "ma-pyproject-scripts",
 )
 
