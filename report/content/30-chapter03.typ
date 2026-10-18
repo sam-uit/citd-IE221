@@ -509,7 +509,7 @@ Quy ước cấu trúc nội dung file Markdown:
 == Hai Runner
 <hai-runner>
 
-Cả hai runner đều chỉ `import` từ `model/` và `services/`; không có logic nghiệp vụ nào trong `cli.py` hay `tui.py`. Thêm một runner thứ ba (chẳng hạn một HTTP API) sẽ không chạm tới `model/`.
+Cả hai runner đều chỉ `import` từ `model/` và `services/`; không có logic nghiệp vụ nào trong `cli.py` hay `tui.py`. Thêm một runner thứ ba bất kỳ (chẳng hạn một HTTP API) sẽ không chạm/thay đổi/ảnh hưởng tới `model/`.
 
 === Giao Diện Dòng Lệnh
 <giao-dien-dong-lenh>
