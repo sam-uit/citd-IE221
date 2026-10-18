@@ -1,14 +1,17 @@
-#import "/lib.typ": *
+#import "../lib.typ": *
 
 = Nguồn Gốc Và Tư Liệu
 <nguon-goc-va-tu-lieu>
 
-== Nguồn Gốc Mã Nguồn
+== Mã Nguồn
 <nguon-goc-ma-nguon>
 
-Ứng dụng là branch `refactor-ie221` của repo `github.com/ggcta/skills-scrapper`, tách từ tag `v2.0.0` (commit `ac49ba2`, 18/02/2026), công trình trước đó của cùng tác giả, bắt đầu từ 05/01/2025 dưới tên Cloud Skills Boost helper. Dòng chính của repo đã chuyển sang lõi Go và giao diện Tauri (tới v2.17.0); báo cáo này chỉ xét phần Python và chỉ dùng dòng chính làm nguồn tham khảo cho các thay đổi của site.
+Ứng dụng trong báo cáo là branch `refactor-ie221` của repo `github.com/ggcta/skills-scrapper`, tách từ tag `v2.0.0` (commit `ac49ba2`, 18/02/2026), công cụ hoàn toàn là công trình/dự án của sinh viên, bắt đầu từ 05/01/2025 dưới tên Cloud Skills Boost helper. Dòng chính (master) của repo đã chuyển sang lõi Go và giao diện Tauri (tới v2.17.0); báo cáo này chỉ xét phần Python và chỉ dùng dòng chính làm nguồn tham khảo cho các thay đổi của site.
 
-Tính đến bản nộp, branch có 22 commit sau `v2.0.0`, HEAD là `45c7d0a` (27/09/2026). Phiên bản gói trong `pyproject.toml` là `2.0.1`; `CHANGELOG.md` trong repo mô tả các thay đổi dưới mốc `py/v2.1.0 (unreleased)`, tiền tố `py/` vì dòng chính đã dùng `v2.1.0` trở lên cho phần Go; tag tạm `py/v2.1.0-rc1` đặt ở commit `5e161e7`. Mã nguồn nộp kèm báo cáo là bản zip của branch này, không có `.venv`, `data/` và vault.
+#co-note(title: [Ghi Chú])[
+  - `ggcta`: Google Cloud Technical Architect, là một tổ chức trên Github, được tạo bởi sinh viên, phục vụ cho công việc, repo ở đây nhưng vẫn dưới quyền sở hữu hoàn toàn của sinh viên.
+  - Tên người đóng góp có thể là `samdx`, `samdinhgg`, hoặc `sam-uit`, đều là các username khác của sinh viên ở các vai trò khác nhau.
+]
 
 == Danh Sách Commit Refactor
 <danh-sach-commit-refactor>
