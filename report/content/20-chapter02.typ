@@ -168,7 +168,11 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 == Hai Quyết Định về Thành Phần
 <hai-quyet-dinh-khong-dung>
 
+#co-note(title: [Ghi Chú])[Đây đều là các quyết định thiết kế có lý do và chủ đích, mà không phải là sự vô tình bỏ sót kỹ năng đã học hoặc nội dung chương trình.]
+
 === Không Cơ Sở Dữ Liệu (Chương 10 - IE221)
+
+Cơ Sở Dữ Liệu không được sử dụng với các lý do sau đây, là về chức năng không phải vì không thể triển khai.
 
 - Kho có dưới 5.000 bản ghi, Tìm Kiếm Tuyến Tính có thể trả về kết quả trong mili giây.
 - Tệp phẳng (flat-file) và văn bản thuần (plain text), nên đọc được bằng git và Obsidian hoặc bất kỳ công cụ nào khác.
@@ -178,15 +182,15 @@ Hướng phụ thuộc một chiều: runner gọi `model/`, `model/` dùng `ser
 
 === Không Giao Diện Đồ Hoạ (Chương 09 -- IE221)
 
+Tương tự, GUI không được triển khai vì đặc thù nhu cầu không sử dụng. Điều này không có nghĩa GUI không thể thực hiện, thậm chí với kiến trúc hiện tại, GUI có thể được thêm vào như một phần đóng góp nếu người khác có nhu cầu.
+
 - Người dùng và môi trường mục tiêu là người làm việc trong terminal.
 - Giao diện đồ hoạ thật đã tồn tại ở nhánh Tauri (như một ví dụ về khả năng mở rộng) nhưng sẽ không được ghép vào dòng/chức năng chính.
 - Báo cáo này sẽ chỉ tập trung vào phần lõi của công cụ (model) nơi biểu hiện rõ nhất các nội dung của chương trình học.
 
-#co-note(title: [Ghi Chú])[Đây đều là các quyết định thiết kế có lý do và chủ đích, mà không phải là sự vô tình bỏ sót kỹ năng đã học hoặc nội dung chương trình].
-
 == Kết Chương
 <ket-chuong-2>
 
-Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ: năm nguyên tắc của một ứng dụng nhỏ, vai trò của con người khi site thay đổi, vị trí của vault trong khung CODE và sự trùng khớp với OKF (@tb-okf), kiến trúc gói phụ thuộc một chiều (@hinh-kien-truc), cùng những phần CÓ và KHÔNG với nguyên do tương ứng.
+Chương này trình bày các lý do và quyết định trong quá trình xây dựng công cụ: năm nguyên tắc của một ứng dụng nhỏ, vai trò của con người khi website thay đổi, vị trí của vault trong khung CODE và sự trùng khớp với OKF (@tb-okf), kiến trúc gói phụ thuộc một chiều (@hinh-kien-truc), cùng những phần CÓ và KHÔNG triển khai với nguyên do tương ứng.
 
-Đây là tiền đề cho Chương 3, nơi các nội dung cốt lõi của môn học được chỉ ra trên chính mã nguồn đã chọn theo các nguyên tắc ở đây.
+Đây là tiền đề cho Chương 3, nơi các nội dung cốt lõi của môn học được chỉ ra trên chính mã nguồn đã chọn theo các nguyên tắc đã được trình bày ở đây.
