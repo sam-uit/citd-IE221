@@ -269,20 +269,13 @@ Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là m�
 === Kiểu Dữ Liệu
 <kieu-du-lieu>
 
-Dữ liệu của một course là `dict` lồng ba tầng, `modules` chứa `steps` chứa `activities`, mỗi tầng là `list` của `dict`; đây cũng chính là hình dạng của file JSON, nên `json.loads` và `json.dumps` đi thẳng không cần lớp chuyển đổi. Chuỗi được xử lý bằng f-string và các phương thức `str`, ví dụ `yaml_scalar` bên dưới dùng `json.dumps` để một chuỗi bất kỳ (kể cả có dấu nháy) thành một giá trị YAML hợp lệ, vì JSON là tập con của YAML. `tuple` xuất hiện làm khoá sắp xếp trong `numeric_id`: số thì so theo giá trị, chữ thì so theo chữ và đứng sau.
+Dữ liệu của một `Course` là `dict` (từ điển) lồng ba tầng: `modules` chứa `steps` chứa `activities`. Mỗi tầng là `list` (danh sách) của `dict`; đây cũng chính là hình dạng của file JSON, nên `json.loads` và `json.dumps` là nạp và xuất dữ liệu trực tiếp không cần lớp chuyển đổi.
 
 #code-figure(
-  "/content/code/base_entity_yaml_scalar.py",
-  size: 0.85em,
-  caption: [`yaml_scalar`, `yaml_list`: chuỗi thành YAML an toàn],
-  label: "ma-yaml-scalar",
-)
-
-#code-figure(
-  "/content/code/collection_numeric_id.py",
-  size: 0.85em,
-  caption: [`numeric_id`: tuple làm khoá sắp xếp, 9 < 10 < 108],
-  label: "ma-numeric-id",
+  "/content/code/course_init.py",
+  size: 0.8em,
+  caption: [`Course.__init__()` -- Kiểu Dữ Liệu],
+  label: "code-course-init",
 )
 
 === Cấu Trúc Điều Khiển
@@ -475,7 +468,7 @@ data/
 
 Lệnh `md` (và bước cuối của `fetch`) biến JSON thành note Markdown cho Obsidian, hoàn toàn offline. Mỗi note gồm frontmatter YAML và thân bài.
 
-Frontmatter do `BaseEntity.generate_front_matter` sinh, là tập mở rộng (superset) của OKF v0.2 @okf-spec: các khoá OKF (`type`, `title`, `description`, `resource`, `tags`, `sources`, `generated`), hai khoá riêng của công cụ (`id`, `portal`), và các tên cũ mà vault hiện có đang truy vấn (`url`, `date_published`, `topics`, `scraped_date`). Mọi giá trị vô hướng đi qua `yaml_scalar` (@ma-yaml-scalar), nên tên course có dấu nháy đơn không còn làm hỏng YAML như ở v2.0.0.
+Frontmatter do `BaseEntity.generate_front_matter` sinh, là tập mở rộng (superset) của OKF v0.2 @okf-spec: các khoá OKF (`type`, `title`, `description`, `resource`, `tags`, `sources`, `generated`), hai khoá riêng của công cụ (`id`, `portal`), và các tên cũ mà vault hiện có đang truy vấn (`url`, `date_published`, `topics`, `scraped_date`). Mọi giá trị vô hướng đi qua `yaml_scalar`, nên tên course có dấu nháy đơn không còn làm hỏng YAML như ở v2.0.0.
 
 #code-figure(
   "/content/code/base_entity_front_matter.py",
