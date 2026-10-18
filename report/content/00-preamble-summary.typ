@@ -47,6 +47,7 @@ Báo Cáo này được thực hiện với các tiêu chí:
   - Như một bản rút gọn của báo cáo.
   - Hoàn toàn có thể bỏ qua báo cáo và vẫn trình bày đầy đủ nội dung cốt lõi.
 - Demo: File hình ảnh/video đính kèm.
+  - Phần DEMO được tách thành Phụ Lục để tránh loãng nội dung chính và sẽ được trình bày ở phụ lục @appendix-demo (#ref(<appendix-demo>, form: "page")).
 - Mã Nguồn: #link("https://github.com/ggcta/skills-scrapper/tree/refactor-ie221")[github.com/ggcta/skills-scrapper], nhánh `refactor-ie221`.
   - Được khởi tạo từ tháng 01/2025.
   - Và vẫn được duy trì hiện tại.
