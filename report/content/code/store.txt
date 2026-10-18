@@ -1,0 +1,6 @@
+data/
+├── index.json          chỉ mục: {kind: {id: {name, datePublished, scrapedTime}}}
+├── paths.json          tập hợp {id: name} của Paths (Collection)
+├── paths/280.json      một path có id 280
+├── courses/892.json    một course có id 892, đầy đủ modules/steps/activities
+└── labs/<id>.json      một lab
