@@ -112,6 +112,11 @@ Trong đó:
   label: "ma-serialize",
 )
 
+#figure(
+  image("images/model-serialize-baseentity.png"),
+  caption: [Hai Cây Kế Thừa Trong Mã Nguồn],
+) <hinh-ide-ke-thua>
+
 === Lớp, Đối Tượng Và Thuộc Tính Suy Diễn
 <lop-doi-tuong-va-thuoc-tinh-suy-dien>
 
@@ -164,28 +169,43 @@ Kế Thừa và Đa Hình xuất hiện ở nhiều nơi trong mã nguồn, ví 
   label: "ma-base-save-markdown",
 )
 
+=== generate_markdown
+
 `model/lab.py` là lớp con nhỏ nhất, đủ để thấy toàn bộ cơ chế: `__init__` gọi `super()`, thêm hai thuộc tính riêng, rồi ghi đè `generate_markdown`.
+
+// #raw(read("/content/code/lab_class.py"), lang: "python", block: true)
+
+`Lab` kế thừa `BaseEntity`:
 
 #code-figure(
   "/content/code/lab_class.py",
-  size: 0.85em,
-  caption: [`model/lab.py`: lớp con kế thừa `BaseEntity` và ghi đè `generate_markdown`],
+  size: 0.8em,
+  from: 1,
+  to: 15,
+  caption: [`model/lab.py` -- Kế Thừa `BaseEntity`],
   label: "ma-lab-class",
 )
 
-Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog` là một bản duy nhất, đọc `API_URL` và `MAX_PAGES` là thuộc tính lớp; `Paths`, `Courses`, `Labs` chỉ khai lại `API_URL`. Ở v2.0.0 có ba bản copy của vòng lặp phân trang này, mỗi lớp một bản.
+Và ghi đè `generate_markdown`:
+
+#code-figure(
+  "/content/code/lab_class.py",
+  size: 0.8em,
+  from: 19,
+  caption: [`model/lab.py` -- Ghi Đè `generate_markdown`],
+  label: "ma-lab-class",
+)
+
+=== fetch_catalog
+
+Cùng cơ chế đó ở nhánh bên phải: `Collection.fetch_catalog()` là một bản duy nhất, đọc `API_URL` và `MAX_PAGES` là thuộc tính lớp; `Paths`, `Courses`, `Labs` chỉ khai lại `API_URL`. Ở v2.0.0 có ba bản copy của vòng lặp phân trang này, mỗi lớp một bản.
 
 #code-figure(
   "/content/code/courses_class.py",
   size: 0.85em,
-  caption: [`model/courses.py`: lớp con chỉ khai `API_URL`, phần còn lại kế thừa],
+  caption: [`model/courses.py` -- Lớp Con Chỉ Khai `API_URL`],
   label: "ma-courses-class",
 )
-
-#figure(
-  image("images/model-serialize-baseentity.png"),
-  caption: [Hai cây kế thừa như IDE nhìn thấy trong mã thật],
-) <hinh-ide-ke-thua>
 
 === Đóng Gói Và Kết Hợp
 <dong-goi-va-ket-hop>
