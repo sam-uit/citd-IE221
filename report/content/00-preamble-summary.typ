@@ -37,3 +37,14 @@ Báo Cáo này được thực hiện với các tiêu chí:
 - Cung cấp bản demo như một minh chứng cho chức năng và khả năng hoạt động.
 - Cởi mở và tường minh về các nội dung đã đạt được, chưa đạt được, hoặc không triển khai.
 - Trình bày chuyên nghiệp theo hướng học thuật.
+
+== Nộp Bài
+
+- Báo cáo: File PDF, khoảng 50 trang.
+  - Vui lòng theo dõi @cai-dat-trien-khai[Chương] (#ref(<cai-dat-trien-khai>, form: "page"), gồm 20 trang) cho các nội dung về kiến thức trong môn học.
+  - Các chương khác mang tính chất bổ sung hoặc/và làm rõ hơn các nội dung ở trong chương này.
+- Slide: File PDF.
+  - Như một bản rút gọn của báo cáo.
+  - Hoàn toàn có thể bỏ qua báo cáo và vẫn trình bày đầy đủ nội dung cốt lõi.
+- Demo: File hình ảnh/video đính kèm.
+- Mã Nguồn: #link("https://github.com/ggcta/skills-scrapper/tree/refactor-ie221")[github.com/ggcta/skills-scrapper], nhánh `refactor-ie221`.
