@@ -18,6 +18,8 @@ Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã 
 === Phân Cấp Dữ Liệu
 <phan-cap-du-lieu>
 
+Để phục vụ cho đăng tải nội dung tới nhiều tệp người dùng, cũng như nhiều tệp sản phẩm, phân cấp dữ liệu trên Google Skills có thể tóm tắt như bảng dưới đây.
+
 #datatable-data((
   columns: (5%, 15%, auto),
   headers: ([Cấp], [Thực thể], [Ghi chú]),
@@ -34,6 +36,8 @@ Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã 
   label: "tb-phan-cap",
 ))
 
+Mô hình phân cấp có thể được trực quan hóa đơn giản như sau:
+
 #figure(
 ```
 Portal (public | partner)
@@ -47,7 +51,7 @@ Portal (public | partner)
           └─ badge | credential | ...
 ```,
   kind: raw,
-  caption: [Cây phân cấp, các loại _activity_ do Google quyết định],
+  caption: [Google Skills -- Cây Phân Cấp Dữ Liệu],
 ) <ma-cay-phan-cap>
 
 #co-note(title: [Ghi Chú])[
