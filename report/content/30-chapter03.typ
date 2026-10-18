@@ -40,12 +40,19 @@
   label: "ma-pyproject-scripts",
 )
 
-`.python-version` cho `uv` biết phiên bản Python được dùng; `__init__.py` của gói đọc lại phiên bản từ metadata đã cài, nên con số chỉ được khai ở một chỗ.
+`.python-version` cho `uv` biết phiên bản Python được dùng; `__init__.py` của gói đọc lại phiên bản từ metadata đã cài, nên con số này chỉ được khai ở một chỗ.
+
+#code-figure(
+  "/content/code/python-version",
+  size: 0.9em,
+  caption: [`.python-version`: Phiên Bản Python Tối Thiểu],
+  label: "ma-init-version",
+)
 
 #code-figure(
   "/content/code/init_version.py",
   size: 0.9em,
-  caption: [`__init__.py`: phiên bản đọc từ metadata của gói, không chép tay],
+  caption: [`__init__.py`: Phiên Bản Đọc Từ Metadata Của Gói],
   label: "ma-init-version",
 )
 
