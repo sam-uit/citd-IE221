@@ -344,45 +344,45 @@ Lặp có ngắt: `Collection.fetch_catalog()` phân trang bằng `while True` v
 <xu-ly-ngoai-le>
 
 #co-note(title: [Nguyên Tắc])[
-  Một _activity_ hỏng không làm hỏng cả _course_ trong quá trình `fetch`; một ngắt giữa chừng không để lại nửa file; mọi lỗi đều được báo, không có lỗi im lặng.
+  Một _activity_ hỏng không làm hỏng cả _course_ trong quá trình `fetch`; một ngắt giữa chừng không để lại nửa file; mọi lỗi đều được thông báo rõ ràng, không có lỗi im lặng.
 ]
 
 Các ngoại lệ gặp trong mã thuộc ba nhóm:
 
-- Của thư viện: `NoSuchElementException` (Selenium) khi trang thiếu phần tử mong đợi, `json.JSONDecodeError` khi danh mục không phải JSON, `OSError` khi ghi file.
-- Của Python: `KeyboardInterrupt` và `EOFError` khi người dùng dừng ở bước đăng nhập, `KeyError` khi tra bảng trình duyệt, `ValueError` khi `type` lạ.
-- Bắt rộng có chủ ý: mỗi `process_*` của một activity nằm trong `try/except Exception` riêng và in lỗi kèm tên phương thức, để course đi tiếp sang activity kế. Bản IE221 không định nghĩa lớp ngoại lệ riêng; phần thử lại khi mất mạng (P10 ở @bang-port-tu-dong-chinh) là hướng phát triển.
+- Của thư viện: `NoSuchElementException` (Selenium) khi trang thiếu phần tử selector được mong đợi; `json.JSONDecodeError` khi danh mục không phải JSON; `OSError` khi ghi file.
+- Của Python: `KeyboardInterrupt` và `EOFError` khi người dùng dừng ở bước đăng nhập; `KeyError` khi tra bảng trình duyệt; `ValueError` khi `type` lạ.
+- `try` và `catch` có chủ ý: mỗi `process_*` của một activity nằm trong `try/except Exception` riêng và in lỗi kèm tên phương thức, để course đi tiếp sang activity kế.
 
-`services/store.py` ghi file nguyên tử (atomic): ghi vào file tạm cùng thư mục, `fsync`, rồi `os.replace`; nếu có lỗi hoặc Ctrl+C giữa chừng thì xoá file tạm và ném lại ngoại lệ, không bao giờ để lại "nửa" file.
+`services/store.py` ghi file nguyên tử (atomic): ghi vào file tạm cùng thư mục, `fsync`, rồi `os.replace`; nếu có lỗi hoặc Ctrl+C giữa chừng thì xoá file tạm và trả lại ngoại lệ, không bao giờ để lại "nửa" file.
 
 #code-figure(
   "/content/code/store_write_text.py",
   from: 1,
   to: 20,
   size: 0.85em,
-  caption: [`store.write_text`: ghi nguyên tử với `try/except/raise`],
+  caption: [`store.write_text()` -- Ghi Nguyên Tử Với `try/except/raise`],
   label: "ma-write-text",
 )
 
-`services/browser.py` xử lý trường hợp người dùng bỏ dở thao tác đăng nhập: `input()` bị ngắt bằng Ctrl+C hay Ctrl+D được bắt và trả `False`, người gọi dừng tường minh.
+`services/browser.py` xử lý trường hợp người dùng bỏ dở thao tác đăng nhập: `input()` bị ngắt bằng Ctrl+C hay Ctrl+D được bắt và trả về `False`, thông báo rõ ràng.
 
 #code-figure(
   "/content/code/browser_ensure_authenticated.py",
   from: 10,
   to: 23,
   size: 0.85em,
-  caption: [`browser.ensure_authenticated`: bắt `KeyboardInterrupt`, `EOFError`],
+  caption: [`browser.ensure_authenticated()` -- `KeyboardInterrupt`, `EOFError`],
   label: "ma-ensure-authenticated",
 )
 
-`BaseEntity.save_json` bắt `OSError` của bước ghi và chỉ cập nhật chỉ mục khi ghi xong, nên chỉ mục không bao giờ trỏ tới một file không tồn tại.
+`BaseEntity.save_json` có `OSError` của bước ghi và chỉ cập nhật chỉ mục khi ghi xong, nên chỉ mục không bao giờ trỏ tới một file không tồn tại.
 
 #code-figure(
   "/content/code/base_entity_json.py",
   from: 10,
   to: 24,
   size: 0.85em,
-  caption: [`BaseEntity.save_json`: ghi trước, cập nhật chỉ mục sau],
+  caption: [`BaseEntity.save_json()` -- Ghi File Trước, Cập Nhật Chỉ Mục Sau],
   label: "ma-save-json",
 )
 
