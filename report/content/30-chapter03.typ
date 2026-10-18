@@ -120,19 +120,19 @@ Trong đó:
 #code-figure(
   "/content/code/base_entity_init.py",
   size: 0.85em,
-  caption: [`BaseEntity.__init__`: ba thuộc tính định danh],
+  caption: [`BaseEntity.__init__()` -- Ba Thuộc Tính Định Danh],
   label: "ma-base-init",
 )
 
 Nhưng để tự nhận diện và phân loại các thực thể, `BaseEntity` khai báo các thuộc tính nội sinh (properties) với `@property`, nhờ đó việc kế thừa trở nên xuyên suốt hơn:
 
 - `@property type` trả `self.__class__.__name__`.
-- `@property url` tra bảng theo `type`, ném `ValueError` khi gặp loại lạ.
+- `@property url` tra bảng theo `type`, trả lại `ValueError` khi gặp một loại lạ.
 
 #code-figure(
   "/content/code/base_entity_type_url.py",
   size: 0.85em,
-  caption: [`BaseEntity.type` và `BaseEntity.url`: suy ra từ tên lớp],
+  caption: [`BaseEntity.type` và `BaseEntity.url`],
   label: "ma-base-type-url",
 )
 
