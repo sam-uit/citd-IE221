@@ -26,3 +26,14 @@ Sinh viên thực hiện:
   [- Họ Tên], [Đinh Xuân Sâm],
   [- Mã Sinh Viên], [25410291],
 )
+
+== Tiêu Chí
+
+Báo Cáo này được thực hiện với các tiêu chí:
+
+- Trình bày quá trình xây dựng một công cụ thực tế sử dụng Python.
+- Trình bày các khối kiến thức đã được sử dụng từ môn học IE221 trong mã nguồn.
+- Cung cấp mã nguồn của công cụ như một minh chứng của quá trình.
+- Cung cấp bản demo như một minh chứng cho chức năng và khả năng hoạt động.
+- Cởi mở và tường minh về các nội dung đã đạt được, chưa đạt được, hoặc không triển khai.
+- Trình bày chuyên nghiệp theo hướng học thuật.
