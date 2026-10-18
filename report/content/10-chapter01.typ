@@ -25,12 +25,12 @@ Trong khoảng hai năm, từ cuối 2024 đến đầu 2026, nền tảng đã 
     ([1], [*Portal*], [Bao gồm _public_ và _partner_; báo cáo này chỉ đề cập _public_ portal vì _partner_ là dành cho đối tác của Google, và cần có tài khoản riêng.]),
     ([2], [*Path*], [Lộ Trình, chứa nhiều Course và Lab theo thứ tự.]),
     ([3], [*Course*], [Khoá Học, có mô tả, mục tiêu, chủ đề và từng chương.]),
-    ([4], [*Module*], [Chương của khoá học, sẽ có từng bài học cụ thể.]),
-    ([5], [*Step*], [Các bước trong chương.]),
-    ([6], [*Activity*], [Các bài học, có thể là video, lab, quiz, pdf hoặc html, hoặc loại nội dung bất kỳ nào khác.]),
+    ([4], [*Module*], [Chương, thuộc Khoá Học, sẽ có từng bài học cụ thể.]),
+    ([5], [*Step*], [Các Bước/Phần trong chương.]),
+    ([6], [*Activity*], [Các Bài Học, có thể là video, lab, quiz, pdf hoặc html, hoặc loại nội dung bất kỳ nào khác.]),
   ),
   options: (index: false, align: ("right", "left", "left"), columns: ("8%", "15%", "auto")),
-  caption: [Sáu cấp dữ liệu của Google Skills],
+  caption: [Google Skills -- Phân Cấp Dữ Liệu],
   label: "tb-phan-cap",
 ))
 
