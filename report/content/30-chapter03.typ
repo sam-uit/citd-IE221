@@ -1,8 +1,8 @@
 #import "../lib.typ": *
 #import "diagrams.typ": *
 
-= CÀI ĐẶT
-<cai-dat>
+= CÀI ĐẶT & TRIỂN KHAI
+<cai-dat-trien-khai>
 
 Đây là phần nội dung chính của báo cáo, và để dễ theo dõi, cũng như bám sát các khối kiến thức của môn học IE221, sinh viên sẽ trình bày lần lượt các nội dung tương ứng.
 
