@@ -608,4 +608,6 @@ Trình duyệt dùng chung: `CloudSkillsBoost.driver` là một `@property` kh�
 == Kết Chương
 <ket-chuong-3>
 
-Chương 3 trình bày về các nội dung kiến thức của môn học IE221 dựa trên mã nguồn đã có sẵn của kho git, đặc biệt trên branch `refactor-ie221` từ các phần cơ bản nhất như gói và module với `uv` và `src/` (@ma-tree); tính kế thừa qua 2 cây kế thừa từ `Serialize` (@hinh-so-do-lop); kiểu dữ liệu lồng, phân nhánh bằng `dict`, đệ quy và vòng lặp có điều kiện thoát; bắt và xử lý ngoại lệ, vv... và từ đó, Chương 4 sẽ trả lời thêm câu hỏi: làm sao biết tất cả những điều trên vẫn đúng khi site đổi.
+Chương 3 trình bày về các nội dung kiến thức của môn học IE221 dựa trên mã nguồn đã có sẵn của kho git, đặc biệt trên branch `refactor-ie221` từ các phần cơ bản nhất như gói và module với `uv` và `src/` (@ma-tree); tính kế thừa qua 2 cây kế thừa từ `Serialize` (@hinh-so-do-lop); kiểu dữ liệu lồng, phân nhánh bằng `dict`, đệ quy và vòng lặp có điều kiện thoát; bắt và xử lý ngoại lệ, vv...
+
+Và từ đó, Chương 4 sẽ trả lời thêm câu hỏi: làm sao biết tất cả những điều trên vẫn đúng khi website thay đổi, vì vốn đây là điều chắc chắn có, và sẽ có cũng như ngoài tầm kiểm soát của công cụ (hay chính xác hơn là sinh viên tạo ra công cụ).
