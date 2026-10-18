@@ -514,7 +514,9 @@ Cả hai runner đều chỉ `import` từ `model/` và `services/`; không có 
 === Giao Diện Dòng Lệnh
 <giao-dien-dong-lenh>
 
-`cli.py` dùng `argparse` với một sub-parser cho mỗi lệnh, mỗi lệnh gắn một hàm `cmd_*` qua `set_defaults(func=...)`; `main()` chỉ phân tích tham số rồi gọi `args.func(args)`.
+`cli.py`:
+
+// `cli.py` dùng `argparse` với một sub-parser cho mỗi lệnh, mỗi lệnh gắn một hàm `cmd_*` qua `set_defaults(func=...)`; `main()` chỉ phân tích tham số rồi gọi `args.func(args)`.
 
 #datatable-data((
   headers: ([Lệnh], [Làm gì], [Cờ chính]),
@@ -523,29 +525,29 @@ Cả hai runner đều chỉ `import` từ `model/` và `services/`; không có 
     ([`fetch` (`f`)], [Thu thập vào `data/` và sinh Markdown], [`-p ID...`/`-c ID...`/`-l ID...`, `--cascade`, `--force`, `--toc`, `--no-transcript`, `--no-md`]),
     ([`md`], [Sinh Markdown từ JSON đã có, offline], [`-c ID,ID`/`-p ID`/`-l ID`, `--toc`, `--no-transcript`]),
     ([`search` (`s`)], [Tìm trong dữ liệu đã tải], [`QUERY`, `-c`/`-p`/`-l`, `--field name|topics|...`]),
-    ([`reindex`], [Dựng lại `data/index.json` từ các file thực thể], [---]),
+    // ([`reindex`], [Dựng lại `data/index.json` từ các file thực thể], [---]),
     ([`browser` (`b`)], [Mở trình duyệt đã đăng nhập và chờ, để đăng nhập], [`--profile-folder`]),
   ),
-  options: (index: false, align: ("left", "left", "left"), columns: ("18%", "40%", "auto")),
-  caption: [Các lệnh của `skills-scraper`, theo `--help` thật],
+  options: (index: false, align: ("left", "left", "left"), columns: ("15%", "40%", "auto")),
+  caption: [`skills-scraper` -- `cli`],
   label: "tb-cli",
 ))
 
-#code-figure(
-  "/content/code/cli_main.py",
-  from: 1,
-  to: 23,
-  size: 0.8em,
-  caption: [`cli.main`: sub-parser `list` với hai nhóm loại trừ lẫn nhau],
-  label: "ma-cli-main",
-)
-
-#code-figure(
-  "/content/code/cli_cmd_reindex.py",
-  size: 0.8em,
-  caption: [`cli.cmd_reindex`: một lệnh CLI là một hàm gọi vào `services`],
-  label: "ma-cli-reindex",
-)
+// #code-figure(
+//   "/content/code/cli_main.py",
+//   from: 1,
+//   to: 23,
+//   size: 0.8em,
+//   caption: [`cli.main`: sub-parser `list` với hai nhóm loại trừ lẫn nhau],
+//   label: "ma-cli-main",
+// )
+//
+// #code-figure(
+//   "/content/code/cli_cmd_reindex.py",
+//   size: 0.8em,
+//   caption: [`cli.cmd_reindex`: một lệnh CLI là một hàm gọi vào `services`],
+//   label: "ma-cli-reindex",
+// )
 
 Vì giao tiếp bằng file và mã thoát, CLI ghép được với shell và các công cụ khác mà không cần API riêng, ví dụ thu thập mọi course của một path rồi xem site đã đổi gì so với lần trước:
 
@@ -558,23 +560,34 @@ done
 git -C csbmdvault diff --stat
 ```,
   kind: raw,
-  caption: [Ghép CLI với `jq`, `while` của shell và `git`],
+  caption: [CLI -- Kết Hợp Với `jq`, `while` của Shell và `git`],
 ) <ma-ghep-shell>
 
 #figure(
   image("images/demo-cli.png"),
-  caption: [`skills-scraper` chạy trong terminal],
+  caption: [`skills-scraper` Trong Terminal],
 ) <hinh-demo-cli>
 
 === Giao Diện Tương Tác
 <giao-dien-tuong-tac>
 
-`tui.py` giữ nguyên kiểu menu của v2.0.0: menu số và chữ, màu ANSI, vòng lặp `while` đọc `input()` và rẽ nhánh theo lựa chọn (`c` một course, `p` một path, `l` danh sách, `h` tất cả course, `w` mở trình duyệt, `q` thoát). Điểm mới duy nhất là trình duyệt dùng chung: `CloudSkillsBoost.driver` là một `@property` khởi tạo lười (lazy), chỉ mở Chrome khi lựa chọn đầu tiên cần tới mạng, và `close()` đóng nó trong khối `finally` của `main()`, nên thoát bằng `q` hay Ctrl+C đều không để lại cửa sổ Chrome mồ côi.
+`tui.py`:
+  - Menu số và chữ.
+  - Màu ANSI.
+  - Vòng lặp `while` đọc `input()` và rẽ nhánh theo lựa chọn:
+    - `c` một course
+    - `p` một path
+    - `l` danh sách
+    - `h` tất cả course
+    - `w` mở trình duyệt
+    - `q` thoát.
+
+Trình duyệt dùng chung: `CloudSkillsBoost.driver` là một `@property` khởi tạo lười (lazy), chỉ mở Chrome khi lựa chọn đầu tiên cần, và `close()` đóng nó trong khối `finally` của `main()`, nên thoát bằng `q` hay Ctrl+C đều không để lại tiến trình Chrome mồ côi (orphaned/zoombie).
 
 #code-figure(
   "/content/code/tui_driver.py",
   size: 0.8em,
-  caption: [`CloudSkillsBoost.driver`: trình duyệt khởi tạo lười, dùng chung cho cả phiên],
+  caption: [`CloudSkillsBoost.driver()` -- Khởi Tạo Trình Duyệt],
   label: "ma-tui-driver",
 )
 
@@ -583,13 +596,13 @@ git -C csbmdvault diff --stat
   from: 18,
   to: 30,
   size: 0.8em,
-  caption: [`tui.main`: `try/finally` đảm bảo đóng trình duyệt khi thoát],
+  caption: [`tui.main` -- `try/finally` -- Đóng Trình Duyệt Khi Thoát],
   label: "ma-tui-main",
 )
 
 #figure(
   image("images/demo-tui.png"),
-  caption: [`skills-scraper-tui`: cùng lõi, giao diện khác],
+  caption: [`skills-scraper-tui` -- Cùng Lõi `model` -- Khác Giao Diện],
 ) <hinh-demo-tui>
 
 == Kết Chương
