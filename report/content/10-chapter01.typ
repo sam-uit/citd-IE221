@@ -183,4 +183,4 @@ Các phạm vi chức năng sẽ được/không được triển khai, tương 
 == Kết Chương
 <ket-chuong-1>
 
-Chương này mô tả bài toán thực tế của sinh viên: nội dung học tập nằm trên một nền tảng chỉ cho xem từng trang, ngày càng đóng, và không trả lời được những câu hỏi liên kết giữa các khoá học. Nhu cầu phát sinh từ công việc, nên lời giải là một công cụ thực tế với mười một yêu cầu chức năng (@tb-fr) và sáu yêu cầu phi chức năng (@tb-nfr), có những đặc thù nhất định và không nhất thiết dùng hết mọi kiến thức của môn học. Chương 2 trình bày triết lý và các quyết định thiết kế để trả lời bài toán đó bằng một ứng dụng nhỏ.
+Chương 1 này đã mô tả một bài toán thực tế của sinh viên: nội dung học tập nằm trên một nền tảng chỉ cho xem từng trang, ngày càng đóng, và không trả lời được những câu hỏi về liên kết giữa các khoá học. Nhu cầu phát sinh từ công việc, nên lời giải là một công cụ thực tế với các một yêu cầu chức năng (@tb-fr) và các yêu cầu phi chức năng (@tb-nfr) tương ứng, có những đặc thù nhất định và không nhất thiết dùng hết mọi kiến thức của môn học IE221. Chương 2 sẽ trình bày triết lý và các quyết định thiết kế để trả lời bài toán đó bằng một ứng dụng nhỏ.
