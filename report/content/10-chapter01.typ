@@ -119,13 +119,20 @@ Mục tiêu thứ hai, về mặt học thuật:
   [- Runner], [CLI, TUI]
 )
 
-
 === Không Bao Gồm
 
-- Partner Portal (sinh viên không còn quyền truy cập);
-- Chạy Lab;
-- Quản lý tài khoản, mua khoá học;
-- Giao diện đồ hoạ và Cơ Sở Dữ Liệu (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<triet-ly-va-thiet-ke>, form: "page")).
+#grid(
+  columns: (30%, 70%),
+  row-gutter: 0.5em,
+  inset: (bottom: 0.5em),
+  stroke: (bottom: 0.5pt + orange.lighten(60%)),
+  grid.header([*Thành Phần*], [*Nội Dung*]),
+  [- Portal], [Partner (sinh viên không còn quyền truy cập)],
+  [- Automation], [Chạy (hoàn thành) Lab (đây là phần thực hành trực tiếp)],
+  [- Account], [Quản lý tài khoản, mua khoá học],
+  [- GUI], [Không (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<hai-quyet-dinh-khong-dung>, form: "page"))],
+  [- Database], [Không (lý do sẽ được trình bày ở @triet-ly-va-thiet-ke[Chương] (#ref(<hai-quyet-dinh-khong-dung>, form: "page"))]
+)
 
 == Yêu Cầu
 <yeu-cau>
