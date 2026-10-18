@@ -97,22 +97,29 @@ Mỗi dòng của bảng là một lần con người quyết định "thay đ�
 
 NFR-03 và NFR-06 được đáp ứng bằng `config.py` với ba lớp cấu hình, lớp sau ghi đè lớp trước:
 
-+ Mặc định trong mã (`DEFAULTS`): `data/`, `csbmdvault/`, `.webdriver_profiles/`, Chrome, không headless; đủ để chạy ngay sau `uv sync`.
-+ `config.yaml` (dữ liệu, không phải mã): tìm theo `$CSB_CONFIG`, rồi `./config.yaml`, rồi `./config/config.yaml`; đường dẫn tương đối tính từ thư mục chứa file, nên `vault: ../skills-vault` nghĩa là một chỗ bất kể chạy lệnh từ đâu. Repo kèm `config.example.yaml` có chú thích từng khoá.
-+ Biến môi trường `CSB_DATA`, `CSB_VAULT`, `CSB_PROFILE_DIR`, `CSB_BROWSER`, `CSB_HEADLESS`: ghi đè từng khoá, tiện cho script và CI; chuỗi `"1"`, `"true"`, `"yes"`, `"on"` được hiểu là bật.
++ Mặc định trong mã (`DEFAULTS`):
+  - `data/`, `csbmdvault/`, `.webdriver_profiles/`, Chrome, không headless.
+  - Đủ để chạy ngay sau `uv sync` một cách mặc định.
++ `config.yaml` (dữ liệu, không phải mã):
+  - Tìm theo `$CSB_CONFIG`, rồi `./config.yaml`, rồi `./config/config.yaml`.
+  - Đường dẫn tương đối tính từ thư mục chứa file, nên `vault: ../skills-vault` nghĩa là một chỗ bất kể chạy lệnh từ đâu.
+  - Repo kèm `config.example.yaml` có chú thích từng khoá.
++ Biến môi trường `CSB_DATA`, `CSB_VAULT`, `CSB_PROFILE_DIR`, `CSB_BROWSER`, `CSB_HEADLESS`:
+  - Ghi đè từng khoá, tiện cho script và CI.
+  - Chuỗi `"1"`, `"true"`, `"yes"`, `"on"` được hiểu là bật.
 
 #code-figure(
   "/content/code/config_load_settings.py",
   from: 7,
   to: 30,
-  size: 0.85em,
-  caption: [`config.load_settings`: trộn ba lớp, đường dẫn tương đối tính từ `config.yaml`],
+  size: 0.8em,
+  caption: [`config.load_settings()` -- Tìm và Tải `config.yaml`],
   label: "ma-load-settings",
 )
 
-Ở v2.0.0, `settings.py` là mã Python chứa đường dẫn tuyệt đối của máy tác giả; bản này không còn chuỗi `/Users/` nào trong `src/` (kiểm bằng `grep -rn "/Users/" src`, kết quả rỗng), nên repo chạy được trên máy khác, hệ điều hành khác mà không sửa mã. Chính nhờ vậy toàn bộ phần offline của chương này (@ma-pytest, @ma-note-mau) được kiểm trên một máy ảo Linux chỉ bằng ba biến môi trường trỏ vào `docs/samples/data`, trong khi phần cần Chrome chạy trên macOS của sinh viên.
+Cho tới v2.0.0, cấu hình được lưu trong `settings.py`, vốn là mã Python chứa đường dẫn tuyệt đối của máy cá nhân. Các thay đổi trên giúp repo chạy được trên máy khác ngay sau khi đồng bộ về mà không cần sửa mã nguồn. Đây là phần "mở" và "khả chuyển".
 
 == Kết Chương
 <ket-chuong-4>
 
-Công cụ được kiểm theo hai lớp: 15 test offline trên trang đã ghi lại (@tb-tests), chạy xanh từ clone sạch trong một phần tư giây (@ma-pytest), và một lần chạy thật qua Chrome trên macOS cho các đường cần đăng nhập. Tính idempotent đến từ ba cơ chế có trong mã và có test; việc bám theo site là một quy trình có con người ở giữa, với năm thay đổi thật đã được xử lý và ghi thành commit (@tb-site-changes); cấu hình ba lớp (@ma-load-settings) làm cho repo di động và cũng là cái cho phép kiểm thử ở một máy khác máy phát triển. Chương 5 đối chiếu tất cả với yêu cầu đã đặt ra ở chương 1 và với các chương của môn học.
+Chương này trình bày các nội dung mở rộng có thể không hoàn toàn nằm trong bộ khung kiến thức của môn học IE221, nhưng là các phần phần không thể thiếu hoặc/và đã có từ những ngày đầu của công cụ, vì vậy sẽ được thêm vào vào để bổ sung và xây dựng nên tính đầy đủ của báo cáo.
